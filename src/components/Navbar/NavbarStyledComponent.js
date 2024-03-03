@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import _default from '../../themes/default';
 
 export const Nav = styled.div`
-    background-color: ${({theme}) => theme.card_light};
+    background-color: #5c5b5b  ;
     height: 80px;
     display: flex;
     align-items: center;
@@ -25,6 +25,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   padding: 0 24px;
   max-width: 1200px;
+  background: #5c5b5b ;
 `;
 
 export const NavLogo = styled(LinkR)`
@@ -58,7 +59,7 @@ export const NavItems = styled.ul`
 `;
 
 export const NavLink = styled.a`
-    color: ${({ theme }) => theme.text_primary};
+    color: white;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease-in-out;

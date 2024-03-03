@@ -13,40 +13,13 @@ export const HeroContainer = styled.div`
   @media (max-width: 640) {
     padding: 32px 16px;
   }
-  z-index: 1;
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-`;
-
-export const HeroBg = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
-  overflow: hidden;
-  padding: 0 30px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
-  @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
-  }
+  
 `;
 
 export const HeroInnerContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   max-width: 1100px;
 
@@ -54,6 +27,20 @@ export const HeroInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
+
+export const HeroInnerContainer1 = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 0px 0px 150px;
+  max-width: 800px;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+`;
+
 export const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
@@ -74,30 +61,12 @@ export const HeroLeftContainer = styled.div`
   }
 `;
 
-export const HeroRightContainer = styled.div`
-  width: 100%;
-  display: flex;
-  order: 2;
-  justify-content: end;
-  gap: 12px;
-  @media (max-width: 960px) {
-    order: 1;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-  }
-
-  @media (max-width: 640px) {
-    margin-bottom: 30px;
-  }
-`;
-
 export const Img = styled.img`
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 400px;
-  max-height: 400px;
+  max-height: 500px;
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.primary};
 
@@ -112,10 +81,26 @@ export const Img = styled.img`
   }
 `;
 
+export const Title1 = styled.div`
+  font-weight: 700;
+  font-size: 50px;
+  color: #5c5b5b;
+  line-height: 68px;
+  @media (max-width: 960px) {
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 8px;
+  }
+`;
+
 export const Title = styled.div`
   font-weight: 700;
   font-size: 50px;
-  color: ${({ theme }) => theme.text_primary};
+  color: #5c5b5b;
   line-height: 68px;
   @media (max-width: 960px) {
     text-align: center;
@@ -185,8 +170,7 @@ export const ResumeButton = styled.a`
     background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
     background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
     background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
-    -20px -20px 60px #1F2634;
+  
     &:hover {
         transform: scale(1.05);
     transition: all 0.4s ease-in-out;
