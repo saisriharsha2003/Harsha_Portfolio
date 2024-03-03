@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroContainer, HeroLeftContainer, Img, HeroInnerContainer,HeroInnerContainer1, TextLoop, Title, Span, SubTitle,SocialMediaIcons,SocialMediaIcon, ResumeButton } from './HeroStyle'
+import { HeroContainer, HeroLeftContainer, Img, HeroInnerContainer,HeroInnerContainer1, TextLoop, Title, Span, SubTitle,Title1, ResumeButton } from './HeroStyle'
 import HeroImg from '../../images/HeroImage.jpg'
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
