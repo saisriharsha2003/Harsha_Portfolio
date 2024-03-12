@@ -214,12 +214,12 @@ export const experiences = [
       "HTML",
       "CSS",
       "JavaSrcipt",
-      "ReactJS",
+      "React.js",
       "TailwindCSS",
       "MongoDB",
       "SQL",
       "OpenAI API",
-      "NodeJs",
+      "Node.js",
       "Material UI",
       "Python",
       "Flask",
@@ -280,14 +280,14 @@ export const education = [
 export const projects = [
   {
     id: 11,
-    title: "TalentTrail India",
+    title: "EmpowerRecruit",
     description:
-      "Developed TalentTrail India, a platform that revolutionized the recruitment process by utilizing cutting-edge technologies. Led the frontend design using React.js for a responsive interface, while Node.js powered the backend operations. Implemented Tailwind CSS for sleek styling, enhancing user experience. Integrated Twilio for real-time notifications and email delivery, significantly reducing response time for application status updates. Leveraged Express.js for efficient server maintenance. Employed advanced NLP technologies for accurate resume parsing and job role generation, boosting efficiency. Personalized job recommendations based on user skills and experiences, leading to an increase in user engagement. Streamlined job listing and candidate shortlisting processes, reducing recruiter workload and expediting the placement life cycle.",
+      "Created EmpowerRecruit, a game-changing recruitment platform using cutting-edge tech. Led frontend design with React.js, ensuring a responsive interface, while Node.js powered backend operations. Used Tailwind CSS for sleek styling, enhancing user experience. Integrated Twilio for real-time notifications, reducing response time for application status updates. Leveraged Express.js for efficient server maintenance. Employed advanced NLP for accurate resume parsing and job role generation, boosting efficiency. Provided personalized job recommendations based on user skills, increasing engagement. Streamlined job listing and candidate shortlisting, reducing recruiter workload. Implemented job parsing and candidate compatibility scoring, sorting applications based on recruiter needs.",
     image:
       "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/placement1.png?alt=media&token=50158ce9-5d5a-4d1c-9dc1-edc0ec6a0893",
     tags: [
       "React Js",
-      "TaikwindCSS",
+      "TailwindCSS",
       "Node Js",
       "Express Js",
       "JavaScirpt",
