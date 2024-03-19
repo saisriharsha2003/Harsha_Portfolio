@@ -5,7 +5,7 @@ export const Bio = {
     "Full Stack NLP Engineer",
     "Front-End Developer",
     "Back-End Developer",
-    "MLP Engineer"
+    "NLP Engineer"
   ],
   description:"I am Rankela Sai Sri Harsha, a dedicated Software Developer with a Bachelor's degree in Computer Science and Engineering (AI & ML). My skill set includes Python, Java, SQL, Cloud Computing, Machine Learning, Artificial Intelligence, and Full Stack Web Development. During my recent internship as a Full Stack NLP Engineer at Solomons International, I led the development of an advanced resume analysis system. In a previous role as a Web Developer Intern at Internshala Trainings, I honed my web development skills.",
   github: "https://github.com/saisriharsha2003",
@@ -17,6 +17,37 @@ export const Bio = {
   facebook: "https://www.facebook.com/rankela.saisriharsha/",
 };
 
+export const codingprofiles = [
+  {
+    profiles: [
+      {
+        name: "LeetCode",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/leetcdoe.png?alt=media&token=e296d95a-b1bf-4a83-8b5e-8fc6624b7033",
+        link: "https://leetcode.com/saisriharsha2005/",
+      },
+      {
+        name: "HackerRank",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/hackerrank.png?alt=media&token=d8f62bcd-8241-4de9-a4e8-1867c4f2172d",
+        link: "https://www.hackerrank.com/profile/rankelassh"
+      },
+      {
+        name: "Coding Ninjas",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/coding%20ninjas.png?alt=media&token=6ceeefd2-39a7-4124-9f87-2ca8640dd782",
+        link: "https://www.codingninjas.com/studio/profile/sai2035",
+      },
+      {
+        name: "GeeksforGeeks",
+        link: "https://auth.geeksforgeeks.org/user/saisrihkb40",
+        image : "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/geeksforgeeks.png?alt=media&token=d0e1890a-f2a7-4bca-91bb-22f898d970df"
+      },
+      {
+        name: "CodeChef",
+        image:"https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/codechef.jpg?alt=media&token=b46c053d-105f-4e68-a093-70666224a723",
+        link: "https://www.codechef.com/users/saisriharsha05"
+      }
+  ],}
+
+]
 export const skills = [
   {
     title: "Frontend",
@@ -187,11 +218,6 @@ export const skills = [
         name: "Postman",
         image:
           "https://static-00.iconduck.com/assets.00/postman-icon-497x512-beb7sy75.png",
-      },
-      {
-        name: "Adobe XD",
-        image:
-          "https://camo.githubusercontent.com/c205ecbe12500177d102169d97bc1c17c545155fdf5ec78c08d54ac53e5b38c1/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f61646f62652d78642e737667",
       },
       {
         name: "Figma",
