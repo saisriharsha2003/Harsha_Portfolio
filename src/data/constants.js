@@ -279,7 +279,7 @@ export const education = [
     img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/vvit.jpg?alt=media&token=8e2d3d4a-b947-4236-838d-1fa9c33e461e",
     school: "Vasireddy Venkatadri Institute of Technology, Guntur",
     date: "July 2020 - June 2024",
-    grade: "8.41 CGPA",
+    grade: "8.45 CGPA",
     desc: "I am currently pursuing a Bachelor's degree in Computer Science and Engineering with specialization in Artificial Intelligence and Machine Learning at Vasireddy Venkatadri Institute of Technology. I have completed 7 semesters and have a CGPA of 8.41. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Deep Learning, Machine Learning, Natual Language Processing, AWS Cloud, Cloud Computing, Design and Analysis of Algorithms, Database Management Systems, Operating Systems, and Computer Networks, among others.",
     degree: "Bachelor of Technology - Computer Science and Engineering (Artificial Intelligence and Machine Learning)",
   },

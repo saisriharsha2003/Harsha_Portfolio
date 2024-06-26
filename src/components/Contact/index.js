@@ -70,6 +70,7 @@ const ContactForm = styled.form`
 const ContactTitle = styled.div`
   font-size: 24px;
   margin-bottom: 6px;
+  text-align:center;
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary};
 `;
@@ -103,30 +104,37 @@ const ContactInputMessage = styled.textarea`
 `;
 
 const ContactButton = styled.input`
-  width: 100%;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  width: 50%;
   text-decoration: none;
   text-align: center;
+  align-center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out !important;
   background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
+  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+
+  &:hover {
+      transform: scale(1.05);
+  transition: all 0.4s ease-in-out;
+  box-shadow:  20px 20px 60px #1F2634,
+  filter: brightness(1);
+  }    
+  
+  
+  @media (max-width: 640px) {
+      padding: 12px 0;
+      font-size: 18px;
+  } 
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
   border: none;
-  color: ${({ theme }) => theme.text_primary};
+  color: white;
   font-size: 18px;
   font-weight: 600;
 `;
@@ -138,14 +146,25 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
-    //   .then((result) => {
-    //     setOpen(true);
-    //     form.current.reset();
-    //   }, (error) => {
-    //     console.log(error.text);
-    //   });
+  
+    const templateParams = {
+      to_email: 'rankelassh@gmail.com',
+      to_name: "Rankela Sai Sri Harsha",
+      from_name: form.current.from_name.value,
+      from_email: form.current.from_email.value,
+      subject: form.current.subject.value,
+      message: form.current.message.value
+    };
+  
+    emailjs.send('service_mida8qc', 'template_ltanhme', templateParams, 'XNNHvoKr7_obURb-h')
+      .then((result) => {
+        setOpen(true);
+        form.current.reset();
+      }, (error) => {
+        console.log(error.text);
+      });
   };
+  
 
   return (
     <Container>
@@ -160,7 +179,7 @@ const Contact = () => {
           <ContactInput placeholder="Your Name" name="from_name" />
           <ContactInput placeholder="Subject" name="subject" />
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
+          <div style={{"alignItems":"center", "textAlign":"center"}}><ContactButton type="submit" value="Send" /></div> 
         </ContactForm>
         <Snackbar
           open={open}

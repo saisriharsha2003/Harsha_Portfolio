@@ -29,7 +29,7 @@ const HeroSection = () => {
                             </Span>
                         </TextLoop>
                         <SubTitle>{Bio.description}</SubTitle>
-                        <ResumeButton href={Bio.resume} target='display'>Check Resume</ResumeButton>
+                        <ResumeButton href={Bio.resume} target='display'><span style={{"color":"white"}}>Check Resume</span></ResumeButton>
                     </HeroLeftContainer>
                 </HeroInnerContainer>
 
