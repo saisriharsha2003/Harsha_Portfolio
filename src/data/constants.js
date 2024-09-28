@@ -7,8 +7,8 @@ export const Bio = {
     "Back-End Developer",
     "NLP Engineer",
   ],
-  description:
-    "I am Rankela Sai Sri Harsha, a dedicated Software Developer with a Bachelor's degree in Computer Science and Engineering (AI & ML). My skill set includes Python, Java, SQL, Cloud Computing, Machine Learning, Artificial Intelligence, and Full Stack Web Development. During my recent internship as a Full Stack NLP Engineer at Solomons International, I led the development of an advanced resume analysis system. In a previous role as a Web Developer Intern at Internshala Trainings, I honed my web development skills.",
+  description:       "I am Rankela Sai Sri Harsha, currently working as a Systems Engineer at TCS. I hold a Bachelor's degree in Computer Science and Engineering (AI & ML) and possess expertise in Python, Java, SQL, Cloud Computing, Machine Learning, Artificial Intelligence, and Full Stack Web Development. During my recent internship as a Full Stack NLP Engineer at Solomons International, I led the development of an advanced resume analysis system. In a previous role as a Web Developer Intern at Internshala Trainings, I honed my web development skills.",
+
   github: "https://github.com/saisriharsha2003",
   resume:
     "https://drive.google.com/file/d/10FR-n8dEgjwFN2kMdMRWydTfnEu-R2xl/view?usp=sharing",
@@ -256,8 +256,7 @@ export const experiences = [
     role: "Full Stack NLP Engineer Intern",
     company: "Solomons International",
     date: "September 2023 - February 2024",
-    desc:
-      "I am Rankela Sai Sri Harsha, currently working as a Systems Engineer at TCS. I hold a Bachelor's degree in Computer Science and Engineering (AI & ML) and possess expertise in Python, Java, SQL, Cloud Computing, Machine Learning, Artificial Intelligence, and Full Stack Web Development. During my recent internship as a Full Stack NLP Engineer at Solomons International, I led the development of an advanced resume analysis system. In a previous role as a Web Developer Intern at Internshala Trainings, I honed my web development skills.",
+    desc: "During my internship at Solomons International Technologies, I had the opportunity to work on a variety of projects that significantly enhanced my skills in natural language processing (NLP) and full-stack development. One of the projects involved developing a system for document classification, specifically for resumes, where I implemented algorithms to accurately categorize resumes into different classifications such as software developer or other custom categories provided by the user. Additionally, I worked on a named entity recognition (NER) project, where I developed algorithms to extract specific entities from text, such as names, organizations, and locations. Another project I undertook was topic modeling, where I created a system to generate relevant topics from text using machine learning algorithms. Lastly, I worked on a document matching project, where I developed an algorithm to match job orders with resumes and generate a score based on the relevance of the match. These projects not only improved my technical skills but also provided me with valuable insights into the practical applications of NLP. I am grateful for the experience and look forward to applying these skills in future projects.",
     skills: [
       "HTML",
       "CSS",
