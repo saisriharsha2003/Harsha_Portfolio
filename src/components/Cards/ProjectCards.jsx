@@ -21,7 +21,7 @@ const Card = styled.div`
     background-color: ${({ theme }) => theme.card};
     cursor: pointer;
     border-radius: 10px;
-    box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
+    box-shadow: 0 0 6px 4px rgba(0,0,0,0.1);
     overflow: hidden;
     padding: 26px 20px;
     display: flex;
@@ -30,12 +30,14 @@ const Card = styled.div`
     transition: all 0.5s ease-in-out;
     &:hover {
         transform: translateY(-10px);
-        box-shadow: 0 0 50px 4px rgba(0,0,0,0.6);
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
         filter: brightness(1.1);
     }
     &:hover ${Button} {
         display: block;
     }
+    border: 0.1px solid #CCBA78;
+    box-shadow: #CCBA78 2px 2px 1px;
 `
 
 const Image = styled.img`
@@ -57,9 +59,9 @@ const Tags = styled.div`
 
 const Tag = styled.span`
     font-size: 12px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.primary};
-    background-color: ${({ theme }) => theme.primary + 15};
+    font-weight: 600;
+    color: white;
+    background-color: #ff00b7;
     padding: 2px 8px;
     border-radius: 10px;
 `
@@ -74,7 +76,7 @@ const Details = styled.div`
 const Title = styled.div`
     font-size: 20px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_secondary};
+    color: ${({ theme }) => theme.text_primary};
     overflow: hidden;
     display: -webkit-box;
     max-width: 100%;
@@ -88,7 +90,7 @@ const Date = styled.div`
     font-size: 12px;
     margin-left: 2px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 80};
+    color: ${({ theme }) => theme.text_secondary };
     @media only screen and (max-width: 768px){
         font-size: 10px;
     }
@@ -97,7 +99,7 @@ const Date = styled.div`
 
 const Description = styled.div`
     font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_secondary};
     overflow: hidden;
     margin-top: 8px;
     display: -webkit-box;
@@ -105,12 +107,6 @@ const Description = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-`
-
-const Members = styled.div`
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
 `
 const Avatar = styled.img`
     width: 38px;
@@ -136,12 +132,7 @@ const ProjectCards = ({project,setOpenModal}) => {
                 <Date>{project.date}</Date>
                 <Description>{project.description}</Description>
             </Details>
-            <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img}/>
-                ))}
-            </Members>
-            {/* <Button>View Project</Button> */}
+            
         </Card>
     )
 }

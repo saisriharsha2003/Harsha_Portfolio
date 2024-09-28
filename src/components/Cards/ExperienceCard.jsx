@@ -17,7 +17,7 @@ const Description = styled.div`
     width: 100%;
     font-size: 15px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_primary + 99};
+    color: ${({ theme }) => theme.text_secondary};
     margin-bottom: 10px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
@@ -65,8 +65,8 @@ const Card = styled.div`
 
     }
 
-    border: 0.1px solid #306EE8;
-    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+    border: 0.1px solid #CCBA78;
+    box-shadow: #CCBA78 2px 2px 1px;
 `
 
 const Top = styled.div`
@@ -80,7 +80,7 @@ const Image = styled.img`
     background-color: #000;
     border-radius: 10px;
     margin-top: 4px;
-    @media only screen and (max-width: 768px){
+    @media only screen and (max-width: 100px){
         height: 40px;
     }
 `
@@ -93,9 +93,9 @@ const Body = styled.div`
 
 
 const Role = styled.div`
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_primary + 99};
+    color: ${({ theme }) => theme.text_primary};
     @media only screen and (max-width: 768px){
         font-size: 14px;
     }
@@ -104,7 +104,7 @@ const Role = styled.div`
 const Company = styled.div`
     font-size: 14px;
     font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_secondary};
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }
@@ -136,7 +136,7 @@ const ItemWrapper = styled.div`
 const Skill = styled.div`
     font-size: 15px;
     font-weight: 400;
-    color: ${({ theme }) => theme.text_primary + 99};
+    color: ${({ theme }) => theme.text_secondary + 99};
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }

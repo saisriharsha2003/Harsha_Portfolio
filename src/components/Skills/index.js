@@ -9,6 +9,7 @@ justify-content: center;
 position: relative;
 z-index: 1;
 align-items: center;
+
 `
 
 const Wrapper = styled.div`
@@ -72,14 +73,15 @@ const Skill = styled.div`
     max-width: 330px;
     padding: 10px 36px;
   }
-
+  border: 0.1px solid #CCBA78;
+  box-shadow: #CCBA78 2px 2px 1px;
 
 `
 
 const SkillTitle = styled.h2`
   font-size: 28px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text_secondary};
+  color: ${({ theme }) => theme.text_primary};
   margin-bottom: 20px;
   text-align: center;
 `
@@ -95,8 +97,8 @@ const SkillList = styled.div`
 const SkillItem = styled.div`
   font-size: 16px;
   font-weight: 400;
-  color: ${({ theme }) => theme.text_primary + 80};
-  border: 1px solid ${({ theme }) => theme.text_primary + 80};
+  color: ${({ theme }) => theme.text_secondary + 80};
+  border: 1px solid ${({ theme }) => theme.text_secondary + 80};
   border-radius: 12px;
   padding: 12px 16px;
   display: flex;
@@ -124,7 +126,7 @@ const Skills = () => {
     <Container id="skills">
       <Wrapper>
         <Title>Skills</Title>
-        <Desc>Here are some of my skills on which I have been working on for the past 2 years.
+        <Desc>Here are some of my skills on which I have been working on for the past 4 years.
         </Desc>
         <SkillsContainer>
           {skills.map((skill) => (

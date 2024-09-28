@@ -1,9 +1,10 @@
 export const lightTheme = {
-    bg:"#FFFFFF",
+    bg:"black",
     bgLight: "#f0f0f0",
-    primary:"#be1adb",
-    text_primary:"#111111",
-    text_secondary:"#48494a",
-    card:"#FFFFFF",
+    primary:"#CCBA78",
+    text_primary:"#CCBA78",
+    text_secondary:"#ffffff",
+    card:"#000000",
     button:"#5c5b5b",
+    
 }

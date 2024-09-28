@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import _default from '../../themes/default';
 
 export const Nav = styled.div`
-    background-color: #5c5b5b  ;
+    background-color: #111111  ;
     height: 80px;
     display: flex;
     align-items: center;
@@ -25,7 +25,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   padding: 0 24px;
   max-width: 1200px;
-  background: #5c5b5b ;
+  background: #111111 ;
 `;
 
 export const NavLogo = styled(LinkR)`
@@ -59,8 +59,9 @@ export const NavItems = styled.ul`
 `;
 
 export const NavLink = styled.a`
-    color: white;
-    font-weight: 500;
+    color: ${({ theme }) => theme.primary};
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
@@ -81,19 +82,18 @@ export const GitHubButton = styled.a`
   align-items: center;
   height: 70%;
   border-radius: 20px;
-  color: white;
+  color:${({ theme }) => theme.primary};
   cursor: pointer;
   padding: 0 20px;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   transition: all 0.6s ease-in-out;
     :hover {
-      background: ${({ theme }) => theme.primary};
-      color: ${({ theme }) => theme.white};     
+      border-color: ${({ theme }) => theme.text_primary};     
     }
     @media screen and (max-width: 768px) { 
-    font-size: 14px;
+    font-size: 18px;
     }
 `;
 

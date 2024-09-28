@@ -84,7 +84,8 @@ export const Img = styled.img`
 export const Title1 = styled.div`
   font-weight: 700;
   font-size: 50px;
-  color: #5c5b5b;
+  color:  ${({ theme }) => theme.text_primary};
+  
   line-height: 68px;
   @media (max-width: 960px) {
     text-align: center;
@@ -100,7 +101,7 @@ export const Title1 = styled.div`
 export const Title = styled.div`
   font-weight: 700;
   font-size: 50px;
-  color: #5c5b5b;
+  color: #ffffff;
   line-height: 68px;
   @media (max-width: 960px) {
     text-align: center;
@@ -118,7 +119,7 @@ export const TextLoop = styled.div`
   font-size: 32px;
   display: flex;
   gap: 12px;
-  color: ${({ theme }) => theme.text_primary};
+  color: #ff00b7;
   line-height: 68px;
   @media (max-width: 960px) {
     text-align: center;
@@ -131,7 +132,7 @@ export const TextLoop = styled.div`
 `;
 
 export const Span = styled.span`
-  color: ${({ theme }) => theme.primary};
+  color: #ff00b7;
   cursor: pointer;
 `;
 
@@ -139,7 +140,7 @@ export const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_primary + 95};
+  color: ${({ theme }) => theme.text_secondary + 98};
 
   @media (max-width: 960px) {
     text-align: center;

@@ -63,9 +63,8 @@ export const skills = [
           "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR4Ab1XAaQqURB9DyohSykREpRIQSAlBCoECKUFCSRCBBEAaSEABQEoCIEASCwAUICALgCo83do0//9v819XX845O7VnDkzOzP7JWGaBd3C3IJpQVjAHeJ+Rs9a97vKLGrBsB1KgMhEP3FMUUwt4ENMfxr1yQIU4SSjRkbeOZtERmHk6pXQVDlnkHh9S+QLTm1hkiz4n/gzFQuny9FoFLquE+i34x+n02k0m00UCoV3BIzn3MMJrVYLtp1OJ0cS/X4f5/MZhmG8IyDsWtDfEaDIn2232/3zbrvdxuFwwGg04qRBt+VnETBNE0IIkE2n07/erdfrWK/X6Ha73Hb9ZXII3G43ivy3dNRqtZe7lUoFs9mM6oBDwCQCgquALT1FT3a5XF7qIZ/PYzgcolqtcggIIgBZAgRKB6lCRalp2uM8k8mAVMrlchwC+DEBipycE4n5fP44j8ViKJVKSCaTbAJCpgaez4vFIsjoWa/XA50FAgEkEgmEw2F2CkxZBZ5Br5tt1ITcbjd8Ph88Hg+7CBefECCsVitS4aVJcV9D/VMCVITk/Hq9YrPZyBBo2a1YMGvAcQYcj0cCtWMugcdYNhjDiBrP25mx3++x3W6RzWZZ8isfxzQLlsslJpMJpYY5jhkqcOH1ejEYDDAej9FoNOByuZxGsfqVzC7KTqcDSkkqleKsZOqX0mAwiHK5DGrJfr+fs5SqX8sjkQji8ThCoRC+v78Za7l6JagrUh3YkUuZpqgwDaecc9VYSDoV5Fg+at7n+eLN57kuE/EvzHr/Kvs31aYAAAAASUVORK5CYII=",
       },
       {
-        name: "Angular Js",
-        image:
-          "https://camo.githubusercontent.com/8886130b3d8aba95dbdd7c4f9a41029606424cc06d1873c1ced87dd55a222fef/68747470733a2f2f616e67756c61722e696f2f6173736574732f696d616765732f6c6f676f732f616e67756c61722f616e67756c61722e737667",
+          name: "Java Server Pages (JSP)",
+          img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/jsp.webp?alt=media&token=8d60fafe-de41-454e-a3fa-42d485c4ace9"
       },
       {
         name: "HTML",
@@ -99,7 +98,7 @@ export const skills = [
     skills: [
       {
         name: "Node Js",
-        image: "https://nodejs.org/static/images/logo.svg",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Node.js_logo.svg.png?alt=media&token=4d60b5cd-9db2-4f64-ae43-d9f687108ae8",
       },
       {
         name: "Express Js",
@@ -121,6 +120,10 @@ export const skills = [
         name: "Django",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFFyY16N5NRhzoG24RqB7x8Ok2t8Bdgs-tuMsOBXS2Q&s",
+      },
+      {
+        name: "Servlets",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/servletslogo.webp?alt=media&token=b55952e5-93fa-4ae6-89d0-0abf8123a39f"
       },
       {
         name: "MySQL",
@@ -230,7 +233,15 @@ export const skills = [
 
 export const experiences = [
   {
-    id: 0,
+    id:0,
+    img:"https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/logo.jpeg?alt=media&token=819b9102-899d-423d-99c9-36c6e17138ee",
+    role:"Systems Engineer",
+    company:"Tata Consultancy Services",
+    date:"August 2024 - Present",
+    skills:["HTML", "CSS", "Java", "Javscript", "Java Server Pages (JSP)", "Servlets", "Java Full Stack Web Development"]
+  },
+  {
+    id: 1,
     img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/logo-1.webp?alt=media&token=808a686b-8f4f-4dfa-9513-66363b38391d",
     role: "Full Stack NLP Engineer Intern",
     company: "Solomons International",
@@ -255,7 +266,7 @@ export const experiences = [
     doc:"https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Rankela%20Sai%20Sri%20Harsha%20Internship%20Certificate-signed_page-0001.jpg?alt=media&token=1932c9d3-273c-45eb-a7ba-bee5dfa8da45",
   },
   {
-    id: 1,
+    id: 2,
     img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/internshala_og_image.jpg?alt=media&token=9f89d8b8-0935-45ff-80d3-565178bf811a",
     role: "Web Developer Intern",
     company: "Internshala",

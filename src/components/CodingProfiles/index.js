@@ -40,6 +40,8 @@ const Profile = styled.div`
     max-width: 330px;
     padding: 10px 36px;
   }
+  border: 0.1px solid #CCBA78;
+  box-shadow: #CCBA78 2px 2px 1px;
 `;
 
 const ProfileTitle = styled.div`

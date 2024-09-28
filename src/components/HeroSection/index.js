@@ -17,7 +17,7 @@ const HeroSection = () => {
                         <Title>Hi, I am <br /> </Title>
                         <Title1>{Bio.name}</Title1>
                         <TextLoop>
-                            I am a
+                            <p style={{color:"#ffffff"}}>I am a</p>
                             <Span>
                                 <Typewriter
                                     options={{
