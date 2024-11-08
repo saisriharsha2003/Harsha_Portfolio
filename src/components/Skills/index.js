@@ -95,9 +95,10 @@ const SkillList = styled.div`
 `
 
 const SkillItem = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary + 80};
+  font-size: 17px;
+  font-weight: 600;
+  background: #ffffff;
+  color: black;
   border: 1px solid ${({ theme }) => theme.text_secondary + 80};
   border-radius: 12px;
   padding: 12px 16px;
@@ -134,10 +135,13 @@ const Skills = () => {
               <SkillTitle>{skill.title}</SkillTitle>
               <SkillList>
                 {skill.skills.map((item) => (
+                  <>
                   <SkillItem>
                     <SkillImage src={item.image}/>
                     {item.name}
                   </SkillItem>
+                  
+                  </>
                 ))}
               </SkillList>
             </Skill>

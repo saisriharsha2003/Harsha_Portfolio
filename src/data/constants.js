@@ -11,7 +11,7 @@ export const Bio = {
 
   github: "https://github.com/saisriharsha2003",
   resume:
-    "https://drive.google.com/file/d/10FR-n8dEgjwFN2kMdMRWydTfnEu-R2xl/view?usp=sharing",
+    "https://drive.google.com/file/d/1-YoPLPf0pcsAKt6e7OlDMsCWotlfsU2R/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/saisriharsha2005/",
   twitter: "https://twitter.com/harsha2350",
   insta: "https://www.instagram.com/saisriharsha2005/",
@@ -24,7 +24,7 @@ export const codingprofiles = [
       {
         name: "LeetCode",
         image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/leetcdoe.png?alt=media&token=e296d95a-b1bf-4a83-8b5e-8fc6624b7033",
+          "https://user-images.githubusercontent.com/36547915/97088991-45da5d00-1652-11eb-900f-80d106540f4f.png",
         link: "https://leetcode.com/saisriharsha2005/",
       },
       {
@@ -60,15 +60,15 @@ export const skills = [
     skills: [
       {
         name: "React Js",
-        image: "",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/react.png?alt=media&token=08760229-d694-415d-9477-09c3cba7316d"
       },
       {
         name: "Next Js",
-        image: "",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/nextjs.png?alt=media&token=4c97bdc9-845b-47a4-a4fe-8d64e513cc67",
       },
       {
         name: "Java Server Pages (JSP)",
-        img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/jsp.webp?alt=media&token=8d60fafe-de41-454e-a3fa-42d485c4ace9",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/jsp.png?alt=media&token=4f7f11e2-4e32-4e57-a64a-616830de64cd"
       },
       {
         name: "HTML",
@@ -91,7 +91,7 @@ export const skills = [
       },
       {
         name: "Material UI",
-        image: "",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/mui.png?alt=media&token=58d83407-9f2d-4639-87fb-ee617c998be2",
       },
     ],
   },
@@ -100,12 +100,11 @@ export const skills = [
     skills: [
       {
         name: "Node Js",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Node.js_logo.svg.png?alt=media&token=4d60b5cd-9db2-4f64-ae43-d9f687108ae8",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/nodejs.webp?alt=media&token=8e00c3e6-54ba-42ee-b3cd-127783349ce5"
       },
       {
         name: "Express Js",
-        image: "",
+        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/icon-expressjs.svg?alt=media&token=89318bf9-9822-4cba-9cf7-3f04353cd2cf",
       },
 
       {
@@ -154,10 +153,20 @@ export const skills = [
           "https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png",
       },
       {
+        name: "Docker",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/e/ea/Docker_%28container_engine%29_logo_%28cropped%29.png",
+      },
+      {
         name: "Google Cloud",
         image:
           "https://static-00.iconduck.com/assets.00/google-cloud-platform-logo-icon-2048x1824-pg4wzspq.png",
       },
+      {
+        name: "Azure",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2048px-Microsoft_Azure.svg.png",
+      }
     ],
   },
 
@@ -177,7 +186,7 @@ export const skills = [
       {
         name: "Keras",
         image:
-          "https://miro.medium.com/v2/resize:fit:600/1*DKu_54iqz6C-p6ndo7rO3g.png",
+          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/2048px-Keras_logo.svg.png?alt=media&token=9f86719f-0599-41f2-b279-7eae722f9650",
       },
       {
         name: "Jupyter",
@@ -187,7 +196,7 @@ export const skills = [
       {
         name: "Google Colab",
         image:
-          "https://assets.stickpng.com/images/63c2e4c9c4baad4ce22bf9ef.png",
+          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/colab_logo.webp?alt=media&token=534bf4c8-2398-4575-bf61-2b6d9d4c11de",
       },
       {
         name: "Sk Learn Kit",
@@ -202,7 +211,7 @@ export const skills = [
       {
         name: "Git",
         image:
-          "https://e7.pngegg.com/pngimages/713/558/png-clipart-computer-icons-pro-git-github-logo-text-logo-thumbnail.png",
+          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/git.webp?alt=media&token=5ca11a09-e0a7-4e0a-9a98-e078eb78b687",
       },
       {
         name: "GitHub",
@@ -218,6 +227,15 @@ export const skills = [
         name: "VS Code",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
+      },
+      {
+        name: "IntelliJ IDEA",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png"
+      },
+      {
+        name: "Eclipse",
+        image:
+          "https://www.cdnlogo.com/logos/e/57/eclipse.svg",
       },
       {
         name: "Postman",
@@ -240,6 +258,7 @@ export const experiences = [
     role: "Systems Engineer",
     company: "Tata Consultancy Services",
     date: "August 2024 - Present",
+    desc: "During my ILP training, I was recognized as one of the top six performers based on my performance in exams and case studies conducted throughout the program",
     skills: [
       "HTML",
       "CSS",
@@ -248,6 +267,9 @@ export const experiences = [
       "Java Server Pages (JSP)",
       "Servlets",
       "Java Full Stack Web Development",
+      "Docker",
+      "Kubernetees",
+      "Devops"
     ],
   },
   {
