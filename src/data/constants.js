@@ -138,7 +138,7 @@ export const skills = [
       {
         name: "Flask",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1280px-Flask_logo.svg.png",
+          "https://buffml.com/wp-content/uploads/2022/12/flask_website.png",
       },
       {
         name: "Django",
