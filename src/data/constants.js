@@ -1,3 +1,31 @@
+import leetcode from "../images/leetcdoe.png";
+import hackerrank from "../images/hackerrank.png";
+import conding_ninjas from "../images/coding_ninjas.png";
+import geeks from "../images/geeksforgeeks.png";
+import codechef from "../images/codechef.jpg";
+import react from "../images/react.png";
+import jsp from "../images/jsp.png";
+import nextjs from "../images/nextjs.png";
+import mui from "../images/mui.png";
+import node from "../images/nodejs.webp";
+import express from "../images/icon-expressjs.svg";
+import servlet from "../images/servletslogo.webp";
+import keras from "../images/keras.png";
+import colab from "../images/colab_logo.webp";
+import git from "../images/git.webp";
+import tcs from "../images/tcs.svg";
+import solomons from "../images/solomons.webp";
+import internshala from "../images/internshala.jpg";
+import vvit from "../images/vvit.jpg";
+import narayana from "../images/naryana.png";
+import holyfaith from "../images/holy faith.jpg";
+import empower_recruit from "../images/empwer-recruit.png";
+import todo from "../images/todolist.jpg";
+import foodbot from "../images/whatsappbot.webp";
+import portfolio from "../images/portfolio.webp";
+import netflix from "../images/netflix.png";
+import virtual_assistant from "../images/virtual_assistant.webp";
+
 export const Bio = {
   name: "Rankela Sai Sri Harsha",
   roles: [
@@ -23,32 +51,27 @@ export const codingprofiles = [
     profiles: [
       {
         name: "LeetCode",
-        image:
-          "https://user-images.githubusercontent.com/36547915/97088991-45da5d00-1652-11eb-900f-80d106540f4f.png",
+        image: leetcode,
         link: "https://leetcode.com/saisriharsha2005/",
       },
       {
         name: "HackerRank",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/hackerrank.png?alt=media&token=d8f62bcd-8241-4de9-a4e8-1867c4f2172d",
+        image: hackerrank,
         link: "https://www.hackerrank.com/profile/rankelassh",
       },
       {
         name: "Coding Ninjas",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/coding%20ninjas.png?alt=media&token=6ceeefd2-39a7-4124-9f87-2ca8640dd782",
+        image: conding_ninjas,
         link: "https://www.codingninjas.com/studio/profile/sai2035",
       },
       {
         name: "GeeksforGeeks",
         link: "https://auth.geeksforgeeks.org/user/saisrihkb40",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/geeksforgeeks.png?alt=media&token=d0e1890a-f2a7-4bca-91bb-22f898d970df",
+        image: geeks
       },
       {
         name: "CodeChef",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/codechef.jpg?alt=media&token=b46c053d-105f-4e68-a093-70666224a723",
+        image: codechef,
         link: "https://www.codechef.com/users/saisriharsha05",
       },
     ],
@@ -60,15 +83,15 @@ export const skills = [
     skills: [
       {
         name: "React Js",
-        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/react.png?alt=media&token=08760229-d694-415d-9477-09c3cba7316d"
+        image: react
       },
       {
         name: "Next Js",
-        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/nextjs.png?alt=media&token=4c97bdc9-845b-47a4-a4fe-8d64e513cc67",
+        image: nextjs
       },
       {
         name: "Java Server Pages (JSP)",
-        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/jsp.png?alt=media&token=4f7f11e2-4e32-4e57-a64a-616830de64cd"
+        image: jsp
       },
       {
         name: "HTML",
@@ -91,7 +114,7 @@ export const skills = [
       },
       {
         name: "Material UI",
-        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/mui.png?alt=media&token=58d83407-9f2d-4639-87fb-ee617c998be2",
+        image: mui
       },
     ],
   },
@@ -100,11 +123,11 @@ export const skills = [
     skills: [
       {
         name: "Node Js",
-        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/nodejs.webp?alt=media&token=8e00c3e6-54ba-42ee-b3cd-127783349ce5"
+        image: node
       },
       {
         name: "Express Js",
-        image: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/icon-expressjs.svg?alt=media&token=89318bf9-9822-4cba-9cf7-3f04353cd2cf",
+        image: express
       },
 
       {
@@ -124,8 +147,7 @@ export const skills = [
       },
       {
         name: "Servlets",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/servletslogo.webp?alt=media&token=b55952e5-93fa-4ae6-89d0-0abf8123a39f",
+        image: servlet
       },
       {
         name: "MySQL",
@@ -185,8 +207,7 @@ export const skills = [
       },
       {
         name: "Keras",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/2048px-Keras_logo.svg.png?alt=media&token=9f86719f-0599-41f2-b279-7eae722f9650",
+        image: keras
       },
       {
         name: "Jupyter",
@@ -195,8 +216,7 @@ export const skills = [
       },
       {
         name: "Google Colab",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/colab_logo.webp?alt=media&token=534bf4c8-2398-4575-bf61-2b6d9d4c11de",
+        image: colab
       },
       {
         name: "Sk Learn Kit",
@@ -210,8 +230,7 @@ export const skills = [
     skills: [
       {
         name: "Git",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/git.webp?alt=media&token=5ca11a09-e0a7-4e0a-9a98-e078eb78b687",
+        image: git
       },
       {
         name: "GitHub",
@@ -254,7 +273,7 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
-    img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/logo.jpeg?alt=media&token=819b9102-899d-423d-99c9-36c6e17138ee",
+    img: tcs,
     role: "Systems Engineer",
     company: "Tata Consultancy Services",
     date: "August 2024 - Present",
@@ -274,7 +293,7 @@ export const experiences = [
   },
   {
     id: 1,
-    img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/logo-1.webp?alt=media&token=808a686b-8f4f-4dfa-9513-66363b38391d",
+    img: solomons,
     role: "Full Stack NLP Engineer Intern",
     company: "Solomons International",
     date: "September 2023 - February 2024",
@@ -299,7 +318,7 @@ export const experiences = [
   },
   {
     id: 2,
-    img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/internshala_og_image.jpg?alt=media&token=9f89d8b8-0935-45ff-80d3-565178bf811a",
+    img: internshala,
     role: "Web Developer Intern",
     company: "Internshala",
     date: "July 2023 - September 2023",
@@ -311,7 +330,7 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/vvit.jpg?alt=media&token=8e2d3d4a-b947-4236-838d-1fa9c33e461e",
+    img: vvit,
     school: "Vasireddy Venkatadri Institute of Technology, Guntur",
     date: "July 2020 - June 2024",
     grade: "8.45 CGPA",
@@ -321,7 +340,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/naryana.png?alt=media&token=580acf73-dccd-43f4-b331-dffb8a9efada",
+    img: narayana,
     school: "Naryana Junior College, Vijayawada, Andhra Pradesh",
     date: "May 2018 - May 2020",
     grade: "93%",
@@ -330,7 +349,7 @@ export const education = [
   },
   {
     id: 2,
-    img: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/holy%20faith.jpg?alt=media&token=ecd321c7-8715-43c3-bcf5-a654bb032447",
+    img: holyfaith,
     school: "Holy Faith EM School, Addanki, Andhra Pradesh",
     date: "May 2017 - Apr 2018",
     grade: "10 CGPA",
@@ -345,8 +364,7 @@ export const projects = [
     title: "EmpowerRecruit",
     description:
       "Created EmpowerRecruit, a game-changing recruitment platform using cutting-edge tech. Led frontend design with React.js, ensuring a responsive interface, while Node.js powered backend operations. Used Tailwind CSS for sleek styling, enhancing user experience. Integrated Twilio for real-time notifications, reducing response time for application status updates. Leveraged Express.js for efficient server maintenance. Employed advanced NLP for accurate resume parsing and job role generation, boosting efficiency. Provided personalized job recommendations based on user skills, increasing engagement. Streamlined job listing and candidate shortlisting, reducing recruiter workload. Implemented job parsing and candidate compatibility scoring, sorting applications based on recruiter needs.",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/placement1.png?alt=media&token=50158ce9-5d5a-4d1c-9dc1-edc0ec6a0893",
+    image: empower_recruit,
     tags: [
       "React Js",
       "TailwindCSS",
@@ -368,8 +386,7 @@ export const projects = [
     title: "VoiceOps Assistant",
     description:
       "Created VoiceOps Assistant, a Python-based virtual assistant with advanced voice recognition for user authentication, reducing unauthorized access risk. Achieved high speech recognition accuracy using Google's text-to-speech API, Selenium, and Beautifulsoup for web scraping, and implemented automated web browsing through voice commands. Orchestrated functionalities including sending WhatsApp messages and playing YouTube videos with voice commands, significantly reducing task completion time. Introduced Natural Language Processing and Machine Learning algorithms to enhance speech-to-text functionality and provide precise language translation.",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Virtual-Assistant-Solutions-scaled-0239fbd2.webp?alt=media&token=079a77d8-1aee-40a4-8df1-20bc93838a18",
+    image: virtual_assistant,
     tags: [
       "Python",
       "Machine Learning",
@@ -388,8 +405,7 @@ export const projects = [
     title: "WhatsAppFoodBot",
     description:
       "Deployed a Python based WhatsApp bot with integrated Twilio API, Django, and MongoDB, optimizing customer requests and reducing response time. Ensured a streamlined food ordering experience exclusively through WhatsApp using this bot, eliminating the need for additional food delivery apps, while maintaining comprehensive test coverage across various scenarios and functions. Assessed customer satisfaction before and after implementation, showing a significant improvement. Analyzed customer interactions, resulting in an increase in engagement and frequency of interaction.",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/whatsappbot.webp?alt=media&token=4992311f-456e-416a-a933-0748f1c805fb",
+    image: foodbot,
     tags: ["Python", "Flask", "Django", "MongoDB", "Twilio"],
     category: "machine learning",
     github: "https://github.com/saisriharsha2003/WhatsAppFoodBot",
@@ -399,8 +415,7 @@ export const projects = [
     title: "Dynamic To Do List",
     description:
       "Designed and developed a dynamic to-do list application, offering users a digital task management solution with enhanced features for organization and productivity. The application allows users to create, update, and manage tasks, prioritize them based on importance and deadlines, and categorize tasks into projects for efficient management. Implemented features include task reminders, notifications, and collaboration tools, enabling users to stay organized and on track with their tasks. The dynamic to-do list application provides a user-friendly interface and seamless integration with other productivity tools for a comprehensive task management experience.",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/to-dolist-templates-header.jpg?alt=media&token=3a16cea0-175a-4ab8-a6b8-29f978b0ff21",
+    image: todo,
     tags: ["HTML", "CSS", "JavaScript"],
     category: "web app",
     github: "https://github.com/saisriharsha2003/To_Do_List",
@@ -411,8 +426,7 @@ export const projects = [
     title: "Harsha Netflix Landing Page",
     description:
       "Developed a landing page concept for Netflix, focusing on user engagement and content discovery. The landing page design emphasized intuitive navigation, personalized content recommendations, and a visually appealing layout to captivate users. Integrated features included a responsive design for seamless viewing across devices, interactive elements for enhanced user interaction, and optimized performance for fast loading times. The Netflix landing page concept aimed to enhance the user experience and drive engagement with the platform's content.",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/netflix.png?alt=media&token=d70bda90-1e72-4d23-becc-094ec3419897",
+    image: netflix,
     tags: ["HTML", "CSS", "JavaScript"],
     category: "web app",
     github: "https://github.com/saisriharsha2003/Harsha_Netflix_landing_page",
@@ -422,8 +436,7 @@ export const projects = [
     title: "Responsive ReactJS Portfolio",
     description:
       "Created a responsive portfolio website using ReactJS, showcasing skills, projects, and achievements in a visually appealing and user-friendly manner. The portfolio features a modern design with smooth animations and transitions, providing an engaging user experience across desktop, tablet, and mobile devices. Implemented features include a dynamic project gallery, interactive skill charts, and a contact form for inquiries. The responsive ReactJS portfolio demonstrates a strong proficiency in front-end development and design principles.",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/portfolio.webp?alt=media&token=eed4dd21-3c8d-434b-9999-127775a460ba",
+    image: portfolio,
     tags: ["HTML", "CSS", "JavaScript", "ReactJS", "TailwindCSS"],
     category: "web app",
     github: "https://github.com/saisriharsha2003/Harsha_Portfolio",
