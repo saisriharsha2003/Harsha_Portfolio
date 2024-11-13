@@ -172,7 +172,7 @@ export const skills = [
       {
         name: "AWS",
         image:
-          "https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png",
+          "https://p.kindpng.com/picc/s/246-2468000_aws-icono-hd-png-download.png",
       },
       {
         name: "Docker",
@@ -226,7 +226,7 @@ export const skills = [
     ],
   },
   {
-    title: "Others",
+    title: "Version Control",
     skills: [
       {
         name: "Git",
@@ -237,6 +237,21 @@ export const skills = [
         image:
           "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
       },
+      {
+        name: "BitBucket",
+        image: "https://icon-library.com/images/bitbucket-icon/bitbucket-icon-8.jpg"
+      },
+      {
+        name: "Jira",
+        image: "https://user-images.githubusercontent.com/6190190/221034136-09f876b1-1caf-4ef7-b523-ce7d9299cdce.png"
+      }
+    ]
+  },
+  
+  {
+    title: "Developer Tools",
+    skills: [
+      
       {
         name: "Netlify",
         image:
@@ -266,6 +281,7 @@ export const skills = [
         image:
           "https://s3-alpha.figma.com/hub/file/1481185752/fa4cd070-6a79-4e1b-b079-8b9b76408595-cover.png",
       },
+     
     ],
   },
 ];
@@ -273,8 +289,8 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
-    img: tcs,
-    role: "Systems Engineer",
+    img: "https://mms.businesswire.com/media/20220421005466/en/1427984/5/TCSLogo2.jpg",
+    role: "DevOps Engineer",
     company: "Tata Consultancy Services",
     date: "August 2024 - Present",
     desc: "During my ILP training, I was recognized as one of the top six performers based on my performance in exams and case studies conducted throughout the program",
@@ -389,16 +405,17 @@ export const projects = [
     image: virtual_assistant,
     tags: [
       "Python",
+      "Artificial Intelligence",
       "Machine Learning",
-      "Selenium",
-      "Automation",
-      "Natural Language Processing",
-      "Voice Recognition",
       "Speech Recognition",
+      "Natural Language Processing",
+      "Selenium",
+      "Voice Recognition",
+      
     ],
     category: "machine learning",
-    github: "https://github.com/rishavchanda/Trackify",
-    webapp: "https://trackify-management.netlify.app/",
+    github: "https://github.com/saisriharsha2003/VoiceOpsAssistant.git",
+    
   },
   {
     id: 0,
@@ -419,7 +436,7 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     category: "web app",
     github: "https://github.com/saisriharsha2003/To_Do_List",
-    webapp: "",
+    webapp: "https://saisriharsha2003.github.io/To_Do_List/",
   },
   {
     id: 2,
@@ -430,6 +447,7 @@ export const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     category: "web app",
     github: "https://github.com/saisriharsha2003/Harsha_Netflix_landing_page",
+    webapp: "https://saisriharsha2003.github.io/Harsha_Netflix_landing_page/"
   },
   {
     id: 3,
