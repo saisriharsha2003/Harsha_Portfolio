@@ -10,19 +10,20 @@ const CodingProfilesContainer = styled.div`
   gap: 30px;
   justify-content: center;
 `;
+
 const Wrapper = styled.div`
-position: relative;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-direction: column;
-width: 100%;
-max-width: 1100px;
-gap: 12px;
-@media (max-width: 960px) {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  gap: 12px;
+  @media (max-width: 960px) {
     flex-direction: column;
-}
-`
+  }
+`;
 
 const Profile = styled.div`
   width: 100%;
@@ -71,25 +72,25 @@ const ProfileImage = styled.img`
 `;
 
 export const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
   color: ${({ theme }) => theme.text_primary};
   @media (max-width: 768px) {
-margin-top: 12px;
-      font-size: 32px;
+    margin-top: 12px;
+    font-size: 32px;
   }
 `;
 
 export const Desc = styled.div`
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
-    @media (max-width: 768px) {
-        font-size: 16px;
-    }
+  font-size: 18px;
+  text-align: center;
+  max-width: 600px;
+  color: ${({ theme }) => theme.text_secondary};
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const handleClick = (link) => {
@@ -101,15 +102,18 @@ const CodingProfiles = () => {
     <CodingProfilesContainer>
       <Wrapper>
         <Title>Coding Profiles</Title>
-        <Desc>Here are some of my Coding Profiles.
-        </Desc>
+        <Desc>Here are some of my Coding Profiles.</Desc>
         {codingprofiles.map((profile) => (
-          <Profile key={profile.name}>
+          <Profile key={profile.name || profile.id}> {/* Added key for Profile */}
             <ProfileTitle>{profile.name}</ProfileTitle>
             <ProfileList>
-              {profile.profiles.map((item) => (
-                <ProfileItem key={item.name}>
-                  <ProfileImage src={item.image} alt={item.name} onClick={() => handleClick(item.link)} />
+              {profile.profiles.map((item, itemIndex) => (
+                <ProfileItem key={item.name + itemIndex}> {/* Added key for ProfileItem */}
+                  <ProfileImage
+                    src={item.image}
+                    alt={item.name}
+                    onClick={() => handleClick(item.link)}
+                  />
                   {item.name}
                 </ProfileItem>
               ))}
