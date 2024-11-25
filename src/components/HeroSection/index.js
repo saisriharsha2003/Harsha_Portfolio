@@ -5,6 +5,8 @@ import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
 
 const HeroSection = () => {
+    const theme= localStorage.getItem("theme").text_secondary;
+    console.log(theme);
     return (
         <div id="about">
             <HeroContainer>
@@ -17,7 +19,7 @@ const HeroSection = () => {
                         <Title>Hi, I am <br /> </Title>
                         <Title1>{Bio.name}</Title1>
                         <TextLoop>
-                            <p style={{color:"#ffffff"}}>I am a</p>
+                            <p style={{color: theme}}>I am a</p>
                             <Span>
                                 <Typewriter
                                     options={{

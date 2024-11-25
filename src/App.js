@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { darkTheme, lightTheme } from './utils/Themes.js';
 import Navbar from "./components/Navbar";
 import './App.css';
@@ -14,13 +14,14 @@ import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
 import CodingProfiles from "./components/CodingProfiles";
 import styled from "styled-components";
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Separator = styled.hr`
   border: none;
   height: 2px;
   background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
-  margin: 50px 0;  /* Adjust spacing */
-  width: 80%;  /* Adjust width */
+  margin: 50px 0;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -31,35 +32,54 @@ const Body = styled.div`
   overflow-x: hidden;
 `;
 
-const Wrapper = styled.div`
-  
+const Wrapper = styled.div``;
+
+const ThemeToggleIcon = styled.div`
+  cursor: pointer;
+  font-size: 24px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: ${({ theme }) => theme.iconColor}; // Ensure the icon color changes with the theme
 `;
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  
+
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? JSON.parse(savedTheme) : darkTheme;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme)); 
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === darkTheme ? lightTheme : darkTheme));
+  };
+
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={theme}>
       <Router>
-        <Navbar />
+        <Navbar toggleTheme={toggleTheme} />
         <Body>
           <HeroSection />
-          <Separator /> 
+          <Separator />
           <Wrapper>
             <Skills />
-            <Separator /> 
+            <Separator />
             <CodingProfiles />
-            <Separator /> 
+            <Separator />
             <Experience />
           </Wrapper>
-          <Separator /> 
+          <Separator />
           <Wrapper>
             <Education />
           </Wrapper>
           <Separator />
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
-          <Separator /> 
+          <Separator />
           <Wrapper>
             <Contact />
           </Wrapper>

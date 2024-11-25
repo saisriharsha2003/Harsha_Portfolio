@@ -13,7 +13,6 @@ import servlet from "../images/servletslogo.webp";
 import keras from "../images/keras.png";
 import colab from "../images/colab_logo.webp";
 import git from "../images/git.webp";
-import tcs from "../images/tcs.svg";
 import solomons from "../images/solomons.webp";
 import internshala from "../images/internshala.jpg";
 import vvit from "../images/vvit.jpg";
@@ -28,7 +27,7 @@ import virtual_assistant from "../images/virtual_assistant.webp";
 import notenexus from "../images/note_nexus.jpg"
 
 export const Bio = {
-  name: "Rankela Sai Sri Harsha",
+  name: "Sai Sri Harsha Rankela ",
   roles: [
     "Python Developer",
     "Java Developer",
