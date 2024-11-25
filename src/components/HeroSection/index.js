@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeroContainer, HeroLeftContainer, Img, HeroInnerContainer,HeroInnerContainer1, TextLoop, Title, Span, SubTitle,Title1, ResumeButton } from './HeroStyle'
+import { HeroContainer, HeroLeftContainer, Img, HeroInnerContainer,HeroInnerContainer1, TextLoop, Title, Span, SubTitle,Title1, ResumeButton, CodingTitle } from './HeroStyle'
 import HeroImg from '../../images/HeroImage.jpg'
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
@@ -19,7 +19,7 @@ const HeroSection = () => {
                         <Title>Hi, I am <br /> </Title>
                         <Title1>{Bio.name}</Title1>
                         <TextLoop>
-                            <p style={{color: theme}}>I am a</p>
+                            <p style={{color: theme}}><CodingTitle>I am a</CodingTitle></p>
                             <Span>
                                 <Typewriter
                                     options={{

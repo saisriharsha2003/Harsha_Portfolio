@@ -136,6 +136,9 @@ export const Span = styled.span`
   cursor: pointer;
 `;
 
+export const CodingTitle = styled.div`
+color: ${({ theme }) => theme.text_secondary};`
+
 export const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
