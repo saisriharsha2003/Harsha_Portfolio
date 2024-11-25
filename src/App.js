@@ -15,7 +15,6 @@ import ProjectDetails from "./components/ProjectDetails";
 import CodingProfiles from "./components/CodingProfiles";
 import styled from "styled-components";
 
-// Styled hr for visual separation
 const Separator = styled.hr`
   border: none;
   height: 2px;
