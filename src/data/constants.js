@@ -25,15 +25,17 @@ import foodbot from "../images/whatsappbot.webp";
 import portfolio from "../images/portfolio.webp";
 import netflix from "../images/netflix.png";
 import virtual_assistant from "../images/virtual_assistant.webp";
+import notenexus from "../images/note_nexus.jpg"
 
 export const Bio = {
   name: "Rankela Sai Sri Harsha",
   roles: [
+    "Python Developer",
+    "Java Developer",
     "Full Stack Developer",
-    "Full Stack NLP Engineer",
     "Front-End Developer",
     "Back-End Developer",
-    "NLP Engineer",
+    "DevOps Engineer",
   ],
   description: "I am Rankela Sai Sri Harsha, currently working as a Systems Engineer at TCS. I hold a Bachelor's degree in Computer Science and Engineering (AI & ML) and possess expertise in Python, Java, SQL, Cloud Computing, Machine Learning, Artificial Intelligence, and Full Stack Web Development. During my recent internship as a Full Stack NLP Engineer at Solomons International, I led the development of an advanced resume analysis system. In a previous role as a Web Developer Intern at Internshala Trainings, I honed my web development skills.",
 
@@ -182,7 +184,7 @@ export const skills = [
       {
         name: "Google Cloud",
         image:
-          "https://static-00.iconduck.com/assets.00/google-cloud-platform-logo-icon-2048x1824-pg4wzspq.png",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxJvqd1ogHWZPF2JuWlYdNp5TUGtNpYu9LA&s",
       },
       {
         name: "Azure",
@@ -203,7 +205,7 @@ export const skills = [
       {
         name: "Tenserflow",
         image:
-          "https://static-00.iconduck.com/assets.00/tensorflow-icon-1911x2048-1m2s54vn.png",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFoiz9_MxMLfD9rxAcai43v3zmqcx4Y8pb5g&s",
       },
       {
         name: "Keras",
@@ -274,7 +276,7 @@ export const skills = [
       {
         name: "Postman",
         image:
-          "https://static-00.iconduck.com/assets.00/postman-icon-497x512-beb7sy75.png",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ5yPOAbr-LrEa8ANO47RBo4f2txsvjPL-fw&s",
       },
       {
         name: "Figma",
@@ -347,7 +349,7 @@ export const education = [
   {
     id: 0,
     img: vvit,
-    school: "Vasireddy Venkatadri Institute of Technology, Guntur",
+    school: "Vasireddy Venkatadri Institute of Technology, Guntur, Andhra Pradesh",
     date: "July 2020 - June 2024",
     grade: "8.45 CGPA",
     desc: "I am currently pursuing a Bachelor's degree in Computer Science and Engineering with specialization in Artificial Intelligence and Machine Learning at Vasireddy Venkatadri Institute of Technology. I have completed 7 semesters and have a CGPA of 8.41. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Deep Learning, Machine Learning, Natual Language Processing, AWS Cloud, Cloud Computing, Design and Analysis of Algorithms, Database Management Systems, Operating Systems, and Computer Networks, among others.",
@@ -376,7 +378,7 @@ export const education = [
 
 export const projects = [
   {
-    id: 11,
+    id: 0,
     title: "EmpowerRecruit",
     description:
       "Created EmpowerRecruit, a game-changing recruitment platform using cutting-edge tech. Led frontend design with React.js, ensuring a responsive interface, while Node.js powered backend operations. Used Tailwind CSS for sleek styling, enhancing user experience. Integrated Twilio for real-time notifications, reducing response time for application status updates. Leveraged Express.js for efficient server maintenance. Employed advanced NLP for accurate resume parsing and job role generation, boosting efficiency. Provided personalized job recommendations based on user skills, increasing engagement. Streamlined job listing and candidate shortlisting, reducing recruiter workload. Implemented job parsing and candidate compatibility scoring, sorting applications based on recruiter needs.",
@@ -398,7 +400,24 @@ export const projects = [
     webapp: "https://final-year-project-client-five.vercel.app/",
   },
   {
-    id: 9,
+    id: 1,
+    title: "NoteNexus",
+    description:
+      "NoteNexus is a cloud-based collaborative note-taking app designed to enable seamless real-time collaboration between users. Whether for study groups, team projects, or group brainstorming sessions, NoteNexus makes it easy to collaboratively create, edit, and organize notes. The app offers a streamlined, user-friendly interface that promotes efficient teamwork and knowledge sharing, allowing users to contribute to and modify shared notes without any hassle.",
+    image: notenexus,
+    tags: [
+      "React Js",
+      "TailwindCSS",
+      "Node Js",
+      "Express Js",
+      "JavaScirpt"
+    ],
+    category: "web app",
+    github: "https://github.com/saisriharsha2003/Harsha_Portfolio",
+    webapp: "https://notenex.netlify.app/",
+  },
+  {
+    id: 2,
     title: "VoiceOps Assistant",
     description:
       "Created VoiceOps Assistant, a Python-based virtual assistant with advanced voice recognition for user authentication, reducing unauthorized access risk. Achieved high speech recognition accuracy using Google's text-to-speech API, Selenium, and Beautifulsoup for web scraping, and implemented automated web browsing through voice commands. Orchestrated functionalities including sending WhatsApp messages and playing YouTube videos with voice commands, significantly reducing task completion time. Introduced Natural Language Processing and Machine Learning algorithms to enhance speech-to-text functionality and provide precise language translation.",
@@ -418,7 +437,7 @@ export const projects = [
     
   },
   {
-    id: 0,
+    id: 3,
     title: "WhatsAppFoodBot",
     description:
       "Deployed a Python based WhatsApp bot with integrated Twilio API, Django, and MongoDB, optimizing customer requests and reducing response time. Ensured a streamlined food ordering experience exclusively through WhatsApp using this bot, eliminating the need for additional food delivery apps, while maintaining comprehensive test coverage across various scenarios and functions. Assessed customer satisfaction before and after implementation, showing a significant improvement. Analyzed customer interactions, resulting in an increase in engagement and frequency of interaction.",
@@ -428,7 +447,7 @@ export const projects = [
     github: "https://github.com/saisriharsha2003/WhatsAppFoodBot",
   },
   {
-    id: 1,
+    id: 4,
     title: "Dynamic To Do List",
     description:
       "Designed and developed a dynamic to-do list application, offering users a digital task management solution with enhanced features for organization and productivity. The application allows users to create, update, and manage tasks, prioritize them based on importance and deadlines, and categorize tasks into projects for efficient management. Implemented features include task reminders, notifications, and collaboration tools, enabling users to stay organized and on track with their tasks. The dynamic to-do list application provides a user-friendly interface and seamless integration with other productivity tools for a comprehensive task management experience.",
@@ -439,7 +458,7 @@ export const projects = [
     webapp: "https://saisriharsha2003.github.io/To_Do_List/",
   },
   {
-    id: 2,
+    id: 5,
     title: "Harsha Netflix Landing Page",
     description:
       "Developed a landing page concept for Netflix, focusing on user engagement and content discovery. The landing page design emphasized intuitive navigation, personalized content recommendations, and a visually appealing layout to captivate users. Integrated features included a responsive design for seamless viewing across devices, interactive elements for enhanced user interaction, and optimized performance for fast loading times. The Netflix landing page concept aimed to enhance the user experience and drive engagement with the platform's content.",
@@ -450,7 +469,7 @@ export const projects = [
     webapp: "https://saisriharsha2003.github.io/Harsha_Netflix_landing_page/"
   },
   {
-    id: 3,
+    id: 6,
     title: "Responsive ReactJS Portfolio",
     description:
       "Created a responsive portfolio website using ReactJS, showcasing skills, projects, and achievements in a visually appealing and user-friendly manner. The portfolio features a modern design with smooth animations and transitions, providing an engaging user experience across desktop, tablet, and mobile devices. Implemented features include a dynamic project gallery, interactive skill charts, and a contact form for inquiries. The responsive ReactJS portfolio demonstrates a strong proficiency in front-end development and design principles.",
