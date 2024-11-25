@@ -101,7 +101,7 @@ export const Title1 = styled.div`
 export const Title = styled.div`
   font-weight: 700;
   font-size: 50px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.text_secondary};
   line-height: 68px;
   @media (max-width: 960px) {
     text-align: center;
@@ -140,7 +140,7 @@ export const SubTitle = styled.div`
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 42px;
-  color: ${({ theme }) => theme.text_secondary + 98};
+  color: ${({ theme }) => theme.text_secondary };
 
   @media (max-width: 960px) {
     text-align: center;

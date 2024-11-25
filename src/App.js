@@ -14,7 +14,6 @@ import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
 import CodingProfiles from "./components/CodingProfiles";
 import styled from "styled-components";
-import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Separator = styled.hr`
   border: none;
@@ -34,30 +33,17 @@ const Body = styled.div`
 
 const Wrapper = styled.div``;
 
-const ThemeToggleIcon = styled.div`
-  cursor: pointer;
-  font-size: 24px;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  color: ${({ theme }) => theme.iconColor}; // Ensure the icon color changes with the theme
-`;
-
 function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? JSON.parse(savedTheme) : darkTheme;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme)); 
-  }, [theme]);
+  const [theme, setTheme] = useState(darkTheme);  
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === darkTheme ? lightTheme : darkTheme));
   };
+
+  useEffect(() => {
+    console.log("Theme changed:", theme);
+  }, [theme]);
 
   return (
     <ThemeProvider theme={theme}>

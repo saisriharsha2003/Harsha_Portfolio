@@ -3,10 +3,10 @@ import { HeroContainer, HeroLeftContainer, Img, HeroInnerContainer,HeroInnerCont
 import HeroImg from '../../images/HeroImage.jpg'
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
+import { useTheme } from 'styled-components';
 
 const HeroSection = () => {
-    const theme= localStorage.getItem("theme").text_secondary;
-    console.log(theme);
+    const theme = useTheme()
     return (
         <div id="about">
             <HeroContainer>

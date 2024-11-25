@@ -4,7 +4,7 @@ import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
 import { useTheme } from 'styled-components';
-import { FaSun, FaMoon } from 'react-icons/fa';  // Sun and Moon Icons
+import { FaSun, FaMoon } from 'react-icons/fa';  
 import styled from 'styled-components';
 
 const Navbar = ({ toggleTheme }) => {
@@ -15,7 +15,7 @@ const Navbar = ({ toggleTheme }) => {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20px', cursor: 'pointer' }}>
+          <a style={{ display: "flex", alignItems: "center", color: "white",  cursor: 'pointer' }}>
             <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
           </a>
         </NavLogo>
@@ -36,7 +36,7 @@ const Navbar = ({ toggleTheme }) => {
         <ButtonContainer>
           <ThemeToggle onClick={toggleTheme}>
             <Circle theme={currentTheme}>
-              {currentTheme === 'dark' ? <MoonIcon /> : <SunIcon />}
+              {currentTheme.bg === '#ffffff' ? <MoonIcon /> : <SunIcon />}
             </Circle>
           </ThemeToggle>
         </ButtonContainer>
@@ -67,9 +67,9 @@ const ThemeToggle = styled.button`
 `;
 
 const Circle = styled.div`
-  width: 50px;  /* Slightly smaller than the portfolio icon */
+  width: 50px; 
   height: 50px;
-  background-color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#000')};  
+  background-color: ${({ theme }) => (theme.bg === '#ffffff' ? '#fff' : '#fff')};  
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -79,12 +79,12 @@ const Circle = styled.div`
 
 const SunIcon = styled(FaSun)`
   font-size: 18px;
-  color: #FFD700;  /* Sun icon color */
+  color: #CCBA78; 
 `;
 
 const MoonIcon = styled(FaMoon)`
   font-size: 18px;
-  color: #1E1E1E;  /* Moon icon color */
+  color: #CCBA78; 
 `;
 
 export default Navbar;

@@ -93,6 +93,9 @@ export const Desc = styled.div`
   }
 `;
 
+export const CodingTitle = styled.div`
+color: ${({ theme }) => theme.text_secondary};`
+
 const handleClick = (link) => {
   window.open(link, '_blank');
 };
@@ -104,17 +107,17 @@ const CodingProfiles = () => {
         <Title>Coding Profiles</Title>
         <Desc>Here are some of my Coding Profiles.</Desc>
         {codingprofiles.map((profile) => (
-          <Profile key={profile.name || profile.id}> {/* Added key for Profile */}
+          <Profile key={profile.name || profile.id}>
             <ProfileTitle>{profile.name}</ProfileTitle>
             <ProfileList>
               {profile.profiles.map((item, itemIndex) => (
-                <ProfileItem key={item.name + itemIndex}> {/* Added key for ProfileItem */}
+                <ProfileItem key={item.name + itemIndex}> 
                   <ProfileImage
                     src={item.image}
                     alt={item.name}
                     onClick={() => handleClick(item.link)}
                   />
-                  {item.name}
+                  <CodingTitle>{item.name}</CodingTitle>
                 </ProfileItem>
               ))}
             </ProfileList>
