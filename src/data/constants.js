@@ -472,7 +472,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Harsha Netflix Landing Page",
+    title: "Netflix Landing Page",
     description:
       "Developed a landing page concept for Netflix, focusing on user engagement and content discovery. The landing page design emphasized intuitive navigation, personalized content recommendations, and a visually appealing layout to captivate users. Integrated features included a responsive design for seamless viewing across devices, interactive elements for enhanced user interaction, and optimized performance for fast loading times. The Netflix landing page concept aimed to enhance the user experience and drive engagement with the platform's content.",
     image: netflix,
