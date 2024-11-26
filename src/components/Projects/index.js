@@ -46,22 +46,20 @@ const Projects = ({ openModal, setOpenModal }) => {
           )}
         </ToggleButtonGroup>
         <CardContainer>
-          {/* Render all projects */}
           {toggle === 'all' &&
             projects.map((project) => (
               <ProjectCard
-                key={project.id || project.name} // Ensure the key is unique
+                key={project.id || project.name} 
                 project={project}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
               />
             ))}
-          {/* Render projects based on selected category */}
           {projects
             .filter((item) => item.category === toggle)
             .map((project) => (
               <ProjectCard
-                key={project.id || project.name} // Ensure the key is unique
+                key={project.id || project.name} 
                 project={project}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
