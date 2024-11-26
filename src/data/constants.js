@@ -399,23 +399,6 @@ export const projects = [
     webapp: "https://final-year-project-client-five.vercel.app/",
   },
   {
-    id: 1,
-    title: "NoteNexus",
-    description:
-      "NoteNexus is a cloud-based collaborative note-taking app designed to enable seamless real-time collaboration between users. Whether for study groups, team projects, or group brainstorming sessions, NoteNexus makes it easy to collaboratively create, edit, and organize notes. The app offers a streamlined, user-friendly interface that promotes efficient teamwork and knowledge sharing, allowing users to contribute to and modify shared notes without any hassle.",
-    image: notenexus,
-    tags: [
-      "React Js",
-      "TailwindCSS",
-      "Node Js",
-      "Express Js",
-      "JavaScirpt"
-    ],
-    category: "web app",
-    github: "https://github.com/saisriharsha2003/note-nexus",
-    webapp: "https://notenex.netlify.app/",
-  },
-  {
     id: 2,
     title: "VoiceOps Assistant",
     description:
@@ -456,6 +439,24 @@ export const projects = [
     github: "https://github.com/saisriharsha2003/Harsha_Portfolio",
     webapp: "https://saisriharsha-portfolio.netlify.app/",
   },
+  {
+    id: 1,
+    title: "NoteNexus",
+    description:
+      "NoteNexus is a cloud-based collaborative note-taking app designed to enable seamless real-time collaboration between users. Whether for study groups, team projects, or group brainstorming sessions, NoteNexus makes it easy to collaboratively create, edit, and organize notes. The app offers a streamlined, user-friendly interface that promotes efficient teamwork and knowledge sharing, allowing users to contribute to and modify shared notes without any hassle.",
+    image: notenexus,
+    tags: [
+      "React Js",
+      "TailwindCSS",
+      "Node Js",
+      "Express Js",
+      "JavaScirpt"
+    ],
+    category: "web app",
+    github: "https://github.com/saisriharsha2003/note-nexus",
+    webapp: "https://notenex.netlify.app/",
+  },
+  
   {
     id: 6,
     title: "Dynamic To Do List",
