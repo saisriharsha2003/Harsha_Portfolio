@@ -393,6 +393,7 @@ export const projects = [
       "Natural Language Processing",
       "Python",
       "Machine Learning",
+      "OpenAI"
     ],
     category: "web app",
     github: "https://github.com/saisriharsha2003/EmpowerRecruitUpdated",
@@ -450,7 +451,8 @@ export const projects = [
       "TailwindCSS",
       "Node Js",
       "Express Js",
-      "JavaScirpt"
+      "JavaScirpt",
+      "MongoDB"
     ],
     category: "web app",
     github: "https://github.com/saisriharsha2003/note-nexus",
