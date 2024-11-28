@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { Snackbar } from "@mui/material";
+import { Resend } from 'resend';
+
+const resend = new Resend('re_frKCJdMt_Jmp79n8Xj1hbifgg2X3V2AYe'); 
 
 const Container = styled.div`
   display: flex;
@@ -115,21 +116,12 @@ const ContactButton = styled.input`
   transition: all 0.2s ease-in-out !important;
   background: hsla(271, 100%, 50%, 1);
   background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-
   &:hover {
       transform: scale(1.05);
-  transition: all 0.4s ease-in-out;
-  box-shadow:  20px 20px 60px #1F2634,
-  filter: brightness(1);
-  }    
-  
-  
-  @media (max-width: 640px) {
-      padding: 12px 0;
-      font-size: 18px;
-  } 
+      transition: all 0.4s ease-in-out;
+      box-shadow: 20px 20px 60px #1F2634,
+      filter: brightness(1);
+  }
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
@@ -140,32 +132,34 @@ const ContactButton = styled.input`
 `;
 
 const Contact = () => {
-  //hooks
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const form = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
   
-    const templateParams = {
-      to_email: 'rankelassh@gmail.com',
-      to_name: "Rankela Sai Sri Harsha",
-      from_name: form.current.from_name.value,
-      from_email: form.current.from_email.value,
-      subject: form.current.subject.value,
-      message: form.current.message.value
-    };
+    const { from_name, from_email, subject, message } = form.current;
   
-    emailjs.send('service_mida8qc', 'template_ltanhme', templateParams, 'XNNHvoKr7_obURb-h')
-      .then((result) => {
-        setOpen(true);
-        form.current.reset();
-      }, (error) => {
-        console.log(error.text);
+    if (!from_name.value || !from_email.value || !subject.value || !message.value) {
+      alert('Please fill in all fields');
+      return;
+    }
+  
+    try {
+      await resend.emails.send({
+        from: from_email.value, 
+        to: 'saisriharsha.r@tcs.com', 
+        subject: subject.value,
+        html: `<p><strong>${from_name.value}</strong> has sent a message:</p><p>${message.value}</p>`, // HTML content of the message
       });
+      setOpen(true); 
+      form.current.reset(); 
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send email');
+    }
   };
   
-
   return (
     <Container>
       <Wrapper>
@@ -179,7 +173,9 @@ const Contact = () => {
           <ContactInput placeholder="Your Name" name="from_name" />
           <ContactInput placeholder="Subject" name="subject" />
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <div style={{"alignItems":"center", "textAlign":"center"}}><ContactButton type="submit" value="Send" /></div> 
+          <div style={{"alignItems":"center", "textAlign":"center"}}>
+            <ContactButton type="submit" value="Send" />
+          </div>
         </ContactForm>
         <Snackbar
           open={open}
