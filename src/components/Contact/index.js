@@ -148,7 +148,7 @@ const Contact = () => {
     try {
       await resend.emails.send({
         from: from_email.value, 
-        to: 'saisriharsha.r@tcs.com', 
+        to: 'saisriharsha.r@gmail.com', 
         subject: subject.value,
         html: `<p><strong>${from_name.value}</strong> has sent a message:</p><p>${message.value}</p>`, // HTML content of the message
       });
