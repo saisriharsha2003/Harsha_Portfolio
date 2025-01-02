@@ -1,6 +1,10 @@
-node_modules
+node_modules/
 npm-debug.log
 build
 .git
 *.md
 .gitignore
+Dockerfile.dev
+Dockerfile.prod
+docker-compose.dev.yaml
+docker-compose.prod.yaml
