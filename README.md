@@ -82,7 +82,7 @@ saisriharsha2003-Harsha_Portfolio/
         └── Themes.js
 ```
 
-# 🛠️ Installation and Setup
+## 🛠️ Installation and Setup
 
 ## Prerequisites
 
@@ -108,7 +108,7 @@ npm install
 npm start
 ```
 
-# Dockerized Devlopment Setup
+## Dockerized Devlopment Setup
 
 Build and start the containers:
 
@@ -118,7 +118,7 @@ docker-compose -f docker-compose.dev.yaml up --build
 
 Access the app in your browser at http://localhost:3000.
 
-# 🐳 Docker Deployment
+## 🐳 Docker Deployment
 
 ## Development Build
 
