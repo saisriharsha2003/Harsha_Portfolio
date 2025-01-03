@@ -80,6 +80,7 @@ saisriharsha2003-Harsha_Portfolio/
     │   └── default.js
     └── utils/                     # Utility functions
         └── Themes.js
+```
 
 # 🛠️ Installation and Setup
 
