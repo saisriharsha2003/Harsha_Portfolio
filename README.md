@@ -80,3 +80,55 @@ saisriharsha2003-Harsha_Portfolio/
     │   └── default.js
     └── utils/                     # Utility functions
         └── Themes.js
+
+# 🛠️ Installation and Setup
+
+## Prerequisites
+
+- Node.js and npm
+- Docker and Docker Compose
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/saisriharsha2003/Harsha_Portfolio.git
+cd Harsha_Portfolio
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start the Development Server
+
+```bash
+npm start
+```
+
+# Dockerized Devlopment Setup
+
+Build and start the containers:
+
+```bash
+docker-compose -f docker-compose.dev.yaml up --build
+```
+
+Access the app in your browser at http://localhost:3000.
+
+# 🐳 Docker Deployment
+
+## Development Build
+
+```bash
+docker-compose -f docker-compose.dev.yaml up --build
+```
+
+## Production Build
+
+```bash
+docker-compose -f docker-compose.prod.yaml up --build
+```
+
+
