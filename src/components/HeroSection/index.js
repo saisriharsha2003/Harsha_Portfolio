@@ -29,7 +29,7 @@ const HeroSection = () => {
             <Title>
               Hi, I am <br />
             </Title>
-            <Title1><Span>{Bio.name}</Span></Title1>
+            <Title1>{Bio.name}</Title1>
             <TextLoop>
               <p style={{ color: theme }}>
                 <CodingTitle>I am a</CodingTitle>

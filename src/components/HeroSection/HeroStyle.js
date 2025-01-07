@@ -41,11 +41,13 @@ export const HeroContentContainer = styled.div`
   padding: 20px;
   background: ${({ theme }) => theme.card_light};
   border-radius: 15px;
-  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '6px 4px 20px rgba(255, 255, 255, 0.2)' : '6px 4px 20px rgba(0, 0, 0, 0.1)'};
+  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 20px rgba(255, 255, 255, 0.2)' : '0px 0px 20px rgba(0, 0, 0, 0.1)'};
 
   &:hover {
     transform: translateY(-10px);
     transition: transform 0.3s ease;
+    box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 30px rgba(255, 255, 255, 0.2)' : '0px 0px 30px rgba(0, 0, 0, 0.1)'};
+
   }
 
   @media (max-width: 960px) {
@@ -82,8 +84,9 @@ export const Title = styled.h1`
 export const Title1 = styled.h1`
   font-size: 48px;
   font-weight: bold;
-  color: #e84393;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
+  color: transparent;
   margin-bottom: 20px;
 
   @media (max-width: 960px) {
@@ -115,12 +118,12 @@ export const ResumeButton = styled.a`
   text-decoration: none;
   border-radius: 25px;
   background: linear-gradient(90deg, #ff7eb3, #ff758c);
-  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '6px 4px 20px rgba(255, 255, 255, 0.4)' : '6px 4px 20px rgba(255, 117, 140, 0.3)'};
+  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 10px rgba(255, 255, 255, 0.4)' : '0px 0px 10px rgba(1, 1, 1, 0.3)'};
   transition: all 0.3s ease;
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: ${({ theme }) => theme.mode === 'dark' ? '6px 4px 30px rgba(255, 255, 255, 0.6)' : '6px 4px 30px rgba(255, 117, 140, 0.5)'};
+    box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 20px rgba(255, 255, 255, 0.6)' : '0px 0px 20px rgba(1, 1, 1, 0.5)'};
   }
 
   @media (max-width: 640px) {
@@ -132,8 +135,9 @@ export const ResumeButton = styled.a`
 export const TextLoop = styled.div`
   font-size: 24px;
   font-weight: 700;
-  color: #e84393;
-  animation: bounce 2s infinite;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;  animation: bounce 2s infinite;
 
   @keyframes bounce {
     0%, 100% {

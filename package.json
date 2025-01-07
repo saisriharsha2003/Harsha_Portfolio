@@ -40,11 +40,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts start",
-    "build": "set \"CI=false\" && WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts build",
-    "test": "WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts test",
-    "eject": "WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts eject",
-    "predeploy": "WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true npm run build",
+    "start": "cross-env CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts start",
+    "build": "cross-env CI=false WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts build",
+    "test": "cross-env WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts test",
+    "eject": "cross-env WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts eject",
+    "predeploy": "cross-env WDS_SOCKET_HOST=127.0.0.1 CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -67,6 +67,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
     "eslint-config-react-app": "^7.0.1",
     "tailwindcss": "^3.4.1"
