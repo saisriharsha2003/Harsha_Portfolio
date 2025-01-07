@@ -36,7 +36,7 @@ export const Bio = {
     "Back-End Developer",
     "DevOps Engineer",
   ],
-  description: "I am Rankela Sai Sri Harsha, currently working as a Systems Engineer at TCS. I hold a Bachelor's degree in Computer Science and Engineering (AI & ML) and possess expertise in Python, Java, SQL, Cloud Computing, Machine Learning, Artificial Intelligence, and Full Stack Web Development. During my recent internship as a Full Stack NLP Engineer at Solomons International, I led the development of an advanced resume analysis system. In a previous role as a Web Developer Intern at Internshala Trainings, I honed my web development skills.",
+  description: "I’m Sai Sri Harsha Rankela, a DevOps Engineer at TCS with a B.Tech in Computer Science (AI & ML). I specialize in Python, Java, SQL, Cloud Computing, and Full Stack Web Development.",
 
   github: "https://github.com/saisriharsha2003",
   resume:

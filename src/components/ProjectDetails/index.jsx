@@ -33,7 +33,9 @@ const Wrapper = styled.div`
 const Title = styled.div`
   font-size: 35px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
   margin: 8px 6px 0px 6px;
   @media only screen and (max-width: 600px) {
     font-size: 24px;

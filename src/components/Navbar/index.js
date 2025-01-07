@@ -79,12 +79,12 @@ const Circle = styled.div`
 
 const SunIcon = styled(FaSun)`
   font-size: 18px;
-  color: #CCBA78; 
+  color: #ff7e5f; 
 `;
 
 const MoonIcon = styled(FaMoon)`
   font-size: 18px;
-  color: #CCBA78; 
+  color: #ff7e5f; 
 `;
 
 export default Navbar;

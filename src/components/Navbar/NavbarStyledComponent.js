@@ -59,19 +59,21 @@ export const NavItems = styled.ul`
 `;
 
 export const NavLink = styled.a`
-    color: ${({ theme }) => theme.primary};
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    :hover {
-      color: ${({ theme }) => theme.primary};
-    }
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;    font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  :hover {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;  }
 
-    &.active {
-      border-bottom: 2px solid ${({ theme }) => theme.primary};
-    }
+  &.active {
+    border-bottom: 2px solid ${({ theme }) => theme.primary};
+  }
 `;
 
 
@@ -82,8 +84,9 @@ export const GitHubButton = styled.a`
   align-items: center;
   height: 70%;
   border-radius: 20px;
-  color:${({ theme }) => theme.primary};
-  cursor: pointer;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;  cursor: pointer;
   padding: 0 20px;
   font-weight: 700;
   text-decoration: none;
@@ -120,8 +123,9 @@ export const MobileIcon = styled.div`
     transform: translate(-100%, 60%);
     font-size: 1.5rem;
     cursor: pointer;
-    color: ${({ theme }) => theme.text_primary};
-  }
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;  }
 `
 
 export const MobileMenu = styled.div`

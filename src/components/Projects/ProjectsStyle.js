@@ -26,14 +26,16 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-font-size: 60px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
   @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 42px;
+    margin-top: 12px;
+    font-size: 36px;
   }
 `;
 

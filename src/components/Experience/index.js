@@ -42,7 +42,9 @@ const Title = styled.div`
   text-align: center;
   font-weight: 600;
   margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
   @media (max-width: 768px) {
     margin-top: 12px;
     font-size: 32px;
@@ -82,9 +84,18 @@ const Experience = () => {
             {experiences.map((experience, index) => (
               <TimelineItem key={experience.id || index}> 
                 <TimelineSeparator>
-                  <TimelineDot variant="outlined" color="secondary" style={{ color: '#CCBA78' }} />
+                  <TimelineDot
+                    variant="outlined"
+                    style={{
+                      color: '#ff7e5f',
+                    }}
+                  />
+
                   {index !== experiences.length - 1 && (
-                    <TimelineConnector style={{ background: '#CCBA78' }} />
+                    <TimelineConnector style={{
+                      background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
+                      
+                    }} />
                   )}
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>

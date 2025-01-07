@@ -6,13 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "3000:3000"  # Map React's default dev server port
+      - "3000:3000"  
     image: saisriharsha2005/harsha_portfolio_dev:latest
     volumes:
-      - .:/note-nexus/frontend/  # Mount project directory for hot reloading
-      - /note-nexus/frontend/node_modules  # Exclude node_modules to avoid conflicts
+      - .:/note-nexus/frontend/ 
+      - /note-nexus/frontend/node_modules  
     container_name: frontend
     environment:
-      - CHOKIDAR_USEPOLLING=true  # Enable file change detection in Docker
+      - CHOKIDAR_USEPOLLING=true  
     stdin_open: true
     tty: true

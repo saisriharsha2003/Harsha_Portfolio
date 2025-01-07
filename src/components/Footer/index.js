@@ -22,13 +22,17 @@ const FooterWrapper = styled.footer`
   gap: 14px;
   align-items: center;
   padding: 1rem;
-  color: ${({ theme }) => theme.text_primary};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
 `;
 
 const Logo = styled.h1`
   font-weight: 600;
   font-size: 20px;
-  color: ${({ theme }) => theme.primary};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
 `;
 
 const Nav = styled.nav`
@@ -49,7 +53,9 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled.a`
-color: ${({ theme }) => theme.text_primary};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.2s ease-in-out;

@@ -39,14 +39,16 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
+    font-size: 42px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;
+    @media (max-width: 768px) {
+        margin-top: 12px;
+        font-size: 32px;
   }
 `;
 
@@ -93,8 +95,8 @@ const index = () => {
                                     <EducationCard education={education}/>
                                 </TimelineContent>
                                 <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length  && <TimelineConnector style={{ background: '#CCBA78' }} />}
+                                    <TimelineDot variant="outlined" style={{color: '#ff7e5f'}} />
+                                    {index !== experiences.length  && <TimelineConnector style={{ background: 'linear-gradient(to right, #ff7e5f, #feb47b)',}} />}
                                 </TimelineSeparator>
                             </TimelineItem>
                         ))}

@@ -41,8 +41,8 @@ const Profile = styled.div`
     max-width: 330px;
     padding: 10px 36px;
   }
-  border: 0.1px solid #CCBA78;
-  box-shadow: #CCBA78 2px 2px 1px;
+  border: 0.1px solid #ff7e5f;
+  box-shadow: #ff7e5f 2px 2px 1px;
 `;
 
 const ProfileTitle = styled.div`
@@ -76,7 +76,9 @@ export const Title = styled.div`
   text-align: center;
   font-weight: 600;
   margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
   @media (max-width: 768px) {
     margin-top: 12px;
     font-size: 32px;

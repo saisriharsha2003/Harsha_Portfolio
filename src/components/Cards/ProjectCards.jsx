@@ -36,8 +36,8 @@ const Card = styled.div`
     &:hover ${Button} {
         display: block;
     }
-    border: 0.1px solid #CCBA78;
-    box-shadow: #CCBA78 2px 2px 1px;
+    border: 0.1px solid #ff7e5f;
+    box-shadow: #ff7e5f 2px 2px 1px;
 `
 
 const Image = styled.img`
@@ -76,7 +76,9 @@ const Details = styled.div`
 const Title = styled.div`
     font-size: 20px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_primary};
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;
     overflow: hidden;
     display: -webkit-box;
     max-width: 100%;
