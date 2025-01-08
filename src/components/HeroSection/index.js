@@ -7,7 +7,6 @@ import {
   TextLoop,
   Title,
   Title1,
-  Span,
   SubTitle,
   ResumeButton,
   CodingTitle
