@@ -21,11 +21,11 @@ import styled from 'styled-components';
 
 const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState('#about'); // Default active section
+  const [activeSection, setActiveSection] = React.useState('#about'); 
   const currentTheme = useTheme();
 
   const handleNavClick = (section) => {
-    setActiveSection(section); // Update the active section state
+    setActiveSection(section); 
   };
 
   return (

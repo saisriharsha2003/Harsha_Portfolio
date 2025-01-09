@@ -110,15 +110,6 @@ const Description = styled.div`
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 `
-const Avatar = styled.img`
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    margin-left: -10px;
-    background-color: ${({ theme }) => theme.white};
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border: 3px solid ${({ theme }) => theme.card};
-`
 
 const ProjectCards = ({project,setOpenModal}) => {
     return (
