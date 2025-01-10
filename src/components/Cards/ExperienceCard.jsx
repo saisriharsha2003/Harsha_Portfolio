@@ -1,187 +1,183 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Document = styled.img`
-    display: none;
-    height: 70px;
-    width: fit-content;
-    background-color: #000;
-    border-radius: 10px;
-    &:hover{
-        cursor: pointer;
-        opacity: 0.8;
-    }
-`
+  display: none;
+  height: 70px;
+  width: auto;
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+`;
 
 const Description = styled.div`
-    width: 100%;
-    font-size: 15px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary};
-    margin-bottom: 10px;
-    @media only screen and (max-width: 768px){
-        font-size: 12px;
-    }
-`
+  width: 100%;
+  font-size: 15px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_secondary};
+  margin-bottom: 12px;
+  @media only screen and (max-width: 768px) {
+    font-size: 13px;
+  }
+`;
 
 const Span = styled.span`
-overflow: hidden;
-display: -webkit-box;
-max-width: 100%;
--webkit-line-clamp: 4;
--webkit-box-orient: vertical;
-text-overflow: ellipsis;
-`
+  overflow: hidden;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+`;
 
 const Card = styled.div`
-    width: 650px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    padding: 12px 16px;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: all 0.3s ease-in-out;
-    &:hover{
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-        transform: translateY(-5px);
-    }
-    @media only screen and (max-width: 768px){
-        padding: 10px;
-        gap: 8px;
-        width: 300px;
-    }
+  width: 650px;
+  border-radius: 12px;
+  padding: 16px 20px;
+  background: ${({ theme }) =>
+    theme.mode === 'dark'
+      ? 'linear-gradient(145deg, #1c1c1c, #292929)'
+      : 'linear-gradient(145deg, #ffffff, #f3f3f3)'};
+  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
+  box-shadow: ${({ theme }) =>
+    theme.mode === 'dark'
+      ? '4px 4px 20px rgba(255, 255, 255, 0.1), -4px -4px 20px rgba(0, 0, 0, 0.3)'
+      : '4px 4px 20px rgba(0, 0, 0, 0.1), -4px -4px 20px rgba(255, 255, 255, 0.5)'};
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
 
-    &:hover ${Document}{
-        display: flex;
-    }
+  &:hover {
+    box-shadow: ${({ theme }) =>
+      theme.mode === 'dark'
+        ? '6px 6px 30px rgba(255, 255, 255, 0.2), -6px -6px 30px rgba(0, 0, 0, 0.5)'
+        : '6px 6px 30px rgba(0, 0, 0, 0.2), -6px -6px 30px rgba(255, 255, 255, 0.7)'};
+    transform: translateY(-8px);
+    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+  }
 
-    &:hover ${Span}{
-        overflow: visible;
-        -webkit-line-clamp: unset;
+  &:hover ${Document} {
+    display: block;
+  }
 
-    }
-
-    border: 0.1px solid #ff7e5f;
-    box-shadow: #ff7e5f 2px 2px 1px;
-`
+  &:hover ${Span} {
+    overflow: visible;
+    -webkit-line-clamp: unset;
+  }
+`;
 
 const Top = styled.div`
-    width: 100%;
-    display: flex;
-    gap: 12px
-`
+  width: 100%;
+  display: flex;
+  gap: 16px;
+`;
 
 const Image = styled.img`
+  height: 60px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #000;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  @media only screen and (max-width: 768px) {
     height: 50px;
-    background-color: #000;
-    border-radius: 10px;
-    margin-top: 4px;
-    @media only screen and (max-width: 100px){
-        height: 40px;
-    }
-`
+    width: 50px;
+  }
+`;
 
 const Body = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-`
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Role = styled.div`
-    font-size: 20px;
-    font-weight: 600;
-background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    color: transparent;    @media only screen and (max-width: 768px){
-        font-size: 14px;
-    }
-`
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
+  @media only screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
 
 const Company = styled.div`
-    font-size: 14px;
-    font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary};
-    @media only screen and (max-width: 768px){
-        font-size: 12px;
-    }
-`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_secondary};
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
 
 const Date = styled.div`
-    font-size: 12px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 80};
-    @media only screen and (max-width: 768px){
-        font-size: 10px;
-    }
-`
-
+  font-size: 12px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_secondary + 80};
+  @media only screen and (max-width: 768px) {
+    font-size: 10px;
+  }
+`;
 
 const Skills = styled.div`
-    width: 100%;
-    display: flex;
-    gap: 12px;
-    margin-top: -10px;
-`
-
-const ItemWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
 
 const Skill = styled.div`
-    font-size: 15px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.text_secondary + 99};
-    @media only screen and (max-width: 768px){
-        font-size: 12px;
-    }
-`
-
-
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  background: ${({ theme }) => (theme.mode === 'dark' ? '#333' : '#ff00b5')};
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
 
 const ExperienceCard = ({ experience }) => {
-    return (
-        <Card>
-            <Top>
-                <Image src={experience.img} />
-                <Body>
-                    <Role>{experience.role}</Role>
-                    <Company>{experience.company}</Company>
-                    <Date>{experience.date}</Date>
-                </Body>
-            </Top>
-            <Description>
-                {experience?.desc &&
-                    <Span>{experience?.desc}</Span>
+  return (
+    <Card>
+      <Top>
+        <Image src={experience.img} />
+        <Body>
+          <Role>{experience.role}</Role>
+          <Company>{experience.company}</Company>
+          <Date>{experience.date}</Date>
+        </Body>
+      </Top>
+      <Description>
+        {experience.desc && <Span>{experience.desc}</Span>}
+        {experience.skills && (
+          <>
+            <br />
+            <Skills>
+              {experience.skills.map((skill, index) => (
+                <Skill key={index}>{skill}</Skill>
+              ))}
+            </Skills>
+          </>
+        )}
+      </Description>
+      {experience.doc && (
+        <a href={experience.doc} target="new">
+          <Document src={experience.doc} />
+        </a>
+      )}
+    </Card>
+  );
+};
 
-                }
-                {experience?.skills &&
-                    <>
-                        <br />
-                        <Skills>
-                            <b>Skills:</b>
-                            <ItemWrapper>
-                                {experience?.skills?.map((skill, index) => (
-                                    <Skill>• {skill}</Skill>
-                                ))}
-                            </ItemWrapper>
-                        </Skills>
-                    </>
-                }
-            </Description>
-            {experience.doc &&
-                <a href={experience.doc} target="new">
-                    <Document src={experience.doc} />
-                </a>
-            }
-        </Card>
-    )
-}
-
-export default ExperienceCard
+export default ExperienceCard;
