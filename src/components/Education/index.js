@@ -25,8 +25,10 @@ const Header = styled.div`
 const Title = styled.h2`
   font-size: 34px;
   font-weight: bold;
-  color: ${({ theme }) => theme.text_primary};
   margin-bottom: 10px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
 `;
