@@ -1,111 +1,95 @@
-
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { education, experiences } from '../../data/constants';
+import { education } from '../../data/constants';
 import EducationCard from '../Cards/EducationCard';
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    align-items: center;
-    padding: 0px 0px 60px 0px;
-    @media (max-width: 960px) {
-        padding: 0px;
-    }
+const Container = styled.section`
+  padding: 50px 15px;
+  background-color: ${({ theme }) => theme.background_primary};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const Wrapper = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1350px;
-    padding: 40px 0px 0px 0px;
-    gap: 12px;
-    @media (max-width: 960px) {
-        flex-direction: column;
-    }
+const Header = styled.div`
+  text-align: center;
+  margin-bottom: 40px;
 `;
 
-const Title = styled.div`
-    font-size: 42px;
-    text-align: center;
-    font-weight: 600;
-    margin-top: 20px;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    color: transparent;
-    @media (max-width: 768px) {
-        margin-top: 12px;
-        font-size: 32px;
+const Title = styled.h2`
+  font-size: 34px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.text_primary};
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+`;
+
+const Description = styled.p`
+  font-size: 16px;
+  color: ${({ theme }) => theme.text_secondary};
+  max-width: 700px;
+  line-height: 1.8;
+  margin: 0 auto;
+`;
+
+const TimelineWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+`;
+
+const StyledTimelineDot = styled(TimelineDot)`
+  &.MuiTimelineDot-outlined {
+    border: 2px solid #ff7e5f;
+    background-color: white;
   }
 `;
 
-const Desc = styled.div`
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px;
-    color: ${({ theme }) => theme.text_secondary};
-    @media (max-width: 768px) {
-        margin-top: 12px;
-        font-size: 16px;
-    }
+const StyledTimelineConnector = styled(TimelineConnector)`
+  &.MuiTimelineConnector-root {
+    width: 2px;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+  }
 `;
 
-const TimelineSection = styled.div`
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    @media (max-width: 660px) {
-        align-items: end;
-    }
-`;
+const EducationSection = () => {
+  return (
+    <Container id="education">
+      <Header>
+        <Title>Education</Title>
+        <Description>
+          My educational journey has been a transformative experience. Here are the milestones of my academic achievements.
+        </Description>
+      </Header>
+      <TimelineWrapper>
+        <Timeline>
+          {education.map((edu, index) => (
+            <TimelineItem
+              key={edu.id || index}
+              position={'right'} 
+            >
+              <TimelineSeparator>
+                <StyledTimelineDot variant="outlined" />
+                {index !== education.length - 1 && <StyledTimelineConnector />}
+              </TimelineSeparator>
+              <TimelineContent>
+                <EducationCard education={edu} /> 
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </TimelineWrapper>
+    </Container>
+  );
+};
 
-
-
-const index = () => {
-    return (
-        <Container id="education">
-            <Wrapper>
-                <Title>Education</Title>
-                <Desc>
-                My educational journey has been a path of self-exploration and personal development. The details of my education are as follows.
-                </Desc>
-                <TimelineSection>
-                    <Timeline>
-                        {education.map((education,index) => (
-                            <TimelineItem >
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <EducationCard education={education}/>
-                                </TimelineContent>
-                                <TimelineSeparator>
-                                    <TimelineDot variant="outlined" style={{color: '#ff7e5f'}} />
-                                    {index !== experiences.length  && <TimelineConnector style={{ background: 'linear-gradient(to right, #ff7e5f, #feb47b)',}} />}
-                                </TimelineSeparator>
-                            </TimelineItem>
-                        ))}
-                    </Timeline>
-
-                </TimelineSection>
-            </Wrapper>
-        </Container>
-    )
-}
-
-export default index
+export default EducationSection;
