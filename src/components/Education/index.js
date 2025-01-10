@@ -29,7 +29,6 @@ const Title = styled.h2`
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   color: transparent;
-  text-transform: uppercase;
   letter-spacing: 2px;
 `;
 

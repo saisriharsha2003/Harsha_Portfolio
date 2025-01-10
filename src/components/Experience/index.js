@@ -27,7 +27,6 @@ const Title = styled.h2`
   font-weight: bold;
   color: ${({ theme }) => theme.text_primary};
   margin-bottom: 10px;
-  text-transform: uppercase;
   letter-spacing: 2px;
 `;
 
