@@ -1,11 +1,6 @@
-import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import { Snackbar } from "@mui/material";
-import { Resend } from 'resend';
 
-const resend = new Resend('re_frKCJdMt_Jmp79n8Xj1hbifgg2X3V2AYe'); 
-
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +12,7 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -32,7 +27,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   font-size: 42px;
   text-align: center;
   font-weight: 600;
@@ -46,7 +41,7 @@ const Title = styled.div`
   }
 `;
 
-const Desc = styled.div`
+export const Desc = styled.div`
   font-size: 18px;
   text-align: center;
   max-width: 600px;
@@ -57,7 +52,7 @@ const Desc = styled.div`
   }
 `;
 
-const ContactForm = styled.form`
+export const ContactForm = styled.form`
   width: 95%;
   max-width: 600px;
   display: flex;
@@ -70,7 +65,7 @@ const ContactForm = styled.form`
   gap: 12px;
 `;
 
-const ContactTitle = styled.div`
+export const ContactTitle = styled.div`
   font-size: 24px;
   margin-bottom: 6px;
   text-align:center;
@@ -78,7 +73,7 @@ const ContactTitle = styled.div`
   color: ${({ theme }) => theme.text_primary};
 `;
 
-const ContactInput = styled.input`
+export const ContactInput = styled.input`
   flex: 1;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.text_secondary};
@@ -92,7 +87,7 @@ const ContactInput = styled.input`
   }
 `;
 
-const ContactInputMessage = styled.textarea`
+export const ContactInputMessage = styled.textarea`
   flex: 1;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.text_secondary};
@@ -106,7 +101,7 @@ const ContactInputMessage = styled.textarea`
   }
 `;
 
-const ContactButton = styled.input`
+export const ContactButton = styled.input`
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -132,63 +127,3 @@ const ContactButton = styled.input`
   font-size: 18px;
   font-weight: 600;
 `;
-
-const Contact = () => {
-  const [open, setOpen] = useState(false);
-  const form = useRef();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const { from_name, from_email, subject, message } = form.current;
-  
-    if (!from_name.value || !from_email.value || !subject.value || !message.value) {
-      alert('Please fill in all fields');
-      return;
-    }
-  
-    try {
-      await resend.emails.send({
-        from: from_email.value, 
-        to: 'saisriharsha.r@gmail.com', 
-        subject: subject.value,
-        html: `<p><strong>${from_name.value}</strong> has sent a message:</p><p>${message.value}</p>`, // HTML content of the message
-      });
-      setOpen(true); 
-      form.current.reset(); 
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Failed to send email');
-    }
-  };
-  
-  return (
-    <Container>
-      <Wrapper>
-        <Title>Contact</Title>
-        <Desc>
-          Feel free to reach out to me for any questions or opportunities!
-        </Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <div style={{"alignItems":"center", "textAlign":"center"}}>
-            <ContactButton type="submit" value="Send" />
-          </div>
-        </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-          severity="success"
-        />
-      </Wrapper>
-    </Container>
-  );
-};
-
-export default Contact;

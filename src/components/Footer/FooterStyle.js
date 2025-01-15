@@ -1,11 +1,6 @@
 import styled from 'styled-components';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import { Bio } from '../../data/constants';
 
-const FooterContainer = styled.div`
+export const FooterContainer = styled.div`
   width: 100%;
   padding: 2rem 0;
   display: flex;
@@ -14,7 +9,7 @@ const FooterContainer = styled.div`
 `;
 
 
-const FooterWrapper = styled.footer`
+export const FooterWrapper = styled.footer`
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -27,7 +22,7 @@ const FooterWrapper = styled.footer`
   color: transparent;
 `;
 
-const Logo = styled.h1`
+export const Logo = styled.h1`
   font-weight: 600;
   font-size: 20px;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -35,7 +30,7 @@ const Logo = styled.h1`
   color: transparent;
 `;
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
   width: 100%;
   max-width: 800px;
   margin-top: 0.5rem;
@@ -52,7 +47,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavLink = styled.a`
+export const NavLink = styled.a`
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   color: transparent;
@@ -67,12 +62,12 @@ const NavLink = styled.a`
   }
 `;
 
-const SocialMediaIcons = styled.div`
+export const SocialMediaIcons = styled.div`
   display: flex;
   margin-top: 1rem;
 `;
 
-const SocialMediaIcon = styled.a`
+export const SocialMediaIcon = styled.a`
   display: inline-block;
   margin: 0 1rem;
   font-size: 1.5rem;
@@ -83,38 +78,9 @@ const SocialMediaIcon = styled.a`
   }
 `;
 
-const Copyright = styled.p`
+export const Copyright = styled.p`
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: ${({ theme }) => theme.soft2};
   text-align: center;
 `;
-
-function Footer() {
-  return (
-    <FooterContainer>
-      <FooterWrapper>
-        <Logo>Rankela Sai Sri Harsha</Logo>
-        <Nav>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
-        </Nav>
-        <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display"><FacebookIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display"><InstagramIcon /></SocialMediaIcon>
-        </SocialMediaIcons>
-        <Copyright>
-          &copy; 2024 Rankela Sai Sri Harsha. All rights reserved.
-        </Copyright>
-
-      </FooterWrapper>
-    </FooterContainer>
-  );
-}
-
-export default Footer;

@@ -1,8 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import { skills } from '../../data/constants';
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   background: ${({ theme }) => theme.card_light};
   flex-direction: column;
@@ -13,7 +11,7 @@ const Container = styled.div`
   padding: 40px 20px;
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +51,7 @@ export const Desc = styled.div`
   }
 `;
 
-const SkillsContainer = styled.div`
+export const SkillsContainer = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -66,7 +64,7 @@ const SkillsContainer = styled.div`
   
 `;
 
-const Skill = styled.div`
+export const Skill = styled.div`
   width: 100%;
   max-width: 480px;
   background: ${({ theme }) => theme.card};
@@ -88,7 +86,7 @@ const Skill = styled.div`
   }
 `;
 
-const SkillTitle = styled.h2`
+export const SkillTitle = styled.h2`
   font-size: 28px;
   font-weight: 600;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -98,14 +96,14 @@ const SkillTitle = styled.h2`
   text-align: center;
 `;
 
-const SkillList = styled.div`
+export const SkillList = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
 `;
 
-const SkillItem = styled.div`
+export const SkillItem = styled.div`
   font-size: 18px;
   font-weight: 600;
   background: #ffffff;
@@ -129,35 +127,7 @@ const SkillItem = styled.div`
   }
 `;
 
-const SkillImage = styled.img`
+export const SkillImage = styled.img`
   width: 26px;
   height: 26px;
 `;
-
-const Skills = () => {
-  return (
-    <Container id="skills">
-      <Wrapper>
-        <Title>Skills</Title>
-        <Desc>Here are some of my skills on which I have been working on for the past 4 years.</Desc>
-        <SkillsContainer>
-          {skills.map((skill, skillIndex) => (
-            <Skill key={skillIndex}>
-              <SkillTitle>{skill.title}</SkillTitle>
-              <SkillList>
-                {skill.skills.map((item, itemIndex) => (
-                  <SkillItem key={itemIndex}>
-                    <SkillImage src={item.image} alt={item.name} />
-                    {item.name}
-                  </SkillItem>
-                ))}
-              </SkillList>
-            </Skill>
-          ))}
-        </SkillsContainer>
-      </Wrapper>
-    </Container>
-  );
-};
-
-export default Skills;

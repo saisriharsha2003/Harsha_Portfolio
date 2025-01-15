@@ -11,7 +11,7 @@ import {
   MobileIcon,
   MobileMenu,
   MobileLink,
-} from './NavbarStyledComponent'; // Import styled components
+} from './NavbarStyle'; 
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';

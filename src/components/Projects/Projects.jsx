@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Container, Wrapper, Title, Desc, CardContainer} from './ProjectsStyle';
-import ProjectCard from '../Cards/ProjectCards';
+import React from 'react';
+import ProjectCard from './ProjectCards';
 import { projects } from '../../data/constants';
+import { Container, Wrapper, Title, Desc, CardContainer } from './ProjectsStyle';
 
 const Projects = ({ openModal, setOpenModal }) => {
 

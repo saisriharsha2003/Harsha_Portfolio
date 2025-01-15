@@ -1,8 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import { codingprofiles } from '../../data/constants';
 
-const CodingProfilesContainer = styled.div`
+export const CodingProfilesContainer = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -11,7 +9,7 @@ const CodingProfilesContainer = styled.div`
   justify-content: center;
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -25,7 +23,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Profile = styled.div`
+export const Profile = styled.div`
   width: 100%;
   max-width: 500px;
   background: ${({ theme }) => theme.card};
@@ -45,25 +43,25 @@ const Profile = styled.div`
   box-shadow: #ff7e5f 2px 2px 1px;
 `;
 
-const ProfileTitle = styled.div`
+export const ProfileTitle = styled.div`
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 16px;
 `;
 
-const ProfileList = styled.div`
+export const ProfileList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 `;
 
-const ProfileItem = styled.div`
+export const ProfileItem = styled.div`
   width: 100%;
   max-width: 120px;
   text-align: center;
 `;
 
-const ProfileImage = styled.img`
+export const ProfileImage = styled.img`
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -97,37 +95,3 @@ export const Desc = styled.div`
 
 export const CodingTitle = styled.div`
 color: ${({ theme }) => theme.text_secondary};`
-
-const handleClick = (link) => {
-  window.open(link, '_blank');
-};
-
-const CodingProfiles = () => {
-  return (
-    <CodingProfilesContainer>
-      <Wrapper>
-        <Title>Coding Profiles</Title>
-        <Desc>Here are some of my Coding Profiles.</Desc>
-        {codingprofiles.map((profile) => (
-          <Profile key={profile.name || profile.id}>
-            <ProfileTitle>{profile.name}</ProfileTitle>
-            <ProfileList>
-              {profile.profiles.map((item, itemIndex) => (
-                <ProfileItem key={item.name + itemIndex}> 
-                  <ProfileImage
-                    src={item.image}
-                    alt={item.name}
-                    onClick={() => handleClick(item.link)}
-                  />
-                  <CodingTitle>{item.name}</CodingTitle>
-                </ProfileItem>
-              ))}
-            </ProfileList>
-          </Profile>
-        ))}
-      </Wrapper>
-    </CodingProfilesContainer>
-  );
-};
-
-export default CodingProfiles;

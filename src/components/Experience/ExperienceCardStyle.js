@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Document = styled.img`
+export const Document = styled.img`
   display: none;
   height: 70px;
   width: auto;
@@ -17,7 +16,7 @@ const Document = styled.img`
   }
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   width: 100%;
   font-size: 15px;
   font-weight: 400;
@@ -28,7 +27,7 @@ const Description = styled.div`
   }
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   overflow: hidden;
   display: -webkit-box;
   max-width: 100%;
@@ -37,7 +36,7 @@ const Span = styled.span`
   text-overflow: ellipsis;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 650px;
   border-radius: 12px;
   padding: 16px 20px;
@@ -74,13 +73,13 @@ const Card = styled.div`
   }
 `;
 
-const Top = styled.div`
+export const Top = styled.div`
   width: 100%;
   display: flex;
   gap: 16px;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 60px;
   width: 140px;
   object-fit: cover;
@@ -93,13 +92,13 @@ const Image = styled.img`
   }
 `;
 
-const Body = styled.div`
+export const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-const Role = styled.div`
+export const Role = styled.div`
   font-size: 20px;
   font-weight: 700;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -110,7 +109,7 @@ const Role = styled.div`
   }
 `;
 
-const Company = styled.div`
+export const Company = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_secondary};
@@ -119,7 +118,7 @@ const Company = styled.div`
   }
 `;
 
-const Date = styled.div`
+export const Date = styled.div`
   font-size: 12px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary + 80};
@@ -128,13 +127,13 @@ const Date = styled.div`
   }
 `;
 
-const Skills = styled.div`
+export const Skills = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 `;
 
-const Skill = styled.div`
+export const Skill = styled.div`
   font-size: 14px;
   font-weight: 400;
   color: white;
@@ -146,38 +145,3 @@ const Skill = styled.div`
     font-size: 12px;
   }
 `;
-
-const ExperienceCard = ({ experience }) => {
-  return (
-    <Card>
-      <Top>
-        <Image src={experience.img} />
-        <Body>
-          <Role>{experience.role}</Role>
-          <Company>{experience.company}</Company>
-          <Date>{experience.date}</Date>
-        </Body>
-      </Top>
-      <Description>
-        {experience.desc && <Span>{experience.desc}</Span>}
-        {experience.skills && (
-          <>
-            <br />
-            <Skills>
-              {experience.skills.map((skill, index) => (
-                <Skill key={index}>{skill}</Skill>
-              ))}
-            </Skills>
-          </>
-        )}
-      </Description>
-      {experience.doc && (
-        <a href={experience.doc} target="new">
-          <Document src={experience.doc} />
-        </a>
-      )}
-    </Card>
-  );
-};
-
-export default ExperienceCard;

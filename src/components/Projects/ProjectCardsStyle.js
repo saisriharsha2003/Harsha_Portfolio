@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
   display: none;
   width: 100%;
   padding: 10px;
@@ -17,7 +16,7 @@ const Button = styled.button`
   margin-top: 16px;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 340px;
   min-height: 440px;
   background: linear-gradient(
@@ -55,7 +54,7 @@ const Card = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
   width: 100%;
   height: 150px;
   overflow: hidden;
@@ -75,14 +74,14 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Details = styled.div`
+export const Details = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   font-size: 20px;
   font-weight: 700;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -92,7 +91,7 @@ const Title = styled.h3`
   margin: 0;
 `;
 
-const Date = styled.p`
+export const Date = styled.p`
   font-size: 12px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary};
@@ -100,7 +99,7 @@ const Date = styled.p`
   margin: 0;
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary};
@@ -110,21 +109,3 @@ const Description = styled.p`
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 `;
-
-const ProjectCards = ({ project, setOpenModal }) => {
-  return (
-    <Card onClick={() => setOpenModal({ state: true, project })}>
-      <ImageWrapper>
-        <img src={project.image} alt={project.title} />
-      </ImageWrapper>
-      <Details>
-        <Title>{project.title}</Title>
-        <Date>{project.date}</Date>
-        <Description>{project.description}</Description>
-      </Details>
-      <Button>View Details</Button>
-    </Card>
-  );
-};
-
-export default ProjectCards;

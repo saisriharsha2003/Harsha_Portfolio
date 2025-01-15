@@ -1,9 +1,6 @@
-import { CloseRounded } from '@mui/icons-material';
-import { Modal } from '@mui/material';
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
@@ -17,7 +14,7 @@ const Container = styled.div`
   transition: opacity 0.5s ease;
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   max-width: 800px;
   width: 90%;
   border-radius: 16px;
@@ -33,7 +30,7 @@ const Wrapper = styled.div`
   overflow-y: auto;
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   font-size: 28px;
   font-weight: 700;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -46,7 +43,7 @@ const Title = styled.div`
   }
 `;
 
-const Date = styled.div`
+export const Date = styled.div`
   font-size: 14px;
   margin: 8px 0;
   font-weight: 400;
@@ -57,7 +54,7 @@ const Date = styled.div`
   }
 `;
 
-const Desc = styled.div`
+export const Desc = styled.div`
   font-size: 14px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary};
@@ -69,7 +66,7 @@ const Desc = styled.div`
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 80%;
   max-height: 300px;
   object-fit: cover;
@@ -79,7 +76,7 @@ const Image = styled.img`
   display: block;
 `;
 
-const Tags = styled.div`
+export const Tags = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -87,7 +84,7 @@ const Tags = styled.div`
   justify-content: center;
 `;
 
-const Tag = styled.div`
+export const Tag = styled.div`
   font-size: 12px;
   font-weight: 600;
   color: white;
@@ -99,14 +96,14 @@ const Tag = styled.div`
   }
 `;
 
-const ButtonGroup = styled.div`
+export const ButtonGroup = styled.div`
   display: flex;
   justify-content: center;
   margin: 15px 0;
   gap: 12px;
 `;
 
-const Button = styled.a`
+export const Button = styled.a`
   font-size: 16px;
   font-weight: 600;
   color: white;
@@ -126,44 +123,3 @@ const Button = styled.a`
     font-size: 14px;
   }
 `;
-
-const index = ({ openModal, setOpenModal }) => {
-  const project = openModal?.project;
-
-  return (
-    <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
-      <Container>
-        <Wrapper>
-          <CloseRounded
-            style={{
-              position: 'absolute',
-              top: '10px',
-              right: '20px',
-              cursor: 'pointer',
-              fontSize: '28px',
-              color: '#ec008c',
-            }}
-            onClick={() => setOpenModal({ state: false, project: null })}
-          />
-          <Image src={project?.image} alt={project?.title} />
-          <Title>{project?.title}</Title>
-          <Date>{project?.date}</Date>
-          <Tags>
-            {project?.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </Tags>
-          <Desc>{project?.description}</Desc>
-          <ButtonGroup>
-            <Button href={project?.github} target="_blank">View Code</Button>
-            {project?.category === 'web app' && (
-              <Button href={project?.webapp} target="_blank">View Live App</Button>
-            )}
-          </ButtonGroup>
-        </Wrapper>
-      </Container>
-    </Modal>
-  );
-};
-
-export default index;

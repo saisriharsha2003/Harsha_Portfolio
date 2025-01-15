@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const Document = styled.img`
+export const Document = styled.img`
   display: none;
   height: 70px;
   width: auto;
@@ -17,7 +16,7 @@ const Document = styled.img`
   }
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   width: 100%;
   font-size: 15px;
   font-weight: 400;
@@ -28,7 +27,7 @@ const Description = styled.div`
   }
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   overflow: hidden;
   display: -webkit-box;
   max-width: 100%;
@@ -37,7 +36,7 @@ const Span = styled.span`
   text-overflow: ellipsis;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 650px;
   border-radius: 12px;
   padding: 16px 20px;
@@ -77,13 +76,13 @@ const Card = styled.div`
   }
 `;
 
-const Top = styled.div`
+export const Top = styled.div`
   width: 100%;
   display: flex;
   gap: 12px;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 50px;
   width: 100px;
   background-color: #000;
@@ -99,13 +98,13 @@ const Image = styled.img`
   }
 `;
 
-const Body = styled.div`
+export const Body = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const Name = styled.div`
+export const Name = styled.div`
   font-size: 20px;
   font-weight: 600;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -116,7 +115,7 @@ const Name = styled.div`
   }
 `;
 
-const Degree = styled.div`
+export const Degree = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_secondary};
@@ -125,7 +124,7 @@ const Degree = styled.div`
   }
 `;
 
-const Date = styled.div`
+export const Date = styled.div`
   font-size: 12px;
   font-weight: 400;
   color: ${({ theme }) => theme.text_secondary + 80};
@@ -134,7 +133,7 @@ const Date = styled.div`
   }
 `;
 
-const Grade = styled.div`
+export const Grade = styled.div`
   font-size: 14px;
   font-weight: 500;
   display: flex;
@@ -155,26 +154,3 @@ const Grade = styled.div`
     font-size: 12px;
   }
 `;
-
-const EducationCard = ({ education }) => {
-  return (
-    <Card>
-      <Top>
-        <Image src={education.img} />
-        <Body>
-          <Name>{education.school}</Name>
-          <Degree>{education.degree}</Degree>
-          <Date>{education.date}</Date>
-        </Body>
-      </Top>
-      <Grade>
-        <b>Grade:</b> <span>{education.grade}</span>
-      </Grade>
-      <Description>
-        <Span>{education.desc}</Span>
-      </Description>
-    </Card>
-  );
-};
-
-export default EducationCard;
