@@ -1,8 +1,8 @@
+import './App.css';
 import { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
 import { darkTheme, lightTheme } from './themes/Themes.js';
 import Navbar from "./components/Navbar/Navbar.jsx";
-import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import HeroSection from "./components/HeroSection/HeroSection.jsx";
 import Skills from "./components/Skills/Skills.jsx";
