@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Nav,
   NavLink,
@@ -11,21 +11,21 @@ import {
   MobileIcon,
   MobileMenu,
   MobileLink,
-} from './NavbarStyle'; 
-import { DiCssdeck } from 'react-icons/di';
-import { FaBars } from 'react-icons/fa';
-import { Bio } from '../../data/constants';
-import { useTheme } from 'styled-components';
-import { FaSun, FaMoon } from 'react-icons/fa';
-import styled from 'styled-components';
+} from "./NavbarStyle";
+import { DiCssdeck } from "react-icons/di";
+import { FaBars } from "react-icons/fa";
+import { Bio } from "../../data/constants";
+import { useTheme } from "styled-components";
+import { FaSun, FaMoon } from "react-icons/fa";
+import styled from "styled-components";
 
 const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState('#about'); 
+  const [activeSection, setActiveSection] = React.useState("#about");
   const currentTheme = useTheme();
 
   const handleNavClick = (section) => {
-    setActiveSection(section); 
+    setActiveSection(section);
   };
 
   return (
@@ -34,10 +34,10 @@ const Navbar = ({ toggleTheme }) => {
         <NavLogo to="/">
           <a
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: 'white',
-              cursor: 'pointer',
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+              cursor: "pointer",
             }}
           >
             <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
@@ -49,36 +49,36 @@ const Navbar = ({ toggleTheme }) => {
         <NavItems>
           <NavLink
             href="#about"
-            className={activeSection === '#about' ? 'active' : ''}
-            onClick={() => handleNavClick('#about')}
+            className={activeSection === "#about" ? "active" : ""}
+            onClick={() => handleNavClick("#about")}
           >
             About
           </NavLink>
           <NavLink
             href="#skills"
-            className={activeSection === '#skills' ? 'active' : ''}
-            onClick={() => handleNavClick('#skills')}
+            className={activeSection === "#skills" ? "active" : ""}
+            onClick={() => handleNavClick("#skills")}
           >
             Skills
           </NavLink>
           <NavLink
             href="#experience"
-            className={activeSection === '#experience' ? 'active' : ''}
-            onClick={() => handleNavClick('#experience')}
+            className={activeSection === "#experience" ? "active" : ""}
+            onClick={() => handleNavClick("#experience")}
           >
             Experience
           </NavLink>
           <NavLink
             href="#projects"
-            className={activeSection === '#projects' ? 'active' : ''}
-            onClick={() => handleNavClick('#projects')}
+            className={activeSection === "#projects" ? "active" : ""}
+            onClick={() => handleNavClick("#projects")}
           >
             Projects
           </NavLink>
           <NavLink
             href="#education"
-            className={activeSection === '#education' ? 'active' : ''}
-            onClick={() => handleNavClick('#education')}
+            className={activeSection === "#education" ? "active" : ""}
+            onClick={() => handleNavClick("#education")}
           >
             Education
           </NavLink>
@@ -92,17 +92,24 @@ const Navbar = ({ toggleTheme }) => {
         <ButtonContainer>
           <ThemeToggle onClick={toggleTheme}>
             <Circle theme={currentTheme}>
-              {currentTheme.bg === '#ffffff' ? <MoonIcon /> : <SunIcon />}
+              {currentTheme.bg === "#ffffff" ? <MoonIcon /> : <SunIcon />}
             </Circle>
           </ThemeToggle>
         </ButtonContainer>
 
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
+            <ButtonContainer>
+              <ThemeToggle onClick={toggleTheme}>
+                <Circle theme={currentTheme}>
+                  {currentTheme.bg === "#ffffff" ? <MoonIcon /> : <SunIcon />}
+                </Circle>
+              </ThemeToggle>
+            </ButtonContainer>
             <MobileLink
               href="#about"
               onClick={() => {
-                handleNavClick('#about');
+                handleNavClick("#about");
                 setIsOpen(!isOpen);
               }}
             >
@@ -111,7 +118,7 @@ const Navbar = ({ toggleTheme }) => {
             <MobileLink
               href="#skills"
               onClick={() => {
-                handleNavClick('#skills');
+                handleNavClick("#skills");
                 setIsOpen(!isOpen);
               }}
             >
@@ -120,7 +127,7 @@ const Navbar = ({ toggleTheme }) => {
             <MobileLink
               href="#experience"
               onClick={() => {
-                handleNavClick('#experience');
+                handleNavClick("#experience");
                 setIsOpen(!isOpen);
               }}
             >
@@ -129,7 +136,7 @@ const Navbar = ({ toggleTheme }) => {
             <MobileLink
               href="#projects"
               onClick={() => {
-                handleNavClick('#projects');
+                handleNavClick("#projects");
                 setIsOpen(!isOpen);
               }}
             >
@@ -138,7 +145,7 @@ const Navbar = ({ toggleTheme }) => {
             <MobileLink
               href="#education"
               onClick={() => {
-                handleNavClick('#education');
+                handleNavClick("#education");
                 setIsOpen(!isOpen);
               }}
             >
@@ -146,10 +153,10 @@ const Navbar = ({ toggleTheme }) => {
             </MobileLink>
             <GitHubButton
               style={{
-                padding: '10px 16px',
+                padding: "10px 16px",
                 background: `${currentTheme.primary}`,
-                color: 'white',
-                width: 'max-content',
+                color: "white",
+                width: "max-content",
               }}
               href={Bio.github}
               target="_blank"
@@ -177,7 +184,7 @@ const Circle = styled.div`
   width: 50px;
   height: 50px;
   background-color: ${({ theme }) =>
-    theme.bg === '#ffffff' ? '#fff' : '#fff'};
+    theme.bg === "#ffffff" ? "#fff" : "#fff"};
   border-radius: 50%;
   display: flex;
   justify-content: center;
