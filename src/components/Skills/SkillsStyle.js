@@ -29,7 +29,7 @@ export const Title = styled.div`
   font-weight: 700;
   text-align: center;
   margin-top: 20px;
-  background: linear-gradient(135deg, #ff6f91, #ff9472, #ffc1a1);
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 768px) {
@@ -56,35 +56,29 @@ export const SkillsContainer = styled.div`
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  margin-top: 50px;
   padding: 30px;
-  border-radius: 20px;
-  box-shadow: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "rgba(0, 0, 0, 0.7) 0px 10px 30px"
-      : "rgba(23, 92, 230, 0.15) 0px 10px 30px"};
 `;
 
 export const Skill = styled.div`
   width: 100%;
   max-width: 380px;
   background: ${({ theme }) => theme.card};
-  border-radius: 16px;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
   padding: 25px 20px;
   transition: all 0.4s ease;
+  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
+  border-radius: 36px;
   box-shadow: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "4px 4px 20px rgba(255, 255, 255, 0.1), -4px -4px 20px rgba(0, 0, 0, 0.3)"
-      : "4px 4px 20px rgba(0, 0, 0, 0.1), -4px -4px 20px rgba(255, 255, 255, 0.5)"};
+  theme.mode === 'dark'
+    ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
+    : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
+
   transform: scale(1);
   &:hover {
-    transform: scale(1.05);
-    border: 1px solid ${({ theme }) => theme.text_primary};
+    transform: translateY(-12px) scale(1.02);
     box-shadow: ${({ theme }) =>
       theme.mode === 'dark'
-        ? '6px 6px 30px rgba(255, 255, 255, 0.2), -6px -6px 30px rgba(0, 0, 0, 0.5)'
-        : '6px 6px 30px rgba(0, 0, 0, 0.2), -6px -6px 30px rgba(255, 255, 255, 0.7)'};
+        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
+        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
   @media (max-width: 768px) {
@@ -115,24 +109,24 @@ export const SkillItem = styled.div`
   font-weight: 600;
   background: linear-gradient(to right, #ffffff, #f7f7f7);
   color: #444;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
-  border-radius: 10px;
   padding: 10px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
+  border-radius: 16px;
   box-shadow: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "4px 4px 20px rgba(255, 255, 255, 0.1), -4px -4px 20px rgba(0, 0, 0, 0.3)"
-      : "4px 4px 20px rgba(0, 0, 0, 0.1), -4px -4px 20px rgba(255, 255, 255, 0.5)"};
+    theme.mode === 'dark'
+      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
+      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
   transition: all 0.3s ease;
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-12px) scale(1.02);
     box-shadow: ${({ theme }) =>
       theme.mode === 'dark'
-        ? '6px 6px 30px rgba(255, 255, 255, 0.2), -6px -6px 30px rgba(0, 0, 0, 0.5)'
-        : '6px 6px 30px rgba(0, 0, 0, 0.2), -6px -6px 30px rgba(255, 255, 255, 0.7)'};
+        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
+        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
   @media (max-width: 768px) {

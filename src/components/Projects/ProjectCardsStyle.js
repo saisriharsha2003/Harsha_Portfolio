@@ -28,8 +28,8 @@ export const Card = styled.div`
   border-radius: 16px;
   box-shadow: ${({ theme }) =>
     theme.mode === 'dark'
-      ? '4px 4px 20px rgba(255, 255, 255, 0.1), -4px -4px 20px rgba(0, 0, 0, 0.3)'
-      : '4px 4px 20px rgba(0, 0, 0, 0.1), -4px -4px 20px rgba(255, 255, 255, 0.5)'};
+      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
+      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -42,8 +42,8 @@ export const Card = styled.div`
     transform: translateY(-12px) scale(1.02);
     box-shadow: ${({ theme }) =>
       theme.mode === 'dark'
-        ? '6px 6px 30px rgba(255, 255, 255, 0.2), -6px -6px 30px rgba(0, 0, 0, 0.5)'
-        : '6px 6px 30px rgba(0, 0, 0, 0.2), -6px -6px 30px rgba(255, 255, 255, 0.7)'};
+        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
+        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
 

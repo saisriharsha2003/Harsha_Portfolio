@@ -62,7 +62,7 @@ export const Img = styled.img`
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.primary};
-  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '6px 4px 30px rgba(255, 255, 255, 0.3)' : '6px 4px 30px rgba(0, 0, 0, 0.2)'};
+  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 30px rgba(255, 255, 255, 0.3)' : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
 `;
 
 export const Title = styled.h1`

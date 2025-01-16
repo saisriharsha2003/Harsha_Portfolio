@@ -300,8 +300,8 @@ export const experiences = [
       "Java",
       "Javscript",
       "Java Server Pages (JSP)",
-      "Servlets",
       "Java Full Stack Web Development",
+      "Servlets",
       "Docker",
       "Kubernetees",
       "Devops"

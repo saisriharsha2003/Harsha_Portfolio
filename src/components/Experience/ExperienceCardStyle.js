@@ -38,8 +38,8 @@ export const Span = styled.span`
 
 export const Card = styled.div`
   width: 100%;
-  border-radius: 12px;
-  padding: 16px 20px;
+  border-radius: 20px;
+  padding: 20px 20px;
   background: ${({ theme }) =>
     theme.mode === 'dark'
       ? 'linear-gradient(145deg, #1c1c1c, #292929)'
@@ -47,19 +47,20 @@ export const Card = styled.div`
   border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
   box-shadow: ${({ theme }) =>
     theme.mode === 'dark'
-      ? '4px 4px 20px rgba(255, 255, 255, 0.1), -4px -4px 20px rgba(0, 0, 0, 0.3)'
-      : '4px 4px 20px rgba(0, 0, 0, 0.1), -4px -4px 20px rgba(255, 255, 255, 0.5)'};
+      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
+      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
   transition: all 0.3s ease;
+  margin-bottom: 15px;
 
   &:hover {
     box-shadow: ${({ theme }) =>
       theme.mode === 'dark'
-        ? '6px 6px 30px rgba(255, 255, 255, 0.2), -6px -6px 30px rgba(0, 0, 0, 0.5)'
-        : '6px 6px 30px rgba(0, 0, 0, 0.2), -6px -6px 30px rgba(255, 255, 255, 0.7)'};
-    transform: translateY(-8px);
+        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
+        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
+    transform: translateX(10px);
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
 
