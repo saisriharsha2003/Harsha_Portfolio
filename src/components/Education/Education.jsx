@@ -6,6 +6,16 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import { education } from '../../data/constants';
 import EducationCard from './EducationCard';
 import { Container, Header, Title, Description, TimelineWrapper, StyledTimelineDot, StyledTimelineConnector } from './EducationStyle';
+import { styled } from '@mui/system';
+
+const CustomTimelineItem = styled(TimelineItem)({
+  '& .MuiTimelineDot-root': {
+    marginLeft: 0, // Optional: removes any margin if required
+  },
+  '&::before': {
+    content: 'none', // Removes the default before pseudo-element
+  },
+});
 
 const EducationSection = () => {
   return (
@@ -19,18 +29,15 @@ const EducationSection = () => {
       <TimelineWrapper>
         <Timeline>
           {education.map((edu, index) => (
-            <TimelineItem
-              key={edu.id || index}
-              position={'right'} 
-            >
+            <CustomTimelineItem key={edu.id || index} position={'right'}>
               <TimelineSeparator>
                 <StyledTimelineDot variant="outlined" />
                 {index !== education.length - 1 && <StyledTimelineConnector />}
               </TimelineSeparator>
               <TimelineContent>
-                <EducationCard education={edu} /> 
+                <EducationCard education={edu} />
               </TimelineContent>
-            </TimelineItem>
+            </CustomTimelineItem>
           ))}
         </Timeline>
       </TimelineWrapper>

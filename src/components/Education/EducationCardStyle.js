@@ -37,7 +37,7 @@ export const Span = styled.span`
 `;
 
 export const Card = styled.div`
-  width: 650px;
+  width: 100%;
   border-radius: 12px;
   padding: 16px 20px;
   background: ${({ theme }) =>

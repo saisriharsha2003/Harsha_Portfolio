@@ -24,7 +24,7 @@ const Contact = () => {
         from: from_email.value, 
         to: 'saisriharsha.r@gmail.com', 
         subject: subject.value,
-        html: `<p><strong>${from_name.value}</strong> has sent a message:</p><p>${message.value}</p>`, // HTML content of the message
+        html: `<p><strong>${from_name.value}</strong> has sent a message:</p><p>${message.value}</p>`,
       });
       setOpen(true); 
       form.current.reset(); 

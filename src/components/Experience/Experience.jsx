@@ -6,6 +6,16 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import ExperienceCard from './ExperienceCard';
 import { experiences } from '../../data/constants';
 import { Container, Header, Title, Description, TimelineWrapper, StyledTimelineDot, StyledTimelineConnector } from './ExperienceStyle';
+import { styled } from '@mui/system';
+
+const CustomTimelineItem = styled(TimelineItem)({
+  '& .MuiTimelineDot-root': {
+    marginLeft: 0,
+  },
+  '&::before': {
+    content: 'none', 
+  },
+});
 
 const Experience = () => {
   return (
@@ -17,7 +27,7 @@ const Experience = () => {
       <TimelineWrapper>
         <Timeline position="right">
           {experiences.map((experience, index) => (
-            <TimelineItem key={experience.id || index}>
+            <CustomTimelineItem key={experience.id || index}>
               <TimelineSeparator>
                 <StyledTimelineDot variant="outlined" />
                 {index !== experiences.length - 1 && <StyledTimelineConnector />}
@@ -25,7 +35,7 @@ const Experience = () => {
               <TimelineContent>
                 <ExperienceCard experience={experience} />
               </TimelineContent>
-            </TimelineItem>
+            </CustomTimelineItem>
           ))}
         </Timeline>
       </TimelineWrapper>
