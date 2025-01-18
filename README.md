@@ -17,69 +17,79 @@ A personal portfolio website showcasing my skills, projects, education, experien
 ## 🗂️ Directory Structure
 
 ```plaintext
-saisriharsha2003-Harsha_Portfolio/
-├── README.md
-├── Dockerfile.dev                # Docker configuration for development
-├── Dockerfile.prod               # Docker configuration for production
-├── docker-compose.dev.yaml       # Docker Compose for development
-├── docker-compose.prod.yaml      # Docker Compose for production
-├── index.css                     # Global styles
-├── package.json                  # NPM configuration and dependencies
-├── tailwind.config.js            # Tailwind CSS configuration
-├── .dockerignore                 # Files to exclude from Docker builds
-├── public/                       # Static public assets
-│   ├── _redirects                # Netlify redirect configuration
-│   └── index.html                # Root HTML file
-└── src/                          # React source files
-    ├── App.css                   # App-specific styles
-    ├── App.js                    # Main React component
-    ├── index.js                  # Entry point of the React app
-    ├── components/               # React components
-    │   ├── About/
-    │   │   ├── AboutStyle.js
-    │   │   └── index.js
-    │   ├── Cards/
-    │   │   ├── EducationCard.jsx
-    │   │   ├── ExperienceCard.jsx
-    │   │   └── ProjectCards.jsx
-    │   ├── CodingProfiles/
-    │   │   └── index.js
-    │   ├── Contact/
-    │   │   └── index.js
-    │   ├── Education/
-    │   │   └── index.js
-    │   ├── Experience/
-    │   │   └── index.js
-    │   ├── Footer/
-    │   │   └── index.js
-    │   ├── HeroSection/
-    │   │   ├── HeroStyle.js
-    │   │   └── index.js
-    │   ├── Navbar/
-    │   │   ├── NavbarStyledComponent.js
-    │   │   └── index.js
-    │   ├── ProjectDetails/
-    │   │   └── index.jsx
-    │   ├── Projects/
-    │   │   ├── ProjectsStyle.js
-    │   │   └── index.js
-    │   └── Skills/
-    │       └── index.js
-    ├── data/                      # Data constants for the app
-    │   └── constants.js
-    ├── images/                    # Static images
-    │   ├── colab_logo.webp
-    │   ├── git.webp
-    │   ├── nodejs.webp
-    │   ├── portfolio.webp
-    │   ├── servletslogo.webp
-    │   ├── solomons.webp
-    │   ├── virtual_assistant.webp
-    │   └── whatsappbot.webp
-    ├── themes/                    # Theme configuration
-    │   └── default.js
-    └── utils/                     # Utility functions
-        └── Themes.js
+└── Harsha_Portfolio/
+    ├── README.md                      # Documentation for the project
+    ├── Dockerfile.dev                 # Docker configuration for development environment
+    ├── Dockerfile.prod                # Docker configuration for production environment
+    ├── docker-compose.dev.yaml        # Docker Compose configuration for development
+    ├── docker-compose.prod.yaml       # Docker Compose configuration for production
+    ├── index.css                      # Global CSS styles applied across the app
+    ├── package.json                   # NPM configuration file listing dependencies and scripts
+    ├── tailwind.config.js             # Configuration for Tailwind CSS utility framework
+    ├── .dockerignore                  # Specifies files to ignore during Docker builds
+    ├── public/
+    │   ├── _redirects                 # Netlify configuration for handling route redirects
+    │   └── index.html                 # The main HTML file used as the entry point for the app
+    └── src/
+        ├── App.css                    # CSS specific to the App component
+        ├── App.js                     # Main React component that organizes the app structure
+        ├── index.js                   # Entry point for the React application
+        ├── components/
+        │   ├── About/
+        │   │   ├── About.jsx          # React component for the "About" section of the portfolio
+        │   │   └── AboutStyle.js      # Styled components for About section
+        │   ├── CodingProfiles/
+        │   │   ├── CodingProfiles.jsx # React component displaying coding profile links
+        │   │   ├── CodingProfilesData.js  # Data for coding profiles (e.g., links, usernames)
+        │   │   └── CodingProfilesStyle.js # Styled components for CodingProfiles
+        │   ├── Contact/
+        │   │   ├── Contact.jsx        # React component for the "Contact" section of the portfolio
+        │   │   └── ContactStyle.js    # Styled components for Contact section
+        │   ├── Education/
+        │   │   ├── Education.jsx      # React component for the "Education" section of the portfolio
+        │   │   ├── EducationCard.jsx  # Component for individual education cards
+        │   │   ├── EducationCardStyle.js  # Styled components for EducationCard
+        │   │   ├── EducationData.js   # Data related to educational qualifications
+        │   │   └── EducationStyle.js  # Styled components for Education section
+        │   ├── Experience/
+        │   │   ├── Experience.jsx     # React component for the "Experience" section
+        │   │   ├── ExperienceCard.jsx # Component for individual experience cards
+        │   │   ├── ExperienceCardStyle.js # Styled components for ExperienceCard
+        │   │   ├── ExperienceData.js  # Data related to work experience
+        │   │   └── ExperienceStyle.js # Styled components for Experience section
+        │   ├── Footer/
+        │   │   ├── Footer.jsx         # Footer component for the portfolio
+        │   │   └── FooterStyle.js     # Styled components for Footer
+        │   ├── HeroSection/
+        │   │   ├── HeroSection.jsx    # React component for the "Hero" or introductory section
+        │   │   ├── HeroSectionData.js # Data for HeroSection (e.g., tagline, heading)
+        │   │   └── HeroStyle.js       # Styled components for HeroSection
+        │   ├── Navbar/
+        │   │   ├── Navbar.jsx         # Navigation bar component
+        │   │   └── NavbarStyle.js     # Styled components for Navbar
+        │   ├── Projects/
+        │   │   ├── ProjectCards.jsx   # Component for individual project cards
+        │   │   ├── ProjectCardsStyle.js  # Styled components for ProjectCards
+        │   │   ├── ProjectDetails.jsx # Detailed project descriptions
+        │   │   ├── ProjectDetailsStyle.js # Styled components for ProjectDetails
+        │   │   ├── Projects.jsx       # React component for the "Projects" section
+        │   │   ├── ProjectsData.js    # Data for projects (e.g., titles, descriptions, links)
+        │   │   └── ProjectsStyle.js   # Styled components for Projects section
+        │   └── Skills/
+        │       ├── Skills.jsx         # React component for the "Skills" section
+        │       ├── SkillsData.js      # Data for skills (e.g., names, proficiency levels)
+        │       └── SkillsStyle.js     # Styled components for Skills component
+        ├── images/
+        │   ├── colab_logo.webp        # Logo for Google Colab
+        │   ├── git.webp               # Icon for Git
+        │   ├── nodejs.webp            # Icon for Node.js
+        │   ├── portfolio.webp         # Portfolio icon or image
+        │   ├── servletslogo.webp      # Icon related to Java Servlets
+        │   ├── solomons.webp          # Project-specific image (e.g., Solomon's puzzle)
+        │   ├── virtual_assistant.webp # Image for a virtual assistant project
+        │   └── whatsappbot.webp       # Image for a WhatsApp bot project
+        └── themes/
+            └── Themes.js              # Theme configuration and utilities (e.g., dark/light mode)
 ```
 
 ## 🛠️ Installation and Setup
