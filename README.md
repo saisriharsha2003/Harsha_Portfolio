@@ -79,15 +79,8 @@ A personal portfolio website showcasing my skills, projects, education, experien
         │       ├── Skills.jsx         # React component for the "Skills" section
         │       ├── SkillsData.js      # Data for skills (e.g., names, proficiency levels)
         │       └── SkillsStyle.js     # Styled components for Skills component
-        ├── images/
-        │   ├── colab_logo.webp        # Logo for Google Colab
-        │   ├── git.webp               # Icon for Git
-        │   ├── nodejs.webp            # Icon for Node.js
-        │   ├── portfolio.webp         # Portfolio icon or image
-        │   ├── servletslogo.webp      # Icon related to Java Servlets
-        │   ├── solomons.webp          # Project-specific image (e.g., Solomon's puzzle)
-        │   ├── virtual_assistant.webp # Image for a virtual assistant project
-        │   └── whatsappbot.webp       # Image for a WhatsApp bot project
+        ├── images/                    # Images required for the portfolio
+        │   
         └── themes/
             └── Themes.js              # Theme configuration and utilities (e.g., dark/light mode)
 ```
