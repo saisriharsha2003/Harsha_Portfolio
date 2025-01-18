@@ -4,7 +4,7 @@ import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineContent from '@mui/lab/TimelineContent';
 import ExperienceCard from './ExperienceCard';
-import { experiences } from '../../data/constants';
+import { experiences } from '../Experience/ExperienceData.js';
 import { Container, Header, Title, Description, TimelineWrapper, StyledTimelineDot, StyledTimelineConnector } from './ExperienceStyle';
 import { styled } from '@mui/system';
 

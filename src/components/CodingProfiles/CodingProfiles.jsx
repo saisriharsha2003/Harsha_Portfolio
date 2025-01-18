@@ -1,5 +1,5 @@
 import React from 'react';
-import { codingprofiles } from '../../data/constants';
+import { codingprofiles } from '../CodingProfiles/CodingProfilesData.js';
 import { CodingTitle, CodingProfilesContainer, Title, Wrapper, Profile, ProfileTitle, ProfileList, ProfileItem, ProfileImage, Desc } from './CodingProfilesStyle';
 
 const handleClick = (link) => {

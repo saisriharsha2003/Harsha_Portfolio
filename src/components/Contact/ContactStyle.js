@@ -60,15 +60,28 @@ export const ContactForm = styled.form`
   background-color: ${({ theme }) => theme.card};
   padding: 32px;
   border-radius: 16px;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  box-shadow: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
+      : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
   margin-top: 28px;
   gap: 12px;
+  
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: ${({ theme }) =>
+      theme.mode === "dark"
+        ? "0px 0px 30px rgba(255, 255, 255, 0.3)"
+        : "0px 0px 30px rgba(0, 0, 0, 0.3)"};
+    border-color: ${({ theme }) =>
+      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+  }
 `;
 
 export const ContactTitle = styled.div`
   font-size: 24px;
   margin-bottom: 6px;
-  text-align:center;
+  text-align: center;
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary};
 `;

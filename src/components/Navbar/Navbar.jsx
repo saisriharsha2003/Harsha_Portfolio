@@ -14,7 +14,7 @@ import {
 } from "./NavbarStyle";
 import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
-import { Bio } from "../../data/constants";
+import { Bio } from "../HeroSection/HeroSectionData.js";
 import { useTheme } from "styled-components";
 import { FaSun, FaMoon } from "react-icons/fa";
 import styled from "styled-components";
@@ -33,6 +33,7 @@ const Navbar = ({ toggleTheme }) => {
       <NavbarContainer>
         <NavLogo to="/">
           <a
+            href="/"
             style={{
               display: "flex",
               alignItems: "center",

@@ -3,17 +3,17 @@ import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineContent from '@mui/lab/TimelineContent';
-import { education } from '../../data/constants';
+import { education } from '../Education/EducationData.js';
 import EducationCard from './EducationCard';
 import { Container, Header, Title, Description, TimelineWrapper, StyledTimelineDot, StyledTimelineConnector } from './EducationStyle';
 import { styled } from '@mui/system';
 
 const CustomTimelineItem = styled(TimelineItem)({
   '& .MuiTimelineDot-root': {
-    marginLeft: 0, // Optional: removes any margin if required
+    marginLeft: 0, 
   },
   '&::before': {
-    content: 'none', // Removes the default before pseudo-element
+    content: 'none', 
   },
 });
 

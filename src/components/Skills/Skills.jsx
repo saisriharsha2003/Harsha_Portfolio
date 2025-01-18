@@ -1,5 +1,5 @@
 import React from 'react';
-import { skills } from '../../data/constants';
+import { skills } from '../Skills/SkillsData.js';
 import { Container, Wrapper, Title, Desc, SkillsContainer, Skill, SkillTitle, SkillList, SkillItem, SkillImage } from './SkillsStyle';
 
 const Skills = () => {
