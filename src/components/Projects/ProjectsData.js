@@ -9,7 +9,7 @@ import notenexus from "../../images/note_nexus.jpg"
 
 export const projects = [
     {
-      id: 0,
+      id: 1,
       title: "EmpowerRecruit",
       description:
         "Created EmpowerRecruit, a game-changing recruitment platform using cutting-edge tech. Led frontend design with React.js, ensuring a responsive interface, while Node.js powered backend operations. Used Tailwind CSS for sleek styling, enhancing user experience. Integrated Twilio for real-time notifications, reducing response time for application status updates. Leveraged Express.js for efficient server maintenance. Employed advanced NLP for accurate resume parsing and job role generation, boosting efficiency. Provided personalized job recommendations based on user skills, increasing engagement. Streamlined job listing and candidate shortlisting, reducing recruiter workload. Implemented job parsing and candidate compatibility scoring, sorting applications based on recruiter needs.",
@@ -73,7 +73,7 @@ export const projects = [
       webapp: "https://saisriharsha-portfolio.netlify.app/",
     },
     {
-      id: 1,
+      id: 5,
       title: "NoteNexus",
       description:
         "NoteNexus is a cloud-based collaborative note-taking app designed to enable seamless real-time collaboration between users. Whether for study groups, team projects, or group brainstorming sessions, NoteNexus makes it easy to collaboratively create, edit, and organize notes. The app offers a streamlined, user-friendly interface that promotes efficient teamwork and knowledge sharing, allowing users to contribute to and modify shared notes without any hassle.",
@@ -103,7 +103,7 @@ export const projects = [
       webapp: "https://saisriharsha2003.github.io/To_Do_List/",
     },
     {
-      id: 5,
+      id: 7,
       title: "Netflix Landing Page",
       description:
         "Developed a landing page concept for Netflix, focusing on user engagement and content discovery. The landing page design emphasized intuitive navigation, personalized content recommendations, and a visually appealing layout to captivate users. Integrated features included a responsive design for seamless viewing across devices, interactive elements for enhanced user interaction, and optimized performance for fast loading times. The Netflix landing page concept aimed to enhance the user experience and drive engagement with the platform's content.",

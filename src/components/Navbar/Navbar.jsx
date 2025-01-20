@@ -17,11 +17,12 @@ import { FaBars } from "react-icons/fa";
 import { Bio } from "../HeroSection/HeroSectionData.js";
 import { useTheme } from "styled-components";
 import { FaSun, FaMoon } from "react-icons/fa";
+import { Link } from "react-router-dom"; 
 import styled from "styled-components";
 
 const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState("#about");
+  const [activeSection, setActiveSection] = React.useState("/"); 
   const currentTheme = useTheme();
 
   const handleNavClick = (section) => {
@@ -31,55 +32,51 @@ const Navbar = ({ toggleTheme }) => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to="/">
-          <a
-            href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              cursor: "pointer",
-            }}
-          >
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </a>
+        <NavLogo to="/"> {/* Link to the homepage */}
+          <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
         </NavLogo>
+
         <MobileIcon>
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </MobileIcon>
         <NavItems>
           <NavLink
-            href="#about"
-            className={activeSection === "#about" ? "active" : ""}
-            onClick={() => handleNavClick("#about")}
+            as={Link} // Use Link component from react-router-dom
+            to="/" // Change to route path
+            className={activeSection === "/" ? "active" : ""}
+            onClick={() => handleNavClick("/")}
           >
-            About
+            Home
           </NavLink>
           <NavLink
-            href="#skills"
-            className={activeSection === "#skills" ? "active" : ""}
-            onClick={() => handleNavClick("#skills")}
+            as={Link}
+            to="/skills"
+            className={activeSection === "/skills" ? "active" : ""}
+            onClick={() => handleNavClick("/skills")}
           >
             Skills
           </NavLink>
           <NavLink
-            href="#experience"
-            className={activeSection === "#experience" ? "active" : ""}
-            onClick={() => handleNavClick("#experience")}
+            as={Link}
+            to="/experience"
+            className={activeSection === "/experience" ? "active" : ""}
+            onClick={() => handleNavClick("/experience")}
           >
             Experience
           </NavLink>
           <NavLink
-            href="#projects"
-            className={activeSection === "#projects" ? "active" : ""}
-            onClick={() => handleNavClick("#projects")}
+            as={Link}
+            to="/projects"
+            className={activeSection === "/projects" ? "active" : ""}
+            onClick={() => handleNavClick("/projects")}
           >
             Projects
           </NavLink>
           <NavLink
-            href="#education"
-            className={activeSection === "#education" ? "active" : ""}
-            onClick={() => handleNavClick("#education")}
+            as={Link}
+            to="/education"
+            className={activeSection === "/education" ? "active" : ""}
+            onClick={() => handleNavClick("/education")}
           >
             Education
           </NavLink>
@@ -108,45 +105,50 @@ const Navbar = ({ toggleTheme }) => {
               </ThemeToggle>
             </ButtonContainer>
             <MobileLink
-              href="#about"
+              as={Link} // Use Link for mobile menu
+              to="/"
               onClick={() => {
-                handleNavClick("#about");
+                handleNavClick("/");
                 setIsOpen(!isOpen);
               }}
             >
-              About
+              Home
             </MobileLink>
             <MobileLink
-              href="#skills"
+              as={Link}
+              to="/skills"
               onClick={() => {
-                handleNavClick("#skills");
+                handleNavClick("/skills");
                 setIsOpen(!isOpen);
               }}
             >
               Skills
             </MobileLink>
             <MobileLink
-              href="#experience"
+              as={Link}
+              to="/experience"
               onClick={() => {
-                handleNavClick("#experience");
+                handleNavClick("/experience");
                 setIsOpen(!isOpen);
               }}
             >
               Experience
             </MobileLink>
             <MobileLink
-              href="#projects"
+              as={Link}
+              to="/projects"
               onClick={() => {
-                handleNavClick("#projects");
+                handleNavClick("/projects");
                 setIsOpen(!isOpen);
               }}
             >
               Projects
             </MobileLink>
             <MobileLink
-              href="#education"
+              as={Link}
+              to="/education"
               onClick={() => {
-                handleNavClick("#education");
+                handleNavClick("/education");
                 setIsOpen(!isOpen);
               }}
             >

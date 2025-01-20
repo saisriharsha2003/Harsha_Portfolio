@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   HeroContainer,
   HeroInnerContainer,
@@ -9,12 +9,12 @@ import {
   Title1,
   SubTitle,
   ResumeButton,
-  CodingTitle
-} from './HeroStyle';
-import HeroImg from '../../images/HeroImage.jpg';
-import Typewriter from 'typewriter-effect';
-import { Bio } from '../HeroSection/HeroSectionData.js';
-import { useTheme } from 'styled-components';
+  CodingTitle,
+} from "./HeroStyle";
+import HeroImg from "../../images/HeroImage.jpg";
+import Typewriter from "typewriter-effect";
+import { Bio } from "../HeroSection/HeroSectionData.js";
+import { useTheme } from "styled-components";
 
 const HeroSection = () => {
   const theme = useTheme();
@@ -30,7 +30,7 @@ const HeroSection = () => {
             </Title>
             <Title1>{Bio.name}</Title1>
             <TextLoop>
-              <p style={{ color: theme }}>
+              <div style={{ color: theme }}>
                 <CodingTitle>I am a</CodingTitle>
                 <Typewriter
                   options={{
@@ -39,11 +39,12 @@ const HeroSection = () => {
                     loop: true,
                   }}
                 />
-              </p>
+              </div>
             </TextLoop>
+
             <SubTitle>{Bio.description}</SubTitle>
             <ResumeButton href={Bio.resume} target="_blank">
-              <span style={{ color: 'white' }}>Check Resume</span>
+              <span style={{ color: "white" }}>Check Resume</span>
             </ResumeButton>
           </HeroContentContainer>
         </HeroInnerContainer>
