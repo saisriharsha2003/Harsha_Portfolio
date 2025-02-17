@@ -65,7 +65,7 @@ export const Skill = styled.div`
   background: ${({ theme }) => theme.card};
   padding: 25px 20px;
   transition: all 0.4s ease;
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
+  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f ')};
   border-radius: 36px;
   box-shadow: ${({ theme }) =>
   theme.mode === 'dark'
@@ -79,7 +79,7 @@ export const Skill = styled.div`
       theme.mode === 'dark'
         ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
         : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
-    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
   }
   @media (max-width: 768px) {
     max-width: 320px;

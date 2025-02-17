@@ -36,6 +36,7 @@ export const NavbarContainer = styled.div`
 
 export const NavLogo = styled(LinkR)`
   width: 80%;
+  color: white;
   padding: 0 6px;
   display: flex;
   justify-content: start;

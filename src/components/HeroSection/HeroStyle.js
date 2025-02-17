@@ -135,9 +135,8 @@ export const ResumeButton = styled.a`
 export const TextLoop = styled.div`
   font-size: 24px;
   font-weight: 700;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
-  color: transparent;  animation: bounce 2s infinite;
+  color: #ff00b7;  
+  animation: bounce 2s infinite;
 
   @keyframes bounce {
     0%, 100% {

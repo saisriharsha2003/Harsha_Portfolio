@@ -42,7 +42,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("Theme changed:", theme);
   }, [theme]);
 
   return (
