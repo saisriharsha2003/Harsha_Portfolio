@@ -123,6 +123,7 @@ export const SkillItem = styled.div`
   transition: all 0.3s ease;
   &:hover {
     transform: translateY(-12px) scale(1.02);
+    cursor: pointer;
     box-shadow: ${({ theme }) =>
       theme.mode === 'dark'
         ? '0px 0px 30px rgba(255, 255, 255, 0.3)'

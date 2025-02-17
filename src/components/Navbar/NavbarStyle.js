@@ -18,6 +18,10 @@ export const Nav = styled.div`
   }
 `;
 
+export const nav_under = styled.a`
+  text-decoration: none;
+`;
+
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;

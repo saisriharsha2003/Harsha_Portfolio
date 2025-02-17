@@ -7,6 +7,7 @@ import {
   NavLogo,
   NavItems,
   GitHubButton,
+  nav_under,
   ButtonContainer,
   MobileIcon,
   MobileMenu,
@@ -32,8 +33,8 @@ const Navbar = ({ toggleTheme }) => {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          <a
-            href="/"
+          <NavLink
+            href="#about"
             style={{
               display: "flex",
               alignItems: "center",
@@ -42,7 +43,7 @@ const Navbar = ({ toggleTheme }) => {
             }}
           >
             <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </a>
+          </NavLink>
         </NavLogo>
         <MobileIcon>
           <FaBars onClick={() => setIsOpen(!isOpen)} />
