@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const HeroContainer = styled.div`
+export const HeroContainer = styled(motion.div)`
   background: ${({ theme }) => theme.card_light};
   display: flex;
   align-items: center;
@@ -18,11 +19,7 @@ export const HeroContainer = styled.div`
   }
 `;
 
-export const CodingTitle = styled.div`
-  color: ${({ theme }) => theme.text_secondary};
-`;
-
-export const HeroInnerContainer = styled.div`
+export const HeroInnerContainer = styled(motion.div)`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -35,7 +32,7 @@ export const HeroInnerContainer = styled.div`
   }
 `;
 
-export const HeroContentContainer = styled.div`
+export const HeroContentContainer = styled(motion.div)`
   flex: 1;
   text-align: left;
   padding: 20px;
@@ -47,7 +44,6 @@ export const HeroContentContainer = styled.div`
     transform: translateY(-10px);
     transition: transform 0.3s ease;
     box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 30px rgba(255, 255, 255, 0.2)' : '0px 0px 30px rgba(0, 0, 0, 0.1)'};
-
   }
 
   @media (max-width: 960px) {
@@ -56,7 +52,7 @@ export const HeroContentContainer = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled(motion.img)`
   max-width: 100%;
   max-height: 500px;
   object-fit: cover;
@@ -65,7 +61,7 @@ export const Img = styled.img`
   box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 30px rgba(255, 255, 255, 0.3)' : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
 `;
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   font-size: 48px;
   font-weight: bold;
   color: ${({ theme }) => theme.text_secondary};
@@ -81,7 +77,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const Title1 = styled.h1`
+export const Title1 = styled(motion.h1)`
   font-size: 48px;
   font-weight: bold;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -98,7 +94,7 @@ export const Title1 = styled.h1`
   }
 `;
 
-export const SubTitle = styled.p`
+export const SubTitle = styled(motion.p)`
   font-size: 18px;
   color: ${({ theme }) => theme.text_secondary};
   line-height: 1.6;
@@ -109,7 +105,7 @@ export const SubTitle = styled.p`
   }
 `;
 
-export const ResumeButton = styled.a`
+export const ResumeButton = styled(motion.a)`
   display: inline-block;
   padding: 15px 30px;
   font-size: 18px;
@@ -132,10 +128,10 @@ export const ResumeButton = styled.a`
   }
 `;
 
-export const TextLoop = styled.div`
+export const TextLoop = styled(motion.div)`
   font-size: 24px;
   font-weight: 700;
-  color: #ff00b7;  
+  color: #ff00b7;
   animation: bounce 2s infinite;
 
   @keyframes bounce {
@@ -156,7 +152,11 @@ export const TextLoop = styled.div`
   }
 `;
 
-export const Span = styled.span`
+export const CodingTitle = styled(motion.div)`
+  color: ${({ theme }) => theme.text_secondary};
+`;
+
+export const Span = styled(motion.span)`
   color: rgb(232, 67, 147);
   cursor: pointer;
 `;
