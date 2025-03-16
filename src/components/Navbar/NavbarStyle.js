@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-import { Link as LinkR } from 'react-router-dom';
+import styled from "styled-components";
+import { Link as LinkR } from "react-router-dom";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-export const Nav = styled.div`
-  background-color: #111111;
+export const Nav = styled.nav`
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(10px);
   height: 80px;
   display: flex;
   align-items: center;
@@ -10,57 +12,50 @@ export const Nav = styled.div`
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
-  transition: all 0.8s ease;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
 
   @media (max-width: 960px) {
-    transition: 0.8s all ease;
+    transition: 0.4s all ease;
   }
-`;
-
-export const nav_under = styled.a`
-  text-decoration: none;
 `;
 
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  z-index: 1;
+  height: 100%;
   width: 100%;
-  padding: 0 24px;
   max-width: 1200px;
-  background: #111111;
+  padding: 0 24px;
 `;
 
 export const NavLogo = styled(LinkR)`
-  width: 80%;
   color: white;
-  padding: 0 6px;
   display: flex;
-  justify-content: start;
   align-items: center;
   text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
-  @media (max-width: 640px) {
-    padding: 0 0px;
+  &:hover {
+    transform: scale(1.05);
+    color: #ff7e5f;
   }
 `;
 
-export const Span = styled.div`
-  padding: 0 4px;
-  font-weight: bold;
+export const Span = styled.span`
+  padding-left: 12px;
   font-size: 18px;
+  color: white;
 `;
 
 export const NavItems = styled.ul`
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 32px;
-  padding: 0 6px;
   list-style: none;
 
   @media screen and (max-width: 768px) {
@@ -68,16 +63,57 @@ export const NavItems = styled.ul`
   }
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(LinkR)`
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
+  position: relative;
   padding-bottom: 4px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.active {
+    border-bottom: 2px solid white;
+  }
+`;
+
+export const GitHubButton = styled.a`
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid white;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 
   &:hover {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -85,49 +121,46 @@ export const NavLink = styled.a`
     color: transparent;
   }
 
-  &.active {
-    border-bottom: 2px solid white;
-    border-width: 50%;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
   }
 `;
 
-export const GitHubButton = styled.a`
-  border: 1.8px solid white;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  height: 70%;
-  border-radius: 20px;
+export const ThemeToggle = styled.button`
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
-  color: transparent;
+  color: white;
+  border: none;
   cursor: pointer;
-  padding: 0 20px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 18px;
-  transition: all 0.6s ease-in-out;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.text_primary};
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 18px;
-  }
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const ButtonContainer = styled.div`
-  width: 80%;
-  height: 100%;
+export const Circle = styled.div`
+  width: 50px;
+  height: 50px;
+  background-color: ${({ theme }) =>
+    theme.bg === "#ffffff" ? "#fff" : "#fff"};
+  border-radius: 50%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  padding: 0 6px;
+  transition: all 0.4s ease-in-out;
+  transform: rotate(
+    ${({ theme }) => (theme.bg === "#ffffff" ? "0deg" : "180deg")}
+  );
+`;
 
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+export const SunIcon = styled(FaSun)`
+  font-size: 20px;
+  color: #ff7e5f;
+`;
+
+export const MoonIcon = styled(FaMoon)`
+  font-size: 20px;
+  color: #ff7e5f;
 `;
 
 export const MobileIcon = styled.div`
@@ -135,48 +168,60 @@ export const MobileIcon = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
     color: #ff7e5f;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
 export const MobileMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
   position: absolute;
   top: 80px;
   right: 0;
   width: 100%;
-  padding: 12px 40px 24px 40px;
-  
-  background: ${({ theme }) => theme.text_secondary};
-  transition: all 0.6s ease-in-out;
-  transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
   border-radius: 0 0 20px 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-  z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
+  transition: all 0.6s ease-in-out;
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateY(0)" : "translateY(-100%)"};
+  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 `;
 
-export const MobileLink = styled.a`
-  color: ${({ theme }) => theme.text_primary};
+export const MobileLink = styled(LinkR)`
+  color: white;
+  font-size: 18px;
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    color: #ff7e5f;
   }
 
   &.active {
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
+    border-bottom: 2px solid #ff7e5f;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;

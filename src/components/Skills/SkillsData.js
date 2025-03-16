@@ -1,13 +1,14 @@
 import react from "../../images/react.png";
 import jsp from "../../images/jsp.png";
-import nextjs from "../../images/nextjs.png";
+import tailwind from "../../images/tailwind.svg";
 import mui from "../../images/mui.png";
 import node from "../../images/nodejs.webp";
 import express from "../../images/icon-expressjs.svg";
 import servlet from "../../images/servletslogo.webp";
-import keras from "../../images/keras.png";
+import kuberntes from "../../images/kubernetes.png";
 import colab from "../../images/colab_logo.webp";
 import git from "../../images/git.webp";
+import nlp from "../../images/nlp.jpg";
 
 export const skills = [
   {
@@ -18,17 +19,18 @@ export const skills = [
         image: react
       },
       {
-        name: "Next Js",
-        image: nextjs
+        name: "HTML",
+        image: "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png",
       },
       {
         name: "Java Server Pages (JSP)",
         image: jsp
       },
       {
-        name: "HTML",
-        image: "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png",
+        name: "Tailwind CSS",
+        image: tailwind
       },
+      
       {
         name: "CSS",
         image:
@@ -117,10 +119,10 @@ export const skills = [
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxJvqd1ogHWZPF2JuWlYdNp5TUGtNpYu9LA&s",
       },
       {
-        name: "Azure",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2048px-Microsoft_Azure.svg.png",
+        name: "Kubernetes",
+        image: kuberntes
       }
+
     ],
   },
 
@@ -133,13 +135,14 @@ export const skills = [
           "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
       },
       {
+        name: "NLP",
+        image: nlp
+
+      },
+      {
         name: "Tenserflow",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFoiz9_MxMLfD9rxAcai43v3zmqcx4Y8pb5g&s",
-      },
-      {
-        name: "Keras",
-        image: keras
       },
       {
         name: "Jupyter",
@@ -150,11 +153,7 @@ export const skills = [
         name: "Google Colab",
         image: colab
       },
-      {
-        name: "Sk Learn Kit",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/2560px-Scikit_learn_logo_small.svg.png",
-      },
+      
     ],
   },
   {

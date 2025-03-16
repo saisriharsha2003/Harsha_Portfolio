@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { motion } from "framer-motion";
 import {
   Nav,
   NavLink,
@@ -7,35 +9,49 @@ import {
   NavLogo,
   NavItems,
   GitHubButton,
-  nav_under,
   ButtonContainer,
   MobileIcon,
   MobileMenu,
   MobileLink,
+  ThemeToggle,
+  Circle,
+  SunIcon,
+  MoonIcon,
 } from "./NavbarStyle";
-import { DiCssdeck } from "react-icons/di";
+import { SiSimilarweb } from "react-icons/si";
 import { FaBars } from "react-icons/fa";
-import { Bio } from "../HeroSection/HeroSectionData.js";
 import { useTheme } from "styled-components";
-import { FaSun, FaMoon } from "react-icons/fa";
-import { Link } from "react-router-dom"; 
-import styled from "styled-components";
+import { Bio } from "../HeroSection/HeroSectionData.js";
 
 const Navbar = ({ toggleTheme }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState("/"); 
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
   const currentTheme = useTheme();
 
   const handleNavClick = (section) => {
     setActiveSection(section);
+    setIsOpen(false);
+  };
+
+  const linkVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const menuVariants = {
+    hidden: { opacity: 0, x: "-100%" },
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to="/">
-          <NavLink
-            href="#about"
+        <NavLogo>
+          <ScrollLink
+            to="hero"
+            smooth={true}
+            duration={500}
+            offset={-80}
             style={{
               display: "flex",
               alignItems: "center",
@@ -43,177 +59,89 @@ const Navbar = ({ toggleTheme }) => {
               cursor: "pointer",
             }}
           >
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </NavLink>
+            <SiSimilarweb size="2rem" /> <Span>Portfolio</Span>
+          </ScrollLink>
         </NavLogo>
 
         <MobileIcon>
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </MobileIcon>
+
         <NavItems>
-          <NavLink
-            as={Link} // Use Link component from react-router-dom
-            to="/" // Change to route path
-            className={activeSection === "/" ? "active" : ""}
-            onClick={() => handleNavClick("/")}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            as={Link}
-            to="/skills"
-            className={activeSection === "/skills" ? "active" : ""}
-            onClick={() => handleNavClick("/skills")}
-          >
-            Skills
-          </NavLink>
-          <NavLink
-            as={Link}
-            to="/experience"
-            className={activeSection === "/experience" ? "active" : ""}
-            onClick={() => handleNavClick("/experience")}
-          >
-            Experience
-          </NavLink>
-          <NavLink
-            as={Link}
-            to="/projects"
-            className={activeSection === "/projects" ? "active" : ""}
-            onClick={() => handleNavClick("/projects")}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            as={Link}
-            to="/education"
-            className={activeSection === "/education" ? "active" : ""}
-            onClick={() => handleNavClick("/education")}
-          >
-            Education
-          </NavLink>
+          {["about", "skills", "experience", "projects", "education"].map(
+            (section, index) => (
+              <motion.div
+                key={section}
+                variants={linkVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+              >
+                <NavLink
+                  as={ScrollLink}
+                  to={section}
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  className={activeSection === section ? "active" : ""}
+                  onClick={() => handleNavClick(section)}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </NavLink>
+              </motion.div>
+            )
+          )}
+
+          <ButtonContainer>
+            <GitHubButton href={Bio.github} target="_blank">
+              Github Profile
+            </GitHubButton>
+          </ButtonContainer>
         </NavItems>
-        <ButtonContainer>
-          <GitHubButton href={Bio.github} target="_blank">
-            Github Profile
-          </GitHubButton>
-        </ButtonContainer>
 
         <ButtonContainer>
-          <ThemeToggle onClick={toggleTheme}>
-            <Circle theme={currentTheme}>
-              {currentTheme.bg === "#ffffff" ? <MoonIcon /> : <SunIcon />}
-            </Circle>
-          </ThemeToggle>
+          <motion.div whileTap={{ scale: 0.9 }}>
+            <ThemeToggle onClick={toggleTheme}>
+              <Circle theme={currentTheme}>
+                {currentTheme.bg === "#ffffff" ? <MoonIcon /> : <SunIcon />}
+              </Circle>
+            </ThemeToggle>
+          </motion.div>
         </ButtonContainer>
 
         {isOpen && (
-          <MobileMenu isOpen={isOpen}>
-            <ButtonContainer>
-              <ThemeToggle onClick={toggleTheme}>
-                <Circle theme={currentTheme}>
-                  {currentTheme.bg === "#ffffff" ? <MoonIcon /> : <SunIcon />}
-                </Circle>
-              </ThemeToggle>
-            </ButtonContainer>
-            <MobileLink
-              as={Link} // Use Link for mobile menu
-              to="/"
-              onClick={() => {
-                handleNavClick("/");
-                setIsOpen(!isOpen);
-              }}
-            >
-              Home
-            </MobileLink>
-            <MobileLink
-              as={Link}
-              to="/skills"
-              onClick={() => {
-                handleNavClick("/skills");
-                setIsOpen(!isOpen);
-              }}
-            >
-              Skills
-            </MobileLink>
-            <MobileLink
-              as={Link}
-              to="/experience"
-              onClick={() => {
-                handleNavClick("/experience");
-                setIsOpen(!isOpen);
-              }}
-            >
-              Experience
-            </MobileLink>
-            <MobileLink
-              as={Link}
-              to="/projects"
-              onClick={() => {
-                handleNavClick("/projects");
-                setIsOpen(!isOpen);
-              }}
-            >
-              Projects
-            </MobileLink>
-            <MobileLink
-              as={Link}
-              to="/education"
-              onClick={() => {
-                handleNavClick("/education");
-                setIsOpen(!isOpen);
-              }}
-            >
-              Education
-            </MobileLink>
-            <GitHubButton
-              style={{
-                padding: "10px 16px",
-                background: `${currentTheme.primary}`,
-                color: "white",
-                width: "max-content",
-              }}
-              href={Bio.github}
-              target="_blank"
-            >
-              Github Profile
-            </GitHubButton>
-          </MobileMenu>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={menuVariants}
+            transition={{ duration: 0.5 }}
+          >
+            <MobileMenu isOpen={isOpen}>
+              {["about", "skills", "experience", "projects", "education"].map(
+                (section) => (
+                  <MobileLink
+                    key={section}
+                    as={ScrollLink}
+                    to={section}
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => handleNavClick(section)}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </MobileLink>
+                )
+              )}
+              <GitHubButton href={Bio.github} target="_blank">
+                Github Profile
+              </GitHubButton>
+            </MobileMenu>
+          </motion.div>
         )}
       </NavbarContainer>
     </Nav>
   );
 };
-
-const ThemeToggle = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-`;
-
-const Circle = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: ${({ theme }) =>
-    theme.bg === "#ffffff" ? "#fff" : "#fff"};
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-`;
-
-const SunIcon = styled(FaSun)`
-  font-size: 18px;
-  color: #ff7e5f;
-`;
-
-const MoonIcon = styled(FaMoon)`
-  font-size: 18px;
-  color: #ff7e5f;
-`;
 
 export default Navbar;
