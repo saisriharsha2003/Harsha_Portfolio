@@ -57,12 +57,27 @@ export const Card = styled.div`
   transition: all 0.3s ease;
   margin-bottom: 15px;
 
+  animation: pulseGlowEducation 3s infinite alternate;
+
+  @keyframes pulseGlowEducation {
+    0% {
+      box-shadow: 0 0 10px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    50% {
+      box-shadow: 0 0 15px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    100% {
+      box-shadow: 0 0 10px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+  }
+
   &:hover {
-    box-shadow: ${({ theme }) =>
-      theme.mode === "dark"
-        ? "0px 0px 30px rgba(255, 255, 255, 0.3)"
-        : "0px 0px 30px rgba(0, 0, 0, 0.3)"};
     transform: translateX(10px);
+    box-shadow: 0px 0px 30px
+      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
     border-color: ${({ theme }) =>
       theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
   }
