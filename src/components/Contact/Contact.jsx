@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Snackbar } from "@mui/material";
 import { Resend } from 'resend';
-import { Container, Wrapper, Title, Desc, ContactForm, ContactTitle, ContactInput, ContactInputMessage, ContactButton } from "./ContactStyle";
+import { 
+  Container, Wrapper, Title, Desc, ContactForm, ContactTitle, ContactInput, 
+  ContactInputMessage, ContactButton, FormContainer 
+} from "./ContactStyle";
 
-const resend = new Resend('re_frKCJdMt_Jmp79n8Xj1hbifgg2X3V2AYe'); 
+const resend = new Resend('re_Gnuoz1Mb_CCZNnSfbaLWkjnDCtLkYwQAi'); 
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
@@ -37,26 +40,23 @@ const Contact = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Contact</Title>
-        <Desc>
-          Feel free to reach out to me for any questions or opportunities!
-        </Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <div style={{"alignItems":"center", "textAlign":"center"}}>
+        <Title>Contact Me</Title>
+        <Desc>Feel free to reach out for collaborations or just a chat!</Desc>
+        <FormContainer>
+          <ContactForm ref={form} onSubmit={handleSubmit}>
+            <ContactTitle>Drop a Message 📩</ContactTitle>
+            <ContactInput placeholder="Your Email" name="from_email" required />
+            <ContactInput placeholder="Your Name" name="from_name" required />
+            <ContactInput placeholder="Subject" name="subject" required />
+            <ContactInputMessage placeholder="Message" rows="5" name="message" required />
             <ContactButton type="submit" value="Send" />
-          </div>
-        </ContactForm>
+          </ContactForm>
+        </FormContainer>
         <Snackbar
           open={open}
           autoHideDuration={6000}
           onClose={() => setOpen(false)}
           message="Email sent successfully!"
-          severity="success"
         />
       </Wrapper>
     </Container>
