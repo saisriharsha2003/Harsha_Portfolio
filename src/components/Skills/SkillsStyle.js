@@ -1,14 +1,31 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const gradientAnimation = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
 
 export const Container = styled.div`
   display: flex;
-  background: ${({ theme }) => theme.background};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1;
-  padding: 60px 30px;
+  padding: 100px 40px;
+  overflow: hidden;
+  background: ${({ theme }) => theme.background};
 `;
 
 export const Wrapper = styled.div`
@@ -18,121 +35,104 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 1200px;
-  gap: 30px;
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
+  gap: 50px;
+  animation: ${fadeInUp} 1s ease-out;
 `;
 
-export const Title = styled.div`
-  font-size: 48px;
-  font-weight: 700;
+export const Title = styled.h1`
+  font-size: 50px;
+  font-weight: bold;
   text-align: center;
-  margin-top: 20px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   color: transparent;
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 36px;
-  }
+  animation: ${gradientAnimation} 4s infinite linear;
 `;
 
-export const Desc = styled.div`
-  font-size: 20px;
+export const Desc = styled.p`
+  font-size: 22px;
   text-align: center;
   max-width: 700px;
   color: ${({ theme }) => theme.text_secondary};
   line-height: 1.8;
-  margin: 0 auto;
-  @media (max-width: 768px) {
-    font-size: 18px;
-  }
+  animation: ${fadeInUp} 1.5s ease-out;
 `;
 
 export const SkillsContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
-  padding: 30px;
+  gap: 40px;
+  padding: 40px;
 `;
 
 export const Skill = styled.div`
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   background: ${({ theme }) => theme.card};
-  padding: 25px 20px;
-  transition: all 0.4s ease;
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
-  border-radius: 36px;
-  box-shadow: ${({ theme }) =>
-  theme.mode === 'dark'
-    ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
-    : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
+  padding: 30px 25px;
+  border-radius: 40px;
+  border: 2px solid ${({ theme }) => (theme.mode === 'light' ? '#feb47b' : '#ff7e5f')};
+  box-shadow: 0px 0px 10px ${({ theme }) => (theme.mode === 'light' ? '#feb47b' : '#ff7e5f')};
+  transition: all 0.4s ease-in-out;
+  animation: pulseGlowSkill 3s infinite alternate;
 
-  transform: scale(1);
-  &:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: ${({ theme }) =>
-      theme.mode === 'dark'
-        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
-        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
-    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+  @keyframes pulseGlowSkill {
+    0% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
+    50% { box-shadow: 0 0 20px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
+    100% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
   }
-  @media (max-width: 768px) {
-    max-width: 320px;
-    padding: 20px 16px;
+
+  &:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 0px 30px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
 `;
 
 export const SkillTitle = styled.h2`
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   color: transparent;
-  margin-bottom: 16px;
-  text-align: center;
+  animation: ${gradientAnimation} 4s infinite linear;
 `;
 
 export const SkillList = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
+  justify-content: center;
 `;
 
 export const SkillItem = styled.div`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 20px;
   background: linear-gradient(to right, #ffffff, #f7f7f7);
-  color: #444;
-  padding: 10px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
-  border-radius: 16px;
+  color: #333;
+  border: 2px solid ${({ theme }) => (theme.mode === 'light' ? '#feb47b' : '#ff7e5f')};
   transition: all 0.3s ease;
+
   &:hover {
-    transform: translateY(-12px) scale(1.02);
-    cursor: pointer;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 4px 20px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
-  }
-  @media (max-width: 768px) {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-  @media (max-width: 500px) {
-    font-size: 12px;
-    padding: 6px 10px;
   }
 `;
 
 export const SkillImage = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
