@@ -36,14 +36,31 @@ export const HeroContentContainer = styled(motion.div)`
   flex: 1;
   text-align: left;
   padding: 20px;
-  background: ${({ theme }) => theme.card_light};
-  border-radius: 15px;
-  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 20px rgba(255, 255, 255, 0.2)' : '0px 0px 20px rgba(0, 0, 0, 0.1)'};
+  border-radius: 20px;
+  margin-right: 20px;
+  animation: pulseGlowHeroC 3s infinite alternate;
+
+  @keyframes pulseGlowHeroC {
+    0% {
+      box-shadow: 0 0 15px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    50% {
+      box-shadow: 0 0 20px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    100% {
+      box-shadow: 0 0 15px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+  }
 
   &:hover {
     transform: translateY(-10px);
-    transition: transform 0.3s ease;
-    box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 30px rgba(255, 255, 255, 0.2)' : '0px 0px 30px rgba(0, 0, 0, 0.1)'};
+    box-shadow: 0px 0px 30px
+      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    border-color: ${({ theme }) =>
+      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
   }
 
   @media (max-width: 960px) {
@@ -57,8 +74,30 @@ export const Img = styled(motion.img)`
   max-height: 500px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.primary};
-  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 30px rgba(255, 255, 255, 0.3)' : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
+  animation: pulseGlowHero 3s infinite alternate;
+
+  @keyframes pulseGlowHero {
+    0% {
+      box-shadow: 0 0 10px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    50% {
+      box-shadow: 0 0 15px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    100% {
+      box-shadow: 0 0 10px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 30px
+      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    border-color: ${({ theme }) =>
+      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+  }
 `;
 
 export const Title = styled(motion.h1)`
