@@ -37,14 +37,17 @@ export const Profile = styled.div`
       ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
       : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
   padding: 20px;
-  transition: transform 0.3s ease-in-out;
+  animation: pulseGlowProfile 3s infinite alternate;
   
+  @keyframes pulseGlowProfile {
+    0% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
+    50% { box-shadow: 0 0 25px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
+    100% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
+  }
+
   &:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: ${({ theme }) =>
-      theme.mode === 'dark'
-        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
-        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 0px 30px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
 
