@@ -161,10 +161,7 @@ export const ContactButton = styled.input`
   transition: all 0.3s ease-in-out;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
-  box-shadow: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
-      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
+  
   color: #fff;
 
   font-size: 18px;
