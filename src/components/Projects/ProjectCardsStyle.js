@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Button = styled.button`
   display: none;
@@ -22,29 +22,44 @@ export const Card = styled.div`
   background: linear-gradient(
     145deg,
     ${({ theme }) => theme.card},
-    ${({ theme }) => theme.mode === 'dark' ? '#1c1c1c' : '#ffffff'}
+    ${({ theme }) => (theme.mode === "dark" ? "#1c1c1c" : "#ffffff")}
   );
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
+  border: 2px solid
+    ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
   border-radius: 16px;
   box-shadow: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
-      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
+    theme.mode === "dark"
+      ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
+      : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  animation: pulseGlowProject 3s infinite alternate;
+
+  @keyframes pulseGlowProject {
+    0% {
+      box-shadow: 0 0 10px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    50% {
+      box-shadow: 0 0 15px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+    100% {
+      box-shadow: 0 0 10px
+        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    }
+  }
 
   &:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: ${({ theme }) =>
-      theme.mode === 'dark'
-        ? '0px 0px 30px rgba(255, 255, 255, 0.3)'
-        : '0px 0px 30px rgba(0, 0, 0, 0.3)'};
-    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0px 0px 30px
+      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+    border-color: ${({ theme }) =>
+      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
   }
 
   &:hover ${Button} {
@@ -59,7 +74,8 @@ export const ImageWrapper = styled.div`
   height: 150px;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, ${({ theme }) => theme.mode === 'dark' ? 0.3 : 0.15});
+  box-shadow: 0px 2px 6px
+    rgba(0, 0, 0, ${({ theme }) => (theme.mode === "dark" ? 0.3 : 0.15)});
   margin-bottom: 16px;
 
   img {
