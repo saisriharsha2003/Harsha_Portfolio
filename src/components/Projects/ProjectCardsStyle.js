@@ -4,8 +4,11 @@ export const Button = styled.button`
   display: none;
   width: 100%;
   padding: 10px;
-  background-color: ${({ theme }) => theme.white};
-  color: ${({ theme }) => theme.text_black};
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+
+  border: 2px solid
+    ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
+  color: #fff;
   font-size: 14px;
   font-weight: 700;
   border: none;
