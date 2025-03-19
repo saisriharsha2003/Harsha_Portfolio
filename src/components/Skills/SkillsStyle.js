@@ -114,6 +114,8 @@ export const SkillItem = styled.div`
   font-size: 18px;
   font-weight: 600;
   padding: 12px 20px;
+  display: flex;
+  align-items: center;
   border-radius: 20px;
   background: linear-gradient(to right, #ffffff, #f7f7f7);
   color: #333;
@@ -122,7 +124,6 @@ export const SkillItem = styled.div`
 
   &:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0px 4px 20px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
     border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
   }
 `;
@@ -130,6 +131,8 @@ export const SkillItem = styled.div`
 export const SkillImage = styled.img`
   width: 35px;
   height: 35px;
+  padding: 3px;
+  margin-right: 5px;
   transition: transform 0.3s ease;
 
   &:hover {
