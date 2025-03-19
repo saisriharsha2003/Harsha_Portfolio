@@ -1,66 +1,98 @@
-import React, { useRef, useState } from "react";
-import { Snackbar } from "@mui/material";
-import { Resend } from 'resend';
-import { 
-  Container, Wrapper, Title, Desc, ContactForm, ContactTitle, ContactInput, 
-  ContactInputMessage, ContactButton, FormContainer 
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import {
+  Container,
+  Wrapper,
+  Title,
+  Desc,
+  ContactForm,
+  ContactTitle,
+  ContactInput,
+  ContactInputMessage,
+  ContactButton,
+  FormContainer,
 } from "./ContactStyle";
 
-const resend = new Resend('re_Gnuoz1Mb_CCZNnSfbaLWkjnDCtLkYwQAi'); 
+export default function Contact() {
+  const [result, setResult] = useState("");
 
-const Contact = () => {
-  const [open, setOpen] = useState(false);
-  const form = useRef();
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const { from_name, from_email, subject, message } = form.current;
-  
-    if (!from_name.value || !from_email.value || !subject.value || !message.value) {
-      alert('Please fill in all fields');
-      return;
-    }
-  
+    formData.append("access_key", "c5ed8572-81d3-495a-a9d5-a4166c94b9d6");
+
     try {
-      await resend.emails.send({
-        from: from_email.value, 
-        to: 'saisriharsha.r@gmail.com', 
-        subject: subject.value,
-        html: `<p><strong>${from_name.value}</strong> has sent a message:</p><p>${message.value}</p>`,
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      setOpen(true); 
-      form.current.reset(); 
+
+      const data = await response.json();
+
+      if (data.success)
+      {
+        Swal.fire({
+          title: "🚀 Success!",
+          text: "Your message has been sent successfully!",
+          icon: "success",
+          confirmButtonColor: "#ff7e5f",
+          background: "linear-gradient(145deg, #1c1c1c, #292929)",
+          color: "#fff",
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            event.target.reset();
+            setResult("");
+          }
+        });
+        
+      }
+      else {
+        Swal.fire({
+          title: "🚫 Error!",
+          text: "An error occurred while sending your message.",
+          icon: "error",
+          confirmButtonColor: "#ff7e5f",
+          background: "linear-gradient(145deg, #1c1c1c, #292929)",
+          color: "#fff",
+        }).then((result) => {
+          console.log("Error Alert closed", result);
+        });
+        setResult(data.message);
+      }
     } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Failed to send email');
+      console.error("Error submitting form:", error);
+      setResult("An error occurred. Please try again.");
     }
   };
-  
+
   return (
     <Container>
       <Wrapper>
         <Title>Contact Me</Title>
         <Desc>Feel free to reach out for collaborations or just a chat!</Desc>
         <FormContainer>
-          <ContactForm ref={form} onSubmit={handleSubmit}>
+          <ContactForm onSubmit={onSubmit}>
             <ContactTitle>Drop a Message 📩</ContactTitle>
-            <ContactInput placeholder="Your Email" name="from_email" required />
-            <ContactInput placeholder="Your Name" name="from_name" required />
-            <ContactInput placeholder="Subject" name="subject" required />
-            <ContactInputMessage placeholder="Message" rows="5" name="message" required />
+            <ContactInput placeholder="Your Name" name="name" required />
+            <ContactInput
+              placeholder="Your Email"
+              name="email"
+              type="email"
+              required
+            />
+            <ContactInputMessage
+              placeholder="Message"
+              rows="5"
+              name="message"
+              required
+            />
             <ContactButton type="submit" value="Send" />
           </ContactForm>
         </FormContainer>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message="Email sent successfully!"
-        />
+        <span>{result}</span>
       </Wrapper>
     </Container>
   );
-};
-
-export default Contact;
+}
