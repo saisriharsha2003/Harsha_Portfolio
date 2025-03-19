@@ -1,9 +1,9 @@
-import './App.css';
+import "./App.css";
 import { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
-import { darkTheme, lightTheme } from './themes/Themes.js';
+import { darkTheme, lightTheme } from "./themes/Themes.js";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 import HeroSection from "./components/HeroSection/HeroSection.jsx";
 import Skills from "./components/Skills/Skills.jsx";
 import Projects from "./components/Projects/Projects.jsx";
@@ -18,7 +18,11 @@ import styled from "styled-components";
 const Separator = styled.hr`
   border: none;
   height: 2px;
-  background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 150, 1) 0%,
+    rgba(0, 204, 255, 1) 100%
+  );
   margin: 50px 0;
   width: 80%;
   margin-left: auto;
@@ -35,14 +39,13 @@ const Wrapper = styled.div``;
 
 function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  const [theme, setTheme] = useState(darkTheme);  
+  const [theme, setTheme] = useState(darkTheme);
 
   const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === darkTheme ? lightTheme : darkTheme));
+    setTheme((prevTheme) => (prevTheme === darkTheme ? lightTheme : darkTheme));
   };
 
-  useEffect(() => {
-  }, [theme]);
+  useEffect(() => {}, [theme]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -52,18 +55,18 @@ function App() {
           <HeroSection />
           <Separator />
           <Wrapper>
+            <Experience />
+            <Separator />
             <Skills />
             <Separator />
             <CodingProfiles />
-            <Separator />
-            <Experience />
           </Wrapper>
+          <Separator />
+          <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Separator />
           <Wrapper>
             <Education />
           </Wrapper>
-          <Separator />
-          <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Separator />
           <Wrapper>
             <Contact />
