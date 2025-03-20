@@ -1,45 +1,81 @@
-import { CloseRounded } from '@mui/icons-material';
-import { Modal } from '@mui/material';
-import React from 'react';
-import { Button, ButtonGroup, Container, Date, Desc, Image, Tag, Tags, Title, Wrapper } from './ProjectDetailsStyle';
+import React from "react";
+import {
+  ModalOverlay,
+  ModalContainer,
+  CloseButton,
+  ProjectImage,
+  ProjectContent,
+  ProjectTitle,
+  ProjectDescription,
+  TechTags,
+  Tag,
+  ButtonGroup,
+  Button,
+} from "./ProjectDetailsStyle";
+import { FaGithub, FaTimes, FaGlobe } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Modal } from "@mui/material";
 
-const ProjectDetails = ({ openModal, setOpenModal }) => {
+const ProjectModal = ({ openModal, setOpenModal }) => {
   const project = openModal?.project;
 
   return (
-    <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
-      <Container>
-        <Wrapper>
-          <CloseRounded
-            style={{
-              position: 'absolute',
-              top: '10px',
-              right: '20px',
-              cursor: 'pointer',
-              fontSize: '28px',
-              color: '#ec008c',
-            }}
+    <Modal
+      open={true}
+      onClose={() => setOpenModal({ state: false, project: null })}
+    >
+      <ModalOverlay
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setOpenModal({ state: false, project: null })}
+      >
+        <ModalContainer
+          as={motion.div}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -50, opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <CloseButton
             onClick={() => setOpenModal({ state: false, project: null })}
-          />
-          <Image src={project?.image} alt={project?.title} />
-          <Title>{project?.title}</Title>
-          <Date>{project?.date}</Date>
-          <Tags>
-            {project?.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </Tags>
-          <Desc>{project?.description}</Desc>
-          <ButtonGroup>
-            <Button href={project?.github} target="_blank">View Code</Button>
-            {project?.category === 'web app' && (
-              <Button href={project?.webapp} target="_blank">View Live App</Button>
-            )}
-          </ButtonGroup>
-        </Wrapper>
-      </Container>
+          >
+            <FaTimes size={20} />
+          </CloseButton>
+          <ProjectImage src={project.image} alt={project.title} />
+          <ProjectContent>
+            <ProjectTitle>{project.title}</ProjectTitle>
+            <TechTags>
+              {project.tags.map((tag, index) => (
+                <Tag key={index}>{tag}</Tag>
+              ))}
+            </TechTags>
+            <ProjectDescription>{project.description}</ProjectDescription>
+
+            <ButtonGroup isWebApp={project?.category === "web app"}>
+              <Button
+                href={project?.github}
+                target="_blank"
+                fullWidth={project?.category !== "web app"}
+              >
+                <FaGithub size={18} />
+                View Code
+              </Button>
+
+              {project?.category === "web app" && (
+                <Button href={project?.webapp} target="_blank">
+                  <FaGlobe size={18} />
+                  View Live App
+                </Button>
+              )}
+            </ButtonGroup>
+          </ProjectContent>
+        </ModalContainer>
+      </ModalOverlay>
     </Modal>
   );
 };
 
-export default ProjectDetails;
+export default ProjectModal;

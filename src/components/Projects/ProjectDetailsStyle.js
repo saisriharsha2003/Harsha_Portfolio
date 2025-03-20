@@ -1,72 +1,66 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const Container = styled.div`
-  width: 100%;
-  height: 100%;
+export const ModalOverlay = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: opacity 0.5s ease;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
 `;
 
-export const Wrapper = styled.div`
-  max-width: 800px;
+export const ModalContainer = styled(motion.div)`
+  background: rgba(30, 30, 30, 0.95);
+  color: white;
   width: 90%;
-  border-radius: 16px;
-  margin: 20px auto;
-  background-color: ${({ theme }) => theme.card};
-  color: ${({ theme }) => theme.text_primary};
-  padding: 20px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  max-height: 90vh;
+  max-width: 750px;
+  max-height: 85vh;
   overflow-y: auto;
-`;
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 
-export const Title = styled.div`
-  font-size: 28px;
-  font-weight: 700;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin: 10px 0;
-  text-align: center;
-  @media only screen and (max-width: 600px) {
-    font-size: 24px;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ec008c;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 95%;
+    max-height: 80vh;
+    padding: 20px;
   }
 `;
 
-export const Date = styled.div`
-  font-size: 14px;
-  margin: 8px 0;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary};
-  text-align: center;
-  @media only screen and (max-width: 768px) {
-    font-size: 12px;
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ec008c;
   }
 `;
 
-export const Desc = styled.div`
-  font-size: 14px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary};
-  margin: 10px 0;
-  line-height: 1.5;
-  text-align: justify;
-  @media only screen and (max-width: 600px) {
-    font-size: 12px;
-  }
-`;
-
-export const Image = styled.img`
+export const ProjectImage = styled.img`
   width: 80%;
   max-height: 300px;
   object-fit: cover;
@@ -76,50 +70,96 @@ export const Image = styled.img`
   display: block;
 `;
 
-export const Tags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0;
-  justify-content: center;
+export const ProjectContent = styled.div`
+  padding: 15px 10px;
 `;
 
-export const Tag = styled.div`
-  font-size: 12px;
-  font-weight: 600;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 16px;
-  background-color: #ff00b7;
-  @media only screen and (max-width: 600px) {
-    font-size: 10px;
+export const ProjectTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin: 10px 0;
+  text-decoration: none;
+  text-shadow: 2px 2px 10px rgba(236, 0, 140, 0.5);
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+
+  @keyframes shine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
+
+  @media (max-width: 600px) {
+    font-size: 26px;
+  }
+`;
+
+export const ProjectDescription = styled.p`
+  font-size: 16px;
+  line-height: 1.7;
+  color: #b3b3b3;
+  text-align: justify;
+`;
+
+export const TechTags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+`;
+
+export const Tag = styled.span`
+  background: linear-gradient(135deg, #ec008c, #fc6767);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 2px 10px rgba(236, 0, 140, 0.5);
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
   justify-content: center;
-  margin: 15px 0;
   gap: 12px;
+  margin-top: 20px;
+  flex-direction: ${({ isWebApp }) => (isWebApp ? "row" : "column")};
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 8px;
+  }
 `;
 
 export const Button = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   font-weight: 600;
   color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  background-color: #ec008c;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ec008c, #fc6767);
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 0 2px 10px rgba(236, 0, 140, 0.5);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  width: ${({ fullWidth }) => (fullWidth ? "100%" : "50%")};
+  gap: 15px;
 
   &:hover {
     transform: scale(1.05);
-    background-color: #d9007a;
+    background: linear-gradient(-135deg, #ec008c, #fc6767);
   }
 
-  @media only screen and (max-width: 600px) {
-    font-size: 14px;
+  @media (max-width: 600px) {
+    width: 100%;
   }
 `;
