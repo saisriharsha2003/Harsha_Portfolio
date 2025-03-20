@@ -16,25 +16,40 @@ export const ModalOverlay = styled(motion.div)`
 `;
 
 export const ModalContainer = styled(motion.div)`
-  background: rgba(30, 30, 30, 0.95);
+  background: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "linear-gradient(145deg, #1c1c1c, #292929)"
+      : "linear-gradient(145deg, #ffffff, #f3f3f3)"};
   color: white;
   width: 90%;
-  max-width: 750px;
+  max-width: 700px;
   max-height: 85vh;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  box-sizing: content-box;
   border-radius: 15px;
   padding: 25px;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+  box-shadow: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
+      : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
 
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
   }
   &::-webkit-scrollbar-thumb {
     background: #ec008c;
     border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   @media (max-width: 600px) {
@@ -50,7 +65,7 @@ export const CloseButton = styled.button`
   right: 15px;
   background: transparent;
   border: none;
-  color: white;
+  color: #feb47b;
   font-size: 22px;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -88,9 +103,15 @@ export const ProjectTitle = styled.h2`
   animation: shine 3s linear infinite;
 
   @keyframes shine {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   @media (max-width: 600px) {
@@ -101,7 +122,7 @@ export const ProjectTitle = styled.h2`
 export const ProjectDescription = styled.p`
   font-size: 16px;
   line-height: 1.7;
-  color: #b3b3b3;
+  color: ${({ theme }) => theme.text_secondary};
   text-align: justify;
 `;
 
