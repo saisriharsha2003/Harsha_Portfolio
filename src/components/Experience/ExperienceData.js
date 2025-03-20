@@ -28,7 +28,7 @@ export const experiences = [
     role: "Full Stack NLP Engineer Intern",
     company: "Solomons International",
     date: "September 2023 - February 2024",
-    desc: "During my internship at Solomons International Technologies, I had the opportunity to work on a variety of projects that significantly enhanced my skills in natural language processing (NLP) and full-stack development. One of the projects involved developing a system for document classification, specifically for resumes, where I implemented algorithms to accurately categorize resumes into different classifications such as software developer or other custom categories provided by the user. Additionally, I worked on a named entity recognition (NER) project, where I developed algorithms to extract specific entities from text, such as names, organizations, and locations. Another project I undertook was topic modeling, where I created a system to generate relevant topics from text using machine learning algorithms. Lastly, I worked on a document matching project, where I developed an algorithm to match job orders with resumes and generate a score based on the relevance of the match. These projects not only improved my technical skills but also provided me with valuable insights into the practical applications of NLP. I am grateful for the experience and look forward to applying these skills in future projects.",
+    desc: "During my internship at Solomons International Technologies, I had the opportunity to work on a variety of projects that significantly enhanced my skills in NLP (NLP) and full-stack development. One of the projects involved developing a system for document classification, specifically for resumes, where I implemented algorithms to accurately categorize resumes into different classifications such as software developer or other custom categories provided by the user. Additionally, I worked on a named entity recognition (NER) project, where I developed algorithms to extract specific entities from text, such as names, organizations, and locations. Another project I undertook was topic modeling, where I created a system to generate relevant topics from text using machine learning algorithms. Lastly, I worked on a document matching project, where I developed an algorithm to match job orders with resumes and generate a score based on the relevance of the match. These projects not only improved my technical skills but also provided me with valuable insights into the practical applications of NLP. I am grateful for the experience and look forward to applying these skills in future projects.",
     skills: [
       "HTML",
       "CSS",
@@ -43,7 +43,7 @@ export const experiences = [
       "Python",
       "Flask",
       "Machine Learning",
-      "Natural Language Processing",
+      "NLP",
     ],
     doc: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Rankela%20Sai%20Sri%20Harsha%20Internship%20Certificate-signed_page-0001.jpg?alt=media&token=1932c9d3-273c-45eb-a7ba-bee5dfa8da45",
   },
