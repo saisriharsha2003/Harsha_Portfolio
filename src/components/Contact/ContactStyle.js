@@ -20,6 +20,10 @@ export const Container = styled.div`
   padding: 50px 20px;
   position: relative;
   animation: ${fadeIn} 1s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -34,6 +38,11 @@ export const Wrapper = styled.div`
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} 1.2s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 25px;
+    max-width: 90%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -43,6 +52,10 @@ export const Title = styled.h1`
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 export const Desc = styled.p`
@@ -50,6 +63,11 @@ export const Desc = styled.p`
   text-align: center;
   max-width: 700px;
   color: ${({ theme }) => theme.text_secondary};
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    max-width: 90%;
+  }
 `;
 
 export const ContactForm = styled.form`
@@ -58,21 +76,17 @@ export const ContactForm = styled.form`
   flex-direction: column;
   gap: 15px;
   padding: 30px;
-  background: ${({ theme }) => theme.card};
-  border-radius: 16px;
   background: ${({ theme }) =>
     theme.mode === "dark"
       ? "linear-gradient(145deg, #1c1c1c, #292929)"
       : "linear-gradient(145deg, #ffffff, #f3f3f3)"};
+  border-radius: 16px;
   border: 2px solid
     ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
   box-shadow: ${({ theme }) =>
     theme.mode === "dark"
       ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
       : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   transition: all 0.3s ease;
   margin-bottom: 15px;
 
@@ -80,16 +94,16 @@ export const ContactForm = styled.form`
 
   @keyframes pulseGlowContact {
     0% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+      box-shadow: 0 0 10px ${({ theme }) =>
+        theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
     }
     50% {
-      box-shadow: 0 0 20px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+      box-shadow: 0 0 20px ${({ theme }) =>
+        theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
     }
     100% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+      box-shadow: 0 0 10px ${({ theme }) =>
+        theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
     }
   }
 
@@ -99,6 +113,10 @@ export const ContactForm = styled.form`
       ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
     border-color: ${({ theme }) =>
       theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
   }
 `;
 
@@ -113,8 +131,13 @@ export const FormContainer = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} 1.2s ease-in-out;
   transition: transform 0.3s ease-in-out;
+
   &:hover {
     transform: translateY(-5px) scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
   }
 `;
 
@@ -124,6 +147,10 @@ export const ContactTitle = styled.h2`
   text-align: center;
   color: ${({ theme }) => theme.text_primary};
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const ContactInput = styled.input`
@@ -132,9 +159,15 @@ export const ContactInput = styled.input`
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.text_secondary};
   font-size: 16px;
+
   &:focus {
     border-color: ${({ theme }) => theme.primary};
     outline: none;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px;
   }
 `;
 
@@ -145,9 +178,15 @@ export const ContactInputMessage = styled.textarea`
   border: 1px solid ${({ theme }) => theme.text_secondary};
   font-size: 16px;
   resize: none;
+
   &:focus {
     border-color: ${({ theme }) => theme.primary};
     outline: none;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 10px;
   }
 `;
 
@@ -160,10 +199,9 @@ export const ContactButton = styled.input`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
-  
+  border: 2px solid
+    ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
   color: #fff;
-
   font-size: 18px;
   font-weight: 600;
   padding: 14px 18px;
@@ -178,5 +216,10 @@ export const ContactButton = styled.input`
       ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
     border-color: ${({ theme }) =>
       theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    padding: 12px;
   }
 `;
