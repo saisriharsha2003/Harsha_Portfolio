@@ -22,7 +22,7 @@ export const projects = [
         "JavaScirpt",
         "Twilio API",
         "MongoDB",
-        "Natural Language Processing",
+        "NLP",
         "Python",
         "Machine Learning",
         "OpenAI"
@@ -35,14 +35,14 @@ export const projects = [
       id: 1,
       title: "VoiceOps Assistant",
       description:
-        "Created VoiceOps Assistant, a Python-based virtual assistant with advanced voice recognition for user authentication, reducing unauthorized access risk. Achieved high speech recognition accuracy using Google's text-to-speech API, Selenium, and Beautifulsoup for web scraping, and implemented automated web browsing through voice commands. Orchestrated functionalities including sending WhatsApp messages and playing YouTube videos with voice commands, significantly reducing task completion time. Introduced Natural Language Processing and Machine Learning algorithms to enhance speech-to-text functionality and provide precise language translation.",
+        "Created VoiceOps Assistant, a Python-based virtual assistant with advanced voice recognition for user authentication, reducing unauthorized access risk. Achieved high speech recognition accuracy using Google's text-to-speech API, Selenium, and Beautifulsoup for web scraping, and implemented automated web browsing through voice commands. Orchestrated functionalities including sending WhatsApp messages and playing YouTube videos with voice commands, significantly reducing task completion time. Introduced NLP and Machine Learning algorithms to enhance speech-to-text functionality and provide precise language translation.",
       image: virtual_assistant,
       tags: [
         "Python",
         "Artificial Intelligence",
         "Machine Learning",
         "Speech Recognition",
-        "Natural Language Processing",
+        "NLP",
         "Selenium",
         "Voice Recognition",
         

@@ -5,7 +5,6 @@ export const Button = styled.button`
   width: 100%;
   padding: 10px;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
-
   border: 2px solid
     ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
   color: #fff;
@@ -15,8 +14,12 @@ export const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
-
   margin-top: 16px;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+    padding: 8px;
+  }
 `;
 
 export const Card = styled.div`
@@ -70,6 +73,12 @@ export const Card = styled.div`
     opacity: 1;
     transform: translateY(0);
   }
+
+  @media (max-width: 600px) {
+    width: 90%;
+    min-height: 400px;
+    padding: 15px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -91,6 +100,10 @@ export const ImageWrapper = styled.div`
       transform: scale(1.1);
     }
   }
+
+  @media (max-width: 600px) {
+    height: 120px;
+  }
 `;
 
 export const Details = styled.div`
@@ -108,6 +121,10 @@ export const Title = styled.h3`
   color: transparent;
   text-align: center;
   margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `;
 
 export const Date = styled.p`
@@ -116,6 +133,10 @@ export const Date = styled.p`
   color: ${({ theme }) => theme.text_secondary};
   text-align: center;
   margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 10px;
+  }
 `;
 
 export const Description = styled.p`
@@ -127,4 +148,9 @@ export const Description = styled.p`
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+    -webkit-line-clamp: 4;
+  }
 `;
