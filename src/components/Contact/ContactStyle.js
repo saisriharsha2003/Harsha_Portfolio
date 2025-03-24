@@ -5,12 +5,6 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const pulseGlow = keyframes`
-  0% { box-shadow: 0 0 5px rgba(255, 126, 95, 0.4); }
-  50% { box-shadow: 0 0 20px rgba(255, 126, 95, 0.8); }
-  100% { box-shadow: 0 0 5px rgba(255, 126, 95, 0.4); }
-`;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,7 +35,6 @@ export const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 25px;
-    max-width: 90%;
   }
 `;
 
