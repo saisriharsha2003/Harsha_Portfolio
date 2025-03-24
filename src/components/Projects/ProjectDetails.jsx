@@ -55,6 +55,12 @@ const ProjectModal = ({ openModal, setOpenModal }) => {
             <ProjectDescription>{project.description}</ProjectDescription>
 
             <ButtonGroup isWebApp={project?.category === "web app"}>
+              {project?.category === "web app" && (
+                <Button href={project?.webapp} target="_blank">
+                  <FaGlobe size={18} />
+                  View Live App
+                </Button>
+              )}
               <Button
                 href={project?.github}
                 target="_blank"
@@ -63,13 +69,6 @@ const ProjectModal = ({ openModal, setOpenModal }) => {
                 <FaGithub size={18} />
                 View Code
               </Button>
-
-              {project?.category === "web app" && (
-                <Button href={project?.webapp} target="_blank">
-                  <FaGlobe size={18} />
-                  View Live App
-                </Button>
-              )}
             </ButtonGroup>
           </ProjectContent>
         </ModalContainer>
