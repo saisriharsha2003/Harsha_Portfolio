@@ -100,7 +100,8 @@ const Navbar = ({ toggleTheme }) => {
           ))}
 
           <ButtonContainer>
-            <GitHubButton href={Bio.github} target="_blank">
+            {/* Changed to button to prevent nested <a> issue */}
+            <GitHubButton as="button" onClick={() => window.open(Bio.github, "_blank")}>
               Github Profile
             </GitHubButton>
           </ButtonContainer>
@@ -132,9 +133,13 @@ const Navbar = ({ toggleTheme }) => {
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </MobileLink>
               ))}
-              <GitHubButton href={Bio.github} target="_blank">
-                Github Profile
-              </GitHubButton>
+
+              {/* Wrapped GitHubButton in a div to prevent <a> nesting */}
+              <div>
+                <GitHubButton as="button" onClick={() => window.open(Bio.github, "_blank")}>
+                  Github Profile
+                </GitHubButton>
+              </div>
             </MobileMenu>
           </motion.div>
         )}
