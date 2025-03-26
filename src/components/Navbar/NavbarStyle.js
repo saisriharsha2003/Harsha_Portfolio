@@ -100,32 +100,6 @@ export const NavLink = styled(LinkR)`
   }
 `;
 
-export const GitHubButton = styled.a`
-  display: flex;
-  align-items: center;
-  height: 40px;
-  border-radius: 20px;
-  padding: 0 20px;
-  font-weight: 700;
-  font-size: 16px;
-  text-decoration: none;
-  border: 2px solid white;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  color: white;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-
-  &:hover {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-  }
-`;
-
 export const ThemeToggle = styled.button`
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;

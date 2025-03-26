@@ -8,7 +8,6 @@ import {
   Span,
   NavLogo,
   NavItems,
-  GitHubButton,
   ButtonContainer,
   MobileIcon,
   MobileMenu,
@@ -21,9 +20,16 @@ import {
 import { SiSimilarweb } from "react-icons/si";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
-import { Bio } from "../HeroSection/HeroSectionData.js";
 
-const sections = ["about", "experience", "skills", "projects", "education"];
+const sections = [
+  "about",
+  "experience",
+  "skills",
+  "projects",
+  "education",
+  "coding profiles",
+  "contact",
+];
 
 const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +37,7 @@ const Navbar = ({ toggleTheme }) => {
   const currentTheme = useTheme();
 
   const handleScroll = () => {
-    let scrollPosition = window.scrollY + 100; 
+    let scrollPosition = window.scrollY + 100;
 
     for (let section of sections) {
       const element = document.getElementById(section);
@@ -46,6 +52,13 @@ const Navbar = ({ toggleTheme }) => {
         }
       }
     }
+  };
+
+  const capitalizeWords = (str) => {
+    return str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   useEffect(() => {
@@ -94,17 +107,10 @@ const Navbar = ({ toggleTheme }) => {
                 className={activeSection === section ? "active" : ""}
                 onClick={() => setActiveSection(section)}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {capitalizeWords(section)}
               </NavLink>
             </motion.div>
           ))}
-
-          <ButtonContainer>
-            {/* Changed to button to prevent nested <a> issue */}
-            <GitHubButton as="button" onClick={() => window.open(Bio.github, "_blank")}>
-              Github Profile
-            </GitHubButton>
-          </ButtonContainer>
         </NavItems>
 
         <ButtonContainer>
@@ -118,7 +124,12 @@ const Navbar = ({ toggleTheme }) => {
         </ButtonContainer>
 
         {isOpen && (
-          <motion.div initial={{ opacity: 0, x: "-100%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "-100%" }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-100%" }}
+            transition={{ duration: 0.5 }}
+          >
             <MobileMenu isOpen={isOpen}>
               {sections.map((section) => (
                 <MobileLink
@@ -130,16 +141,9 @@ const Navbar = ({ toggleTheme }) => {
                   offset={-80}
                   onClick={() => setActiveSection(section)}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {capitalizeWords(section)}
                 </MobileLink>
               ))}
-
-              {/* Wrapped GitHubButton in a div to prevent <a> nesting */}
-              <div>
-                <GitHubButton as="button" onClick={() => window.open(Bio.github, "_blank")}>
-                  Github Profile
-                </GitHubButton>
-              </div>
             </MobileMenu>
           </motion.div>
         )}
