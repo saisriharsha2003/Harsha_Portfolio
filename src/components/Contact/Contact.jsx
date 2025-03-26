@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import {
-  Container,
-  Wrapper,
-  Title,
-  Desc,
-  ContactForm,
+  ContactContainer,
+  ContactWrapper,
   ContactTitle,
+  ContactDesc,
+  ContactForm,
+  ContactFormTitle,
   ContactInput,
   ContactInputMessage,
   ContactButton,
-  FormContainer,
+  ContactFormContainer,
 } from "./ContactStyle";
 
 export default function Contact() {
@@ -68,13 +68,13 @@ export default function Contact() {
   };
 
   return (
-    <Container>
-      <Wrapper>
-        <Title>Contact Me</Title>
-        <Desc>Feel free to reach out for collaborations or just a chat!</Desc>
-        <FormContainer>
+    <ContactContainer id="contact">
+      <ContactWrapper>
+        <ContactTitle>Contact Me</ContactTitle>
+        <ContactDesc>Feel free to reach out for collaborations or just a chat!</ContactDesc>
+        <ContactFormContainer>
           <ContactForm onSubmit={onSubmit}>
-            <ContactTitle>Drop a Message 📩</ContactTitle>
+            <ContactFormTitle>Drop a Message 📩</ContactFormTitle>
             <ContactInput placeholder="Your Name" name="name" required />
             <ContactInput
               placeholder="Your Email"
@@ -90,9 +90,9 @@ export default function Contact() {
             />
             <ContactButton type="submit" value="Send" />
           </ContactForm>
-        </FormContainer>
+        </ContactFormContainer>
         <span>{result}</span>
-      </Wrapper>
-    </Container>
+      </ContactWrapper>
+    </ContactContainer>
   );
 }

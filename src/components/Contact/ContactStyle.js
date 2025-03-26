@@ -5,7 +5,7 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-export const Container = styled.div`
+export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,6 @@ export const Wrapper = styled.div`
   padding: 40px;
   background: ${({ theme }) => theme.card};
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} 1.2s ease-in-out;
 
   @media (max-width: 768px) {
@@ -38,7 +37,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const ContactTitle = styled.h1`
   font-size: 42px;
   font-weight: bold;
   text-align: center;
@@ -51,7 +50,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const Desc = styled.p`
+export const ContactDesc = styled.p`
   font-size: 18px;
   text-align: center;
   max-width: 700px;
@@ -113,7 +112,7 @@ export const ContactForm = styled.form`
   }
 `;
 
-export const FormContainer = styled.div`
+export const ContactFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +120,6 @@ export const FormContainer = styled.div`
   padding: 30px;
   border-radius: 16px;
   width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} 1.2s ease-in-out;
   transition: transform 0.3s ease-in-out;
 
@@ -134,7 +132,7 @@ export const FormContainer = styled.div`
   }
 `;
 
-export const ContactTitle = styled.h2`
+export const ContactFormTitle = styled.h2`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
