@@ -5,7 +5,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineContent from '@mui/lab/TimelineContent';
 import { education } from '../Education/EducationData.js';
 import EducationCard from './EducationCard';
-import { Container, Header, Title, Description, TimelineWrapper, StyledTimelineDot, StyledTimelineConnector } from './EducationStyle';
+import { EducationContainer, Header, Title, Description, TimelineWrapper, StyledTimelineDot, StyledTimelineConnector } from './EducationStyle';
 import { styled } from '@mui/system';
 
 const CustomTimelineItem = styled(TimelineItem)({
@@ -19,7 +19,7 @@ const CustomTimelineItem = styled(TimelineItem)({
 
 const EducationSection = () => {
   return (
-    <Container id="education">
+    <EducationContainer id="education">
       <Header>
         <Title>Education</Title>
         <Description>
@@ -41,7 +41,7 @@ const EducationSection = () => {
           ))}
         </Timeline>
       </TimelineWrapper>
-    </Container>
+    </EducationContainer>
   );
 };
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 
-export const Container = styled.section`
+export const EducationContainer = styled.section`
   padding: 50px 15px;
   background-color: ${({ theme }) => theme.background_primary};
   display: flex;
