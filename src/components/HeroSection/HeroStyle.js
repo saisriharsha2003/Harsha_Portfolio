@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const HeroContainer = styled(motion.div)`
   background: ${({ theme }) => theme.card_light};
@@ -37,7 +37,7 @@ export const HeroContentContainer = styled(motion.div)`
   text-align: left;
   padding: 20px;
   border-radius: 20px;
-  margin-right: 20px;
+  margin: 20px;
   animation: pulseGlowHeroC 3s infinite alternate;
 
   @keyframes pulseGlowHeroC {
@@ -105,7 +105,7 @@ export const Title = styled(motion.h1)`
   font-weight: bold;
   color: ${({ theme }) => theme.text_secondary};
   -webkit-background-clip: text;
-  margin-bottom: 20px;
+  margin: 20px;
 
   @media (max-width: 960px) {
     font-size: 36px;
@@ -116,13 +116,28 @@ export const Title = styled(motion.h1)`
   }
 `;
 
+export const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+`;
+
 export const Title1 = styled(motion.h1)`
   font-size: 48px;
   font-weight: bold;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   color: transparent;
-  margin-bottom: 20px;
+  margin: 20px;
 
   @media (max-width: 960px) {
     font-size: 36px;
@@ -137,33 +152,38 @@ export const SubTitle = styled(motion.p)`
   font-size: 18px;
   color: ${({ theme }) => theme.text_secondary};
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin: 20px;
 
   @media (max-width: 960px) {
     font-size: 16px;
   }
 `;
 
-export const ResumeButton = styled(motion.a)`
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 18px;
+export const HeroButton = styled(motion.a)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ec008c, #fc6767);
+  cursor: pointer;
   text-decoration: none;
-  border-radius: 25px;
-  background: linear-gradient(90deg, #ff7eb3, #ff758c);
-  box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 10px rgba(255, 255, 255, 0.4)' : '0px 0px 10px rgba(1, 1, 1, 0.3)'};
-  transition: all 0.3s ease;
+  box-shadow: 0px 0px 20px rgba(236, 0, 140, 0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 45%;
+  gap: 15px;
 
   &:hover {
-    transform: scale(1.1);
-    box-shadow: ${({ theme }) => theme.mode === 'dark' ? '0px 0px 20px rgba(255, 255, 255, 0.6)' : '0px 0px 20px rgba(1, 1, 1, 0.5)'};
+    transform: scale(1.05);
+    background: linear-gradient(-135deg, #ec008c, #fc6767);
+    box-shadow: 0px 0px 30px rgba(236, 0, 140, 0.5);
   }
 
-  @media (max-width: 640px) {
-    padding: 12px 25px;
-    font-size: 16px;
+  @media (max-width: 600px) {
+    width: 100%;
   }
 `;
 
@@ -172,9 +192,11 @@ export const TextLoop = styled(motion.div)`
   font-weight: 700;
   color: #ff00b7;
   animation: bounce 2s infinite;
+  margin: 20px;
 
   @keyframes bounce {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {

@@ -9,13 +9,16 @@ import {
   Title,
   Title1,
   SubTitle,
-  ResumeButton,
   CodingTitle,
+  ButtonGroup,
+  HeroButton,
 } from "./HeroStyle";
 import HeroImg from "../../images/HeroImage.jpg";
 import Typewriter from "typewriter-effect";
 import { Bio } from "../HeroSection/HeroSectionData.js";
 import { useTheme } from "styled-components";
+import { FaGithub, FaFileAlt } from "react-icons/fa";
+import { MdDescription } from "react-icons/md";
 
 const containerVariants = {
   hidden: { opacity: 0, y: -50 },
@@ -70,15 +73,28 @@ const HeroSection = () => {
             <SubTitle as={motion.p} variants={itemVariants}>
               {Bio.description}
             </SubTitle>
-            <ResumeButton
-              as={motion.a}
-              href={Bio.resume}
-              target="_blank"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <span style={{ color: "white" }}>Check Resume</span>
-            </ResumeButton>
+            <ButtonGroup>
+              <HeroButton
+                as={motion.a}
+                target="_blank"
+                onClick={() => window.open(Bio.github, "_blank")}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaGithub size={25} />
+                Github Profile
+              </HeroButton>
+              <HeroButton
+                as={motion.a}
+                href={Bio.resume}
+                target="_blank"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <MdDescription size={25} />
+                Check Resume
+              </HeroButton>
+            </ButtonGroup>
           </HeroContentContainer>
         </HeroInnerContainer>
       </HeroContainer>
