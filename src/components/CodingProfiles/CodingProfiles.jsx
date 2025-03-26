@@ -19,7 +19,7 @@ const handleClick = (link) => {
 
 const CodingProfiles = () => {
   return (
-    <CodingProfilesContainer>
+    <CodingProfilesContainer id="coding profiles">
       <Wrapper>
         <Title>Coding Profiles</Title>
         <Desc>Here are some of my Coding Profiles.</Desc>
