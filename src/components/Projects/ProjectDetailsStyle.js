@@ -178,6 +178,7 @@ export const Button = styled.a`
   &:hover {
     transform: scale(1.05);
     background: linear-gradient(-135deg, #ec008c, #fc6767);
+    box-shadow: 0 2px 20px rgba(236, 0, 140, 0.5);
   }
 
   @media (max-width: 600px) {
