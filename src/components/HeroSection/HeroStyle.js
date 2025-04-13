@@ -25,7 +25,7 @@ export const HeroInnerContainer = styled(motion.div)`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -151,8 +151,10 @@ export const Title1 = styled(motion.h1)`
 export const SubTitle = styled(motion.p)`
   font-size: 18px;
   color: ${({ theme }) => theme.text_secondary};
-  line-height: 1.6;
-  margin: 20px;
+  line-height: 1.7;
+  text-align: justify; 
+  max-width: 800px; 
+  margin: 25px auto; 
 
   @media (max-width: 960px) {
     font-size: 16px;

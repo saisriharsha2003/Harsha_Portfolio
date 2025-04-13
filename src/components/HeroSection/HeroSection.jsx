@@ -17,7 +17,7 @@ import HeroImg from "../../images/HeroImage.jpg";
 import Typewriter from "typewriter-effect";
 import { Bio } from "../HeroSection/HeroSectionData.js";
 import { useTheme } from "styled-components";
-import { FaGithub, FaFileAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
 
 const containerVariants = {
@@ -65,6 +65,7 @@ const HeroSection = () => {
                     strings: Bio.roles,
                     autoStart: true,
                     loop: true,
+                    
                   }}
                 />
               </div>
