@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaChevronDown } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: rgba(17, 17, 17, 0.9);
@@ -110,6 +110,104 @@ export const ThemeToggle = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const DropIcon = styled(FaChevronDown)`
+  font-size: 14px;
+  fill: #ff7e5f; 
+  transition: transform 0.3s ease-in-out;
+
+  
+`;
+
+export const NavLinkMore = styled(LinkR)`
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-bottom: 4px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.active {
+    border-bottom: 2px solid white;
+  }
+`;
+
+export const DropdownContainer = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 0;
+  max-width: 400px;
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  ${DropdownContainer}:hover & {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+`;
+
+export const DropdownItem = styled(LinkR)`
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.active {
+    border-bottom: 2px solid white;
+  }
 `;
 
 export const Circle = styled.div`

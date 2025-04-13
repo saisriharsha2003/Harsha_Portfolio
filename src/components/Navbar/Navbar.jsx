@@ -10,31 +10,31 @@ import {
   NavItems,
   ButtonContainer,
   MobileIcon,
+  DropdownContainer,
+  DropdownMenu,
+  DropdownItem,
+  NavLinkMore,
   MobileMenu,
   MobileLink,
   ThemeToggle,
   Circle,
   SunIcon,
+  DropIcon,
   MoonIcon,
 } from "./NavbarStyle";
 import { SiSimilarweb } from "react-icons/si";
 import { FaBars } from "react-icons/fa";
 import { useTheme } from "styled-components";
 
-const sections = [
-  "about",
-  "experience",
-  "skills",
-  "projects",
-  "education",
-  "coding profiles",
-  "contact",
-];
-
 const Navbar = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const currentTheme = useTheme();
+
+  const mainSections = ["about", "experience", "skills", "projects", "contact"];
+  const dropdownSections = ["education", "coding profiles"];
+  const sections = [...mainSections, ...dropdownSections];
 
   const handleScroll = () => {
     let scrollPosition = window.scrollY + 100;
@@ -91,7 +91,7 @@ const Navbar = ({ toggleTheme }) => {
         </MobileIcon>
 
         <NavItems>
-          {sections.map((section, index) => (
+          {mainSections.map((section, index) => (
             <motion.div
               key={section}
               initial={{ opacity: 0, y: -20 }}
@@ -111,6 +111,30 @@ const Navbar = ({ toggleTheme }) => {
               </NavLink>
             </motion.div>
           ))}
+          <DropdownContainer
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <NavLinkMore>More <DropIcon /></NavLinkMore>
+            {dropdownOpen && (
+              <DropdownMenu>
+                {dropdownSections.map((section) => (
+                  <DropdownItem
+                    key={section}
+                    as={ScrollLink}
+                    to={section}
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => setActiveSection(section)}
+                  >
+                    {capitalizeWords(section)}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            )}
+          </DropdownContainer>
+
         </NavItems>
 
         <ButtonContainer>
