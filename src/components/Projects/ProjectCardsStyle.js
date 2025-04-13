@@ -15,6 +15,21 @@ export const Button = styled.button`
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
   margin-top: 16px;
+  box-shadow: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "0px 0px 10px rgba(255, 255, 255, 0.2)"
+      : "0px 0px 10px rgba(0, 0, 0, 0.2)"};
+
+  &:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: linear-gradient(to left, #ff7e5f, #feb47b);
+    border-color: ${({ theme }) =>
+      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+    box-shadow: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
+      : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
+  }
 
   @media (max-width: 600px) {
     font-size: 12px;

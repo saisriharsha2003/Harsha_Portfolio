@@ -13,6 +13,7 @@ export const ModalOverlay = styled(motion.div)`
   justify-content: center;
   z-index: 1000;
   backdrop-filter: blur(8px);
+
 `;
 
 export const ModalContainer = styled(motion.div)`
@@ -56,6 +57,7 @@ export const ModalContainer = styled(motion.div)`
     max-width: 95%;
     max-height: 80vh;
     padding: 20px;
+    margin: 20px;
   }
 `;
 
