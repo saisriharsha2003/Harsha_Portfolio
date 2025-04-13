@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the development server with hot reloading
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
