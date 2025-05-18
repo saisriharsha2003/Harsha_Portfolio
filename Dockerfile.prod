@@ -1,5 +1,5 @@
 # Stage 1: Build the React App
-FROM alpine:3.18 AS build
+FROM alpine:3.20 AS build
 
 # Install Node.js runtime
 RUN apk add --no-cache nodejs npm
@@ -20,7 +20,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve with a Minimal Image
-FROM nginx:stable-alpine
+FROM nginx:1.27.4-alpine-slim
 
 # Set the working directory for Nginx
 WORKDIR /usr/share/nginx/html
