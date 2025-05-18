@@ -1,5 +1,18 @@
-import styled from "styled-components";
 import { motion } from "framer-motion";
+
+import styled, { keyframes } from 'styled-components';
+
+const pulseGlow = (color) => keyframes`
+  0% {
+    box-shadow: 0 0 10px ${color};
+  }
+  50% {
+    box-shadow: 0 0 15px ${color};
+  }
+  100% {
+    box-shadow: 0 0 10px ${color};
+  }
+`;
 
 export const HeroContainer = styled(motion.div)`
   background: ${({ theme }) => theme.card_light};
@@ -38,29 +51,15 @@ export const HeroContentContainer = styled(motion.div)`
   padding: 20px;
   border-radius: 20px;
   margin: 20px;
-  animation: pulseGlowHeroC 3s infinite alternate;
-
-  @keyframes pulseGlowHeroC {
-    0% {
-      box-shadow: 0 0 15px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    50% {
-      box-shadow: 0 0 20px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    100% {
-      box-shadow: 0 0 15px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-  }
+  animation: ${({ theme }) =>
+    pulseGlow(theme.mode === 'dark' ? '#00bcd4' : '#00bfff')} 3s infinite alternate;
 
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0px 0px 30px
-      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+      ${({ theme }) => (theme.mode === "dark" ? "#0d1b2a" : "#00bfff")};
     border-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+      theme.mode === "dark" ? "#0d1b2a" : "#00bfff"};
   }
 
   @media (max-width: 960px) {
@@ -74,29 +73,16 @@ export const Img = styled(motion.img)`
   max-height: 500px;
   object-fit: cover;
   border-radius: 50%;
-  animation: pulseGlowHero 3s infinite alternate;
-
-  @keyframes pulseGlowHero {
-    0% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    50% {
-      box-shadow: 0 0 15px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    100% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-  }
+  box-shadow: 0px 0px 10px ${({ theme }) => (theme.mode === 'light' ? '#0d1b2a' : '#00bfff')};
+  animation: ${({ theme }) =>
+    pulseGlow(theme.mode === 'dark' ? '#00bcd4' : '#00bfff')} 3s infinite alternate;
 
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0px 0px 30px
-      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
+      ${({ theme }) => (theme.mode === "dark" ? "#0d1b2a" : "#00bfff")};
     border-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+      theme.mode === "dark" ? "#0d1b2a" : "#00bfff"};
   }
 `;
 
@@ -120,7 +106,6 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 20px;
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
@@ -134,7 +119,10 @@ export const ButtonGroup = styled.div`
 export const Title1 = styled(motion.h1)`
   font-size: 48px;
   font-weight: bold;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"}; 
   -webkit-background-clip: text;
   color: transparent;
   margin: 20px;
@@ -154,7 +142,7 @@ export const SubTitle = styled(motion.p)`
   line-height: 1.7;
   text-align: justify; 
   max-width: 800px; 
-  margin: 25px auto; 
+  margin: 20px; 
 
   @media (max-width: 960px) {
     font-size: 16px;
