@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const pulseGlow = (color) => keyframes`
+  0% {
+    box-shadow: 0 0 10px ${color};
+  }
+  50% {
+    box-shadow: 0 0 15px ${color};
+  }
+  100% {
+    box-shadow: 0 0 10px ${color};
+  }
+`;
 
 export const CodingProfilesContainer = styled.div`
   width: 100%;
@@ -7,7 +19,9 @@ export const CodingProfilesContainer = styled.div`
   margin-top: 40px;
   gap: 40px;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 20px;  
+  background: ${({ theme }) => theme.background};
+
 `;
 
 export const Wrapper = styled.div`
@@ -29,26 +43,20 @@ export const Wrapper = styled.div`
 export const Profile = styled.div`
   width: 100%;
   max-width: 500px;
-  background: ${({ theme }) => theme.card};
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
+  background: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "linear-gradient(145deg, #1c1c1c, #292929)"
+      : "linear-gradient(145deg, #ffffff, #f3f3f3)"};
+  opacity: 0.9;
   border-radius: 20px;
-  box-shadow: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
-      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
   padding: 20px;
-  animation: pulseGlowProfile 3s infinite alternate;
+  animation: ${({ theme }) =>
+    pulseGlow(theme.mode === 'dark' ? '#00bcd4' : '#00bfff')} 3s infinite alternate;
   
-  @keyframes pulseGlowProfile {
-    0% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
-    50% { box-shadow: 0 0 25px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
-    100% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
-  }
-
   &:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0px 0px 30px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
-    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+    box-shadow: 0px 0px 10px ${({ theme }) => (theme.mode === 'dark' ? '#0d1b2a' : '#00bfff')};
+
   }
 
   @media (max-width: 768px) {
@@ -108,7 +116,10 @@ export const Title = styled.div`
   text-align: center;
   font-weight: 700;
   margin-top: 30px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"}; 
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 768px) {
