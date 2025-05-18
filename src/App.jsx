@@ -14,6 +14,7 @@ import Education from "./components/Education/Education.jsx";
 import ProjectDetails from "./components/Projects/ProjectDetails.jsx";
 import CodingProfiles from "./components/CodingProfiles/CodingProfiles.jsx";
 import styled from "styled-components";
+import GalaxyBackground from "./GalaxyBackground.jsx";
 
 const Separator = styled.hr`
   border: none;
@@ -30,7 +31,7 @@ const Separator = styled.hr`
 `;
 
 const Body = styled.div`
-  background-color: ${({ theme }) => theme.bg};
+  background-color: transparent;
   width: 100%;
   overflow-x: hidden;
 `;
@@ -39,16 +40,30 @@ const Wrapper = styled.div``;
 
 function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  const [theme, setTheme] = useState(darkTheme);
+  const [theme, setTheme] = useState(null); // start null to prevent flicker
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false);
+
+  useEffect(() => {
+    // On first mount, read theme from localStorage or default to dark
+    const savedThemeMode = localStorage.getItem("themeMode") || "dark";
+    setTheme(savedThemeMode === "dark" ? darkTheme : lightTheme);
+    setIsThemeLoaded(true);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === darkTheme ? lightTheme : darkTheme));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === darkTheme ? lightTheme : darkTheme;
+      localStorage.setItem("themeMode", newTheme === darkTheme ? "dark" : "light");
+      return newTheme;
+    });
   };
 
-  useEffect(() => {}, [theme]);
+  // Don't render app until theme is loaded
+  if (!isThemeLoaded) return null;
 
   return (
     <ThemeProvider theme={theme}>
+      <GalaxyBackground />
       <Router>
         <Navbar toggleTheme={toggleTheme} />
         <Body>
