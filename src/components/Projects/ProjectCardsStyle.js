@@ -1,12 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
+
+const pulseGlow = (color) => keyframes`
+  0% {
+    box-shadow: 0 0 10px ${color};
+  }
+  50% {
+    box-shadow: 0 0 15px ${color};
+  }
+  100% {
+    box-shadow: 0 0 10px ${color};
+  }
+`;
 
 export const Button = styled.button`
   display: none;
   width: 100%;
   padding: 10px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  border: 2px solid
-    ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
+  background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -15,20 +25,10 @@ export const Button = styled.button`
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
   margin-top: 16px;
-  box-shadow: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "0px 0px 10px rgba(255, 255, 255, 0.2)"
-      : "0px 0px 10px rgba(0, 0, 0, 0.2)"};
 
   &:hover {
     transform: translateY(-10px) scale(1.03);
-    background: linear-gradient(to left, #ff7e5f, #feb47b);
-    border-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
-    box-shadow: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
-      : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
+    background: linear-gradient(to left, #00bfff, #0d1b2a);
   }
 
   @media (max-width: 600px) {
@@ -45,42 +45,21 @@ export const Card = styled.div`
     ${({ theme }) => theme.card},
     ${({ theme }) => (theme.mode === "dark" ? "#1c1c1c" : "#ffffff")}
   );
-  border: 2px solid
-    ${({ theme }) => (theme.mode === "dark" ? "#ff7e5f" : "#feb47b")};
   border-radius: 16px;
-  box-shadow: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "0px 0px 20px rgba(255, 255, 255, 0.2)"
-      : "0px 0px 20px rgba(0, 0, 0, 0.2)"};
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   overflow: hidden;
-  animation: pulseGlowProject 3s infinite alternate;
 
-  @keyframes pulseGlowProject {
-    0% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    50% {
-      box-shadow: 0 0 15px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    100% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-  }
+  transition: all 0.4s ease-in-out;
+  animation: ${({ theme }) =>
+    pulseGlow(theme.mode === 'dark' ? '#00bcd4' : '#00bfff')} 3s infinite alternate;
 
   &:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0px 0px 30px
-      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    border-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+    box-shadow: 0px 0px 30px ${({ theme }) => (theme.mode === 'dark' ? '#00bfff' : '#0d1b2a')};
   }
 
   &:hover ${Button} {
@@ -95,6 +74,7 @@ export const Card = styled.div`
     padding: 15px;
   }
 `;
+
 
 export const ImageWrapper = styled.div`
   width: 100%;
@@ -131,7 +111,10 @@ export const Details = styled.div`
 export const Title = styled.h3`
   font-size: 20px;
   font-weight: 700;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"};  
   -webkit-background-clip: text;
   color: transparent;
   text-align: center;

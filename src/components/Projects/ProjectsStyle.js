@@ -29,7 +29,10 @@ export const Title = styled.div`
   font-weight: 700;
   text-align: center;
   margin-top: 20px;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"};  
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 768px) {
