@@ -2,7 +2,7 @@ import vvit from "../../images/vvit.jpg";
 import narayana from "../../images/naryana.png";
 import holyfaith from "../../images/holy faith.jpg";
 
-export const education = [
+export const educations = [
   {
     id: 0,
     img: vvit,
