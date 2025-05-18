@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const pulseGlow = (color) => keyframes`
+  0% {
+    box-shadow: 0 0 10px ${color};
+  }
+  50% {
+    box-shadow: 0 0 15px ${color};
+  }
+  100% {
+    box-shadow: 0 0 10px ${color};
+  }
+`;
 
 export const Document = styled.img`
   display: none;
@@ -39,47 +51,25 @@ export const Span = styled.span`
 export const Card = styled.div`
   width: 100%;
   border-radius: 20px;
-  padding: 20px 20px;
+  padding: 16px 20px;
   background: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? 'linear-gradient(145deg, #1c1c1c, #292929)'
-      : 'linear-gradient(145deg, #ffffff, #f3f3f3)'};
-  border: 2px solid ${({ theme }) => (theme.mode === 'dark' ? '#ff7e5f' : '#feb47b')};
-  box-shadow: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? '0px 0px 20px rgba(255, 255, 255, 0.2)'
-      : '0px 0px 20px rgba(0, 0, 0, 0.2)'};
+    theme.mode === "dark"
+      ? "linear-gradient(145deg, #1c1c1c, #292929)"
+      : "linear-gradient(145deg, #ffffff, #f3f3f3)"};
+
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  position: relative;
   transition: all 0.3s ease;
   margin-bottom: 15px;
 
-  animation: pulseGlowExperience 3s infinite alternate;
-
-  @keyframes pulseGlowExperience {
-    0% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    50% {
-      box-shadow: 0 0 15px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-    100% {
-      box-shadow: 0 0 10px
-        ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    }
-  }
+  animation: ${({ theme }) =>
+    pulseGlow(theme.mode === 'dark' ? '#00bcd4' : '#00bfff')} 3s infinite alternate;
 
   &:hover {
-    transform: translateX(10px);
-    box-shadow: 0px 0px 30px
-      ${({ theme }) => (theme.mode === "dark" ? "#feb47b" : "#ff7e5f")};
-    border-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#feb47b" : "#ff7e5f"};
+    box-shadow: 0px 0px 40px ${({ theme }) => (theme.mode === 'dark' ? '#0d1b2a' : '#00bfff')};
   }
-
 
   &:hover ${Document} {
     display: block;
@@ -90,6 +80,7 @@ export const Card = styled.div`
     -webkit-line-clamp: unset;
   }
 `;
+
 
 export const Top = styled.div`
   width: 100%;
@@ -119,7 +110,7 @@ export const Body = styled.div`
 export const Role = styled.div`
   font-size: 20px;
   font-weight: 700;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%);
   -webkit-background-clip: text;
   color: transparent;
   @media only screen and (max-width: 768px) {

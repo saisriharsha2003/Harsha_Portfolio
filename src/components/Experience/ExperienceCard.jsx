@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Top, Image, Body, Role, Company, Date, Description, Span, Skills, Skill, Document } from './ExperienceCardStyle';
 
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = ({ experience, direction }) => {
   return (
-    <Card>
+    <Card direction={direction}>
       <Top>
         <Image src={experience.img} />
         <Body>
