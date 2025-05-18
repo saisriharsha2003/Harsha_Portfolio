@@ -37,7 +37,7 @@ export default function Contact() {
           title: "🚀 Success!",
           text: "Your message has been sent successfully!",
           icon: "success",
-          confirmButtonColor: "#ff7e5f",
+          confirmButtonColor: "#00bfff",
           background: "linear-gradient(145deg, #1c1c1c, #292929)",
           color: "#fff",
         }).then((result) => {
@@ -53,7 +53,7 @@ export default function Contact() {
           title: "🚫 Error!",
           text: "An error occurred while sending your message.",
           icon: "error",
-          confirmButtonColor: "#ff7e5f",
+          confirmButtonColor: "#00bfff",
           background: "linear-gradient(145deg, #1c1c1c, #292929)",
           color: "#fff",
         }).then((result) => {
