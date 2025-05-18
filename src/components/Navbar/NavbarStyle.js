@@ -42,7 +42,7 @@ export const NavLogo = styled(LinkR)`
 
   &:hover {
     transform: scale(1.05);
-    color: #ff7e5f;
+    color: #00bfff
   }
 `;
 
@@ -67,7 +67,7 @@ export const NavLink = styled(LinkR)`
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%); 
   -webkit-background-clip: text;
   color: transparent;
   position: relative;
@@ -84,7 +84,9 @@ export const NavLink = styled(LinkR)`
     position: absolute;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%);
+
+
     bottom: -5px;
     left: 0;
     transform: scaleX(0);
@@ -101,7 +103,10 @@ export const NavLink = styled(LinkR)`
 `;
 
 export const ThemeToggle = styled.button`
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"}; 
   -webkit-background-clip: text;
   color: white;
   border: none;
@@ -114,7 +119,7 @@ export const ThemeToggle = styled.button`
 
 export const DropIcon = styled(FaChevronDown)`
   font-size: 14px;
-  fill: #ff7e5f; 
+  fill: #00bfff 
   transition: transform 0.3s ease-in-out;
 
   
@@ -124,8 +129,11 @@ export const NavLinkMore = styled(LinkR)`
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"}; 
+-webkit-background-clip: text;
   color: transparent;
   padding-bottom: 4px;
   transition: all 0.3s ease-in-out;
@@ -177,8 +185,11 @@ export const DropdownItem = styled(LinkR)`
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"}; 
+-webkit-background-clip: text;
   color: transparent;
   position: relative;
   padding: 5px;
@@ -194,7 +205,9 @@ export const DropdownItem = styled(LinkR)`
     position: absolute;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%);
+
+
     bottom: -5px;
     left: 0;
     transform: scaleX(0);
@@ -227,12 +240,12 @@ export const Circle = styled.div`
 
 export const SunIcon = styled(FaSun)`
   font-size: 20px;
-  color: #ff7e5f;
+  color: #00bfff
 `;
 
 export const MoonIcon = styled(FaMoon)`
   font-size: 20px;
-  color: #ff7e5f;
+  color: #00bfff
 `;
 
 export const MobileIcon = styled.div`
@@ -242,7 +255,7 @@ export const MobileIcon = styled.div`
     display: block;
     font-size: 1.8rem;
     cursor: pointer;
-    color: #ff7e5f;
+    color: #00bfff
     transition: transform 0.3s ease-in-out;
 
     &:hover {
@@ -280,11 +293,11 @@ export const MobileLink = styled(LinkR)`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: #ff7e5f;
+    color: #00bfff
   }
 
   &.active {
-    border-bottom: 2px solid #ff7e5f;
+    border-bottom: 2px solid #00bfff
   }
 `;
 
