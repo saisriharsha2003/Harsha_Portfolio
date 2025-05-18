@@ -18,7 +18,7 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Rankela Sai Sri Harsha</Logo>
+        <Logo>Sai Sri Harsha Rankela</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#experience">Experience</NavLink>
@@ -43,7 +43,7 @@ function Footer() {
           </SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>
-          &copy; 2024 Rankela Sai Sri Harsha. All rights reserved.
+          &copy; 2024 Sai Sri Harsha Rankela. All rights reserved.
         </Copyright>
       </FooterWrapper>
     </FooterContainer>
