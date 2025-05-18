@@ -1,22 +1,22 @@
 import React from "react";
 import {Card, Top, Image, Body, Name, Degree, Date, Grade, Description, Span} from "./EducationCardStyle"
 
-const EducationCard = ({ education }) => {
+const EducationCard = ({ educations }) => {
   return (
     <Card>
       <Top>
-        <Image src={education.img} />
+        <Image src={educations.img} />
         <Body>
-          <Name>{education.school}</Name>
-          <Degree>{education.degree}</Degree>
-          <Date>{education.date}</Date>
+          <Name>{educations.school}</Name>
+          <Degree>{educations.degree}</Degree>
+          <Date>{educations.date}</Date>
         </Body>
       </Top>
       <Grade>
-        <b>Grade:</b> <span>{education.grade}</span>
+        <b>Grade:</b> <span>{educations.grade}</span>
       </Grade>
       <Description>
-        <Span>{education.desc}</Span>
+        <Span>{educations.desc}</Span>
       </Description>
     </Card>
   );
