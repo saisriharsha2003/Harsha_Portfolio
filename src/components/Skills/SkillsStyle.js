@@ -1,4 +1,16 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
+
+const pulseGlow = (color) => keyframes`
+  0% {
+    box-shadow: 0 0 10px ${color};
+  }
+  50% {
+    box-shadow: 0 0 15px ${color};
+  }
+  100% {
+    box-shadow: 0 0 10px ${color};
+  }
+`;
 
 const fadeInUp = keyframes`
   from {
@@ -9,12 +21,6 @@ const fadeInUp = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-`;
-
-const gradientAnimation = keyframes`
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 `;
 
 export const Container = styled.div`
@@ -43,11 +49,12 @@ export const Title = styled.h1`
   font-size: 50px;
   font-weight: bold;
   text-align: center;
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
-  background-size: 200% 200%;
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"};
   -webkit-background-clip: text;
   color: transparent;
-  animation: ${gradientAnimation} 4s infinite linear;
 `;
 
 export const Desc = styled.p`
@@ -70,24 +77,22 @@ export const SkillsContainer = styled.div`
 export const Skill = styled.div`
   width: 100%;
   max-width: 400px;
-  background: ${({ theme }) => theme.card};
+  background: linear-gradient(
+    145deg,
+    ${({ theme }) => theme.card},
+    ${({ theme }) => (theme.mode === "dark" ? "#1c1c1c" : "#ffffff")}
+  );
+  opacity: 0.9;
   padding: 30px 25px;
   border-radius: 40px;
-  border: 2px solid ${({ theme }) => (theme.mode === 'light' ? '#feb47b' : '#ff7e5f')};
-  box-shadow: 0px 0px 10px ${({ theme }) => (theme.mode === 'light' ? '#feb47b' : '#ff7e5f')};
+  box-shadow: 0px 0px 10px ${({ theme }) => (theme.mode === 'light' ? '#0d1b2a' : '#00bfff')};
   transition: all 0.4s ease-in-out;
-  animation: pulseGlowSkill 3s infinite alternate;
-
-  @keyframes pulseGlowSkill {
-    0% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
-    50% { box-shadow: 0 0 20px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
-    100% { box-shadow: 0 0 10px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')}; }
-  }
+  animation: ${({ theme }) =>
+    pulseGlow(theme.mode === 'dark' ? '#00bcd4' : '#00bfff')} 3s infinite alternate;
 
   &:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0px 0px 30px ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
-    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+    box-shadow: 0px 0px 30px ${({ theme }) => (theme.mode === 'dark' ? '#00bfff' : '#0d1b2a')};
   }
 `;
 
@@ -96,11 +101,12 @@ export const SkillTitle = styled.h2`
   font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
-  background-size: 200% 200%;
+  background: ${({ theme }) =>
+    theme.mode === "light"
+      ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
+      : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"};
   -webkit-background-clip: text;
   color: transparent;
-  animation: ${gradientAnimation} 4s infinite linear;
 `;
 
 export const SkillList = styled.div`
@@ -119,12 +125,12 @@ export const SkillItem = styled.div`
   border-radius: 20px;
   background: linear-gradient(to right, #ffffff, #f7f7f7);
   color: #333;
-  border: 2px solid ${({ theme }) => (theme.mode === 'light' ? '#feb47b' : '#ff7e5f')};
+  border: 2px solid ${({ theme }) => (theme.mode === 'light' ? '#0d1b2a' : '#00bfff')};
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-5px) scale(1.05);
-    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#feb47b' : '#ff7e5f')};
+    border-color: ${({ theme }) => (theme.mode === 'dark' ? '#0d1b2a' : '#00bfff')};
   }
 `;
 
