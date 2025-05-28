@@ -86,7 +86,6 @@ export const NavLink = styled(LinkR)`
     height: 3px;
     background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%);
 
-
     bottom: -5px;
     left: 0;
     transform: scaleX(0);
@@ -121,8 +120,6 @@ export const DropIcon = styled(FaChevronDown)`
   font-size: 14px;
   fill: #00bfff 
   transition: transform 0.3s ease-in-out;
-
-  
 `;
 
 export const NavLinkMore = styled(LinkR)`
@@ -133,7 +130,7 @@ export const NavLinkMore = styled(LinkR)`
     theme.mode === "light"
       ? "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)"
       : "linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%)"}; 
--webkit-background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   padding-bottom: 4px;
   transition: all 0.3s ease-in-out;
@@ -206,7 +203,6 @@ export const DropdownItem = styled(LinkR)`
     width: 100%;
     height: 3px;
     background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 35%, #4fc3f7 70%, #29b6f6 100%);
-
 
     bottom: -5px;
     left: 0;
