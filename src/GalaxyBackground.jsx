@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 const twinkle = keyframes`
   0%, 100% { opacity: 0.3; transform: scale(1); }
@@ -34,54 +34,59 @@ const Galaxy = styled.div`
   pointer-events: none;
 `;
 
-const StarWrapper = styled.div`
+const StarWrapper = styled.div.attrs((props) => ({
+  style: {
+    top: `${props.$top}%`,
+    left: `${props.$left}%`,
+  },
+}))`
   position: absolute;
-  top: ${(props) => props.top}%;
-  left: ${(props) => props.left}%;
-  animation: ${(props) =>
-      ellipticalOrbit(props.rx, props.ry, props.phase)}
-    ${(props) => props.duration}s linear infinite;
+  ${({ $rx, $ry, $phase, $duration }) => css`
+    animation: ${ellipticalOrbit($rx, $ry, $phase)} ${$duration}s linear infinite;
+  `}
 `;
 
 const Star = styled.div`
-  width: ${(props) => props.size}px;
-  height: ${(props) => props.size}px;
+  width: ${(props) => props.$size}px;
+  height: ${(props) => props.$size}px;
   background: white;
   border-radius: 50%;
   opacity: 0.8;
-  animation: ${twinkle} ${(props) => props.twinkleDuration}s ease-in-out infinite;
+  animation: ${twinkle} ${(props) => props.$twinkleDuration}s ease-in-out infinite;
 `;
 
 const GalaxyBackground = () => {
-  const stars = React.useMemo(() =>
-    Array.from({ length: 400 }).map((_, i) => ({
-      id: i,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      size: Math.random() * 2 + 0.5,
-      twinkleDuration: Math.random() * 2 + 1,
-      duration: Math.random() * 40 + 20,
-      rx: Math.random() * 60 + 20,
-      ry: Math.random() * 20 + 10,
-      phase: Math.random() * 360,
-    }))
-  , []);
+  const stars = React.useMemo(
+    () =>
+      Array.from({ length: 400 }).map((_, i) => ({
+        id: i,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        size: Math.random() * 2 + 0.5,
+        twinkleDuration: Math.random() * 2 + 1,
+        duration: Math.random() * 40 + 20,
+        rx: Math.random() * 60 + 20,
+        ry: Math.random() * 20 + 10,
+        phase: Math.random() * 360,
+      })),
+    []
+  );
 
   return (
     <Galaxy>
       {stars.map((star) => (
         <StarWrapper
           key={star.id}
-          top={star.top}
-          left={star.left}
-          rx={star.rx}
-          ry={star.ry}
-          duration={star.duration}
-          phase={star.phase}
+          $top={star.top}
+          $left={star.left}
+          $rx={star.rx}
+          $ry={star.ry}
+          $duration={star.duration}
+          $phase={star.phase}
         >
           <Star
-            size={star.size}
-            twinkleDuration={star.twinkleDuration}
+            $size={star.size}
+            $twinkleDuration={star.twinkleDuration}
           />
         </StarWrapper>
       ))}
