@@ -12,6 +12,8 @@ import {
   CodingTitle,
   ButtonGroup,
   HeroButton,
+  GlowRing,
+
 } from "./HeroStyle";
 import HeroImg from "../../images/HeroImage.jpg";
 import Typewriter from "typewriter-effect";
@@ -42,6 +44,7 @@ const HeroSection = () => {
         variants={containerVariants}
       >
         <HeroInnerContainer>
+          <GlowRing />
           <Img
             as={motion.img}
             src={HeroImg}
@@ -58,7 +61,7 @@ const HeroSection = () => {
               {Bio.name}
             </Title1>
             <TextLoop as={motion.div} variants={itemVariants}>
-              <div style={{ color: theme }}>
+              
                 <CodingTitle>I am a</CodingTitle>
                 <Typewriter
                   options={{
@@ -68,7 +71,7 @@ const HeroSection = () => {
                     
                   }}
                 />
-              </div>
+              
             </TextLoop>
 
             <SubTitle as={motion.p} variants={itemVariants}>
