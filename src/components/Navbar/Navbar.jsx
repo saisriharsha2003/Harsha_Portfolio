@@ -69,22 +69,20 @@ const Navbar = ({ toggleTheme }) => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo>
-          <ScrollLink
-            to="hero"
-            smooth={true}
-            duration={500}
-            offset={-80}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              cursor: "pointer",
-            }}
-          >
-            <SiSimilarweb size="2rem" /> <Span>Portfolio</Span>
-          </ScrollLink>
-        </NavLogo>
+        <ScrollLink
+          to={"about"}
+          smooth={true}
+          duration={500}
+          offset={-80}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            color: "white",
+            cursor: "pointer",
+          }}
+        >
+          <SiSimilarweb size="2rem" /> <Span>Portfolio</Span>
+        </ScrollLink>
 
         <MobileIcon>
           <FaBars onClick={() => setIsOpen(!isOpen)} />
@@ -115,7 +113,9 @@ const Navbar = ({ toggleTheme }) => {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <NavLinkMore>More <DropIcon /></NavLinkMore>
+            <NavLinkMore>
+              More <DropIcon />
+            </NavLinkMore>
             {dropdownOpen && (
               <DropdownMenu>
                 {dropdownSections.map((section) => (
@@ -134,7 +134,6 @@ const Navbar = ({ toggleTheme }) => {
               </DropdownMenu>
             )}
           </DropdownContainer>
-
         </NavItems>
 
         <ButtonContainer>
