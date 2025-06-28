@@ -106,7 +106,7 @@ export const projects = [
       ],
       category: "web app",
       github: "https://github.com/saisriharsha2003/note-nexus",
-      webapp: "https://notenex.netlify.app/",
+      webapp: "https://notenexus-app.netlify.app",
     },
     
     {
