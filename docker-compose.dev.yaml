@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "3000:5173"  
+      - "4000:5173"  
     image: saisriharsha2005/harsha_portfolio_dev:latest
     volumes:
       - .:/harsha_portfolio
