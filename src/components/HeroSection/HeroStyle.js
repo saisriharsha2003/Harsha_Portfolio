@@ -73,16 +73,6 @@ export const Img = styled(motion.img)`
   }
 `;
 
-export const GlowRing = styled.div`
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #00bcd4 20%, transparent 60%);
-  animation: ${({ theme }) => pulseGlow('#00bcd4')} 3s infinite alternate;
-  z-index: 1;
-`;
-
 export const Title = styled(motion.h1)`
   font-size: 50px;
   font-weight: bold;

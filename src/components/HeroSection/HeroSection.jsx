@@ -12,8 +12,6 @@ import {
   CodingTitle,
   ButtonGroup,
   HeroButton,
-  GlowRing,
-
 } from "./HeroStyle";
 import HeroImg from "../../images/HeroImage.jpg";
 import Typewriter from "typewriter-effect";
@@ -44,7 +42,6 @@ const HeroSection = () => {
         variants={containerVariants}
       >
         <HeroInnerContainer>
-          <GlowRing />
           <Img
             as={motion.img}
             src={HeroImg}
