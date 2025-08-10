@@ -33,7 +33,7 @@ const Navbar = ({ toggleTheme }) => {
   const currentTheme = useTheme();
 
   const mainSections = ["about", "experience", "skills", "projects", "contact"];
-  const dropdownSections = ["education", "coding profiles"];
+  const dropdownSections = ["education", "coding profiles", "certifications"];
   const sections = [...mainSections, ...dropdownSections];
 
   const handleScroll = () => {

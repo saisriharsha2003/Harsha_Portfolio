@@ -15,6 +15,7 @@ import ProjectDetails from "./components/Projects/ProjectDetails.jsx";
 import CodingProfiles from "./components/CodingProfiles/CodingProfiles.jsx";
 import styled from "styled-components";
 import GalaxyBackground from "./GalaxyBackground.jsx";
+import Certifications from "./components/Certifications/Certifications";
 
 const Separator = styled.hr`
   border: none;
@@ -78,6 +79,8 @@ function App() {
           </Wrapper>
           <Separator />
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
+          <Separator />
+          <Certifications/>
           <Separator />
           <Wrapper>
             <Education />
