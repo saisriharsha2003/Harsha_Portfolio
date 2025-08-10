@@ -1,4 +1,3 @@
-import React from 'react';
 import {Card, ImageWrapper, Details, Title, Date, Description, Button} from './ProjectCardsStyle';
 
 const ProjectCards = ({ project, setOpenModal }) => {

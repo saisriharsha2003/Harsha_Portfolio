@@ -75,7 +75,6 @@ export const Card = styled.div`
   }
 `;
 
-
 export const ImageWrapper = styled.div`
   width: 100%;
   height: 150px;
