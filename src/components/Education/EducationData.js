@@ -21,14 +21,5 @@ export const educations = [
     grade: "93%",
     desc: "I completed my class 12 high school education at Naryana Junior College, vIjayawada where I studied Intermediate in MPC and maintained a percentage of 93%. And also i have secured 3129 rank in AP EAMCET and 4354 rank in TS EAMCET",
     degree: "BIEAP(XII), Intermediate in MPC",
-  },
-  {
-    id: 2,
-    img: holyfaith,
-    school: "Holy Faith EM School, Addanki, Andhra Pradesh",
-    date: "May 2017 - Apr 2018",
-    grade: "10 CGPA",
-    desc: "I completed my class 10 education at Holy Faith EM School, Addanki, where I maintained a CGPA of 10",
-    degree: "SSC(X)",
-  },
+  }
 ];

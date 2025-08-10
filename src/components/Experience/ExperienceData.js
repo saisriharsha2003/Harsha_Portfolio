@@ -1,5 +1,4 @@
-import solomons from "../../images/solomons.webp";
-import internshala from "../../images/internshala.jpg";
+import solomons from "../../images/solomons.png";
 
 export const experiences = [
   {
@@ -7,23 +6,42 @@ export const experiences = [
     img: "https://mms.businesswire.com/media/20220421005466/en/1427984/5/TCSLogo2.jpg",
     role: "DevOps Engineer",
     company: "Tata Consultancy Services",
-    date: "August 2024 - Present",
-    desc: "During my ILP training, I was recognized as one of the top six performers based on my performance in exams and case studies conducted throughout the program",
+    date: "October 2024 - Present",
+    desc: "As a DevOps Engineer at TCS, I maintain pipelines and perform installation, upgrade (II UG), rollback, backup, and restore tasks for Ericsson applications. I work on CI/CD pipelines and containerized deployments using Jenkins, Docker, and Kubernetes. I also collaborate with Ericsson’s DevOps team to streamline deployments and manage infrastructure across their microservices.",
+    skills: [
+      "Docker",
+      "Kubernetees",
+      "Devops",
+      "Jenkins",
+      "CI/CD",
+      "Git",
+      "Groovy",
+      "Ansible",
+      "Python",
+      "Bash Scripting",
+      "Linux",
+    
+    ],
+  },
+  {
+    id: 1,
+    img: "https://mms.businesswire.com/media/20220421005466/en/1427984/5/TCSLogo2.jpg",
+    role: "ILP Trainee",
+    company: "Tata Consultancy Services",
+    date: "August 2024 - September 2024",
+    desc: "During my ILP training, I contributed to the development of SmartBill, an electricity billing portal built with Java, JSP, Servlets, and JDBC. I implemented admin features for managing consumer details and billing, along with consumer-side functionalities such as multi-consumer registration, bill viewing, payment tracking, and complaint management.  I was recognized as one of the top six performers based on my performance in exams and case studies throughout the training.",
     skills: [
       "HTML",
       "CSS",
       "Java",
       "Javscript",
       "Java Server Pages (JSP)",
-      "Java Full Stack Web Development",
       "Servlets",
-      "Docker",
-      "Kubernetees",
-      "Devops"
+      "Derby",
     ],
   },
   {
-    id: 1,
+    id: 2,
     img: solomons,
     role: "Full Stack NLP Engineer Intern",
     company: "Solomons International",
@@ -46,15 +64,5 @@ export const experiences = [
       "NLP",
     ],
     doc: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Rankela%20Sai%20Sri%20Harsha%20Internship%20Certificate-signed_page-0001.jpg?alt=media&token=1932c9d3-273c-45eb-a7ba-bee5dfa8da45",
-  },
-  {
-    id: 2,
-    img: internshala,
-    role: "Web Developer Intern",
-    company: "Internshala",
-    date: "July 2023 - September 2023",
-    desc: "During my internship with Internshala Remote, I played a key role in developing the responsive web interface for PG Life. Using HTML, CSS, and JavaScript, I crafted a user-friendly experience that garnered positive feedback for its usability. Additionally, I focused on enhancing user engagement by implementing a contemporary design and strategically utilizing Bootstrap. This approach led to a significant increase in the average session duration, reflecting the success of the project. Furthermore, I took charge of revamping the PHP and MySQL database integration in PG Life, achieving an impressive average response time of less than 100ms. To ensure efficient version control and streamlined query execution, I implemented Git for Version Control and SQL. These efforts collectively contributed to the optimization of PG Life's performance and user experience.",
-    skills: ["HTML", "CSS", "BootStrap", "JavaScript", "MySQL", "PHP"],
-    doc: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Web%20Development%20Training%20-%20Certificate%20of%20Completion_page-0001.jpg?alt=media&token=5b8c8501-e605-451f-83d9-dc9695e4c54f",
   },
 ];

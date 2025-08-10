@@ -93,8 +93,9 @@ export const Image = styled.img`
   width: 140px;
   object-fit: cover;
   border-radius: 12px;
-  background-color: #000;
+  background-color: white;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
   @media only screen and (max-width: 768px) {
     height: 50px;
     width: 50px;
