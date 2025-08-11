@@ -156,9 +156,9 @@ export const DropdownContainer = styled.div`
 
 export const DropdownMenu = styled.div`
   position: absolute;
-  top: 30px;
+  top: 35px;
   left: 0;
-  max-width: 400px;
+  min-width: 180px;
   background: rgba(17, 17, 17, 0.9);
   backdrop-filter: blur(10px);
   padding: 15px;
