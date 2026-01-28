@@ -114,9 +114,8 @@ export const skills = [
           "https://upload.wikimedia.org/wikipedia/commons/e/ea/Docker_%28container_engine%29_logo_%28cropped%29.png",
       },
       {
-        name: "Google Cloud",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxJvqd1ogHWZPF2JuWlYdNp5TUGtNpYu9LA&s",
+        name: "Git",
+        image: git
       },
       {
         name: "Kubernetes",
@@ -124,59 +123,6 @@ export const skills = [
       }
 
     ],
-  },
-
-  {
-    title: "Machine Learning",
-    skills: [
-      {
-        name: "Python",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
-      },
-      {
-        name: "NLP",
-        image: nlp
-
-      },
-      {
-        name: "Tenserflow",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFoiz9_MxMLfD9rxAcai43v3zmqcx4Y8pb5g&s",
-      },
-      {
-        name: "Jupyter",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1767px-Jupyter_logo.svg.png",
-      },
-      {
-        name: "Google Colab",
-        image: colab
-      },
-      
-    ],
-  },
-  {
-    title: "Version Control",
-    skills: [
-      {
-        name: "Git",
-        image: git
-      },
-      {
-        name: "GitHub",
-        image:
-          "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-      },
-      {
-        name: "BitBucket",
-        image: "https://icon-library.com/images/bitbucket-icon/bitbucket-icon-8.jpg"
-      },
-      {
-        name: "Jira",
-        image: "https://user-images.githubusercontent.com/6190190/221034136-09f876b1-1caf-4ef7-b523-ce7d9299cdce.png"
-      }
-    ]
   },
   
   {

@@ -106,12 +106,12 @@ export const projects = [
       ],
       category: "web app",
       github: "https://github.com/saisriharsha2003/note-nexus",
-      webapp: "https://notenexus-app.netlify.app",
+      webapp: "https://note-nexus-beige.vercel.app/",
     },
     
     {
       id: 6,
-      title: "Dynamic To Do List",
+      title: "Todovibe",
       description:
         "Designed and developed a dynamic to-do list application, offering users a digital task management solution with enhanced features for organization and productivity. The application allows users to create, update, and manage tasks, prioritize them based on importance and deadlines, and categorize tasks into projects for efficient management. Implemented features include task reminders, notifications, and collaboration tools, enabling users to stay organized and on track with their tasks. The dynamic to-do list application provides a user-friendly interface and seamless integration with other productivity tools for a comprehensive task management experience.",
       image: todo,
@@ -129,7 +129,7 @@ export const projects = [
       ],
       category: "web app",
       github: "https://github.com/saisriharsha2003/To_Do_List",
-      webapp: "https://saisriharsha2003.github.io/To_Do_List/",
+      webapp: "https://todovibe-wheat.vercel.app/",
     },
     {
       id: 7,
