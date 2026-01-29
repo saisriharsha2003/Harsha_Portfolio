@@ -6,9 +6,10 @@ import node from "../../images/nodejs.webp";
 import express from "../../images/icon-expressjs.svg";
 import servlet from "../../images/servletslogo.webp";
 import kuberntes from "../../images/kubernetes.png";
-import colab from "../../images/colab_logo.webp";
 import git from "../../images/git.webp";
-import nlp from "../../images/nlp.jpg";
+import netlify from "../../images/netlify.png";
+import jenkins from "../../images/jenkins.png";
+import ansible from "../../images/ansible.png";
 
 export const skills = [
   {
@@ -40,11 +41,6 @@ export const skills = [
         name: "JavaScript",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      },
-      {
-        name: "Bootstrap",
-        image:
-          "https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png",
       },
       {
         name: "Material UI",
@@ -120,7 +116,15 @@ export const skills = [
       {
         name: "Kubernetes",
         image: kuberntes
-      }
+      },
+      {
+        name: "Jenkins",
+        image: jenkins
+      },
+      {
+        name: "Ansible",
+        image: ansible
+      },
 
     ],
   },
@@ -131,8 +135,7 @@ export const skills = [
       
       {
         name: "Netlify",
-        image:
-          "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
+        image: netlify
       },
       {
         name: "VS Code",
