@@ -15,12 +15,6 @@ const certifications = [
     link: "https://drive.google.com/file/d/1UYtklUnOXLaGAxsHVMBquQVN7I4lVGvk/view?usp=sharing"
   },
   {
-    title: "Google Cloud Digital Leader",
-    organization: "Google Cloud",
-    image: gcp_cdl,
-    link: "https://drive.google.com/file/d/1X6oNUmZ6xca1lmQAjuKmY2LRmxmY-jE_/view?usp=sharing"
-  },
-  {
     title: "Programming Data Structures and Algorithms using Python",
     organization: "NPTEL",
     image: python_dsa,
@@ -55,7 +49,13 @@ const certifications = [
     organization: "Microsoft Azure",
     image: azure_fundamentals,
     link: "https://drive.google.com/file/d/17pkM4DiUDWv_nw1WBtdawtIPh9qtaT-z/view?usp=drive_link"
-  }
+  },
+  {
+    title: "Google Cloud Digital Leader",
+    organization: "Google Cloud",
+    image: gcp_cdl,
+    link: "https://drive.google.com/file/d/1X6oNUmZ6xca1lmQAjuKmY2LRmxmY-jE_/view?usp=sharing"
+  },
 ];
 
 export default certifications;
