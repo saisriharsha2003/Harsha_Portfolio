@@ -10,6 +10,8 @@ import git from "../../images/git.webp";
 import netlify from "../../images/netlify.png";
 import jenkins from "../../images/jenkins.png";
 import ansible from "../../images/ansible.png";
+import groovy from "../../images/groovy.webp";
+import helm from "../../images/helm.webp";
 
 export const skills = [
   {
@@ -100,11 +102,6 @@ export const skills = [
     title: "DevOps",
     skills: [
       {
-        name: "AWS",
-        image:
-          "https://p.kindpng.com/picc/s/246-2468000_aws-icono-hd-png-download.png",
-      },
-      {
         name: "Docker",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/e/ea/Docker_%28container_engine%29_logo_%28cropped%29.png",
@@ -117,6 +114,12 @@ export const skills = [
         name: "Kubernetes",
         image: kuberntes
       },
+      
+      {
+        name: "AWS",
+        image:
+          "https://p.kindpng.com/picc/s/246-2468000_aws-icono-hd-png-download.png",
+      },
       {
         name: "Jenkins",
         image: jenkins
@@ -124,6 +127,14 @@ export const skills = [
       {
         name: "Ansible",
         image: ansible
+      },
+      {
+        name: "Groovy",
+        image: groovy
+      },
+      {
+        name: "Helm",
+        image: helm
       },
 
     ],
