@@ -1,4 +1,5 @@
 import solomons from "../../images/solomons.png";
+import solomons_experience_letter from "../../imges/solomons_experience_letter.jpg"
 
 export const experiences = [
   {
@@ -16,7 +17,7 @@ export const experiences = [
       "CI/CD",
       "Git",
       "Groovy",
-      "Ansible",
+      "Ansible",to
       "Python",
       "Bash Scripting",
       "Linux",
@@ -63,6 +64,6 @@ export const experiences = [
       "Machine Learning",
       "NLP",
     ],
-    doc: "https://firebasestorage.googleapis.com/v0/b/harshaportfolio-2005.appspot.com/o/Rankela%20Sai%20Sri%20Harsha%20Internship%20Certificate-signed_page-0001.jpg?alt=media&token=1932c9d3-273c-45eb-a7ba-bee5dfa8da45",
+    doc: solomons_experience_letter,
   },
 ];
