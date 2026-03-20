@@ -17,7 +17,7 @@ export const experiences = [
       "CI/CD",
       "Git",
       "Groovy",
-      "Ansible",to
+      "Ansible",
       "Python",
       "Bash Scripting",
       "Linux",
