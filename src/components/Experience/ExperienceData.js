@@ -1,5 +1,5 @@
 import solomons from "../../images/solomons.png";
-import solomons_experience_letter from "../../imges/solomons_experience_letter.jpg"
+import solomons_experience_letter from "../../images/solomons_experience_letter.jpg";
 
 export const experiences = [
   {
