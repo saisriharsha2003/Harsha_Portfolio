@@ -10,9 +10,9 @@ import smartbill from "../../images/smartbill.jpg"
 export const projects = [
     {
       id: 0,
-      title: "EmpowerRecruit",
+      title: "TalenTrail",
       description:
-      "EmpowerRecruit is a comprehensive recruitment platform built using the MERN stack, designed to streamline the hiring process for colleges, students, and recruiters. Recruiters can post jobs with job parsing for automated field entry, choose between global or college-specific postings, and utilize a job compatibility score to rank applicants. They can accept or reject applications, with status updates sent via email. Students can apply for jobs using resume parsing for seamless form filling, check their compatibility scores for job descriptions, and track their application statuses. Colleges can manage placement activities, approve drives, track placement statistics, handle student data, and coordinate with recruiters to optimize placement outcomes. Empower Recruit enhances efficiency, transparency, and engagement in the hiring process.",
+      "TalenTrail is a comprehensive recruitment platform built using the MERN stack, designed to streamline the hiring process for colleges, students, and recruiters. Recruiters can post jobs with job parsing for automated field entry, choose between global or college-specific postings, and utilize a job compatibility score to rank applicants. They can accept or reject applications, with status updates sent via email. Students can apply for jobs using resume parsing for seamless form filling, check their compatibility scores for job descriptions, and track their application statuses. Colleges can manage placement activities, approve drives, track placement statistics, handle student data, and coordinate with recruiters to optimize placement outcomes. Empower Recruit enhances efficiency, transparency, and engagement in the hiring process.",
       image: empower_recruit,
       tags: [
         "React Js",
@@ -28,8 +28,8 @@ export const projects = [
         "OpenAI"
       ],
       category: "web app",
-      github: "https://github.com/saisriharsha2003/EmpowerRecruitUpdated",
-      webapp: "https://final-year-project-client-five.vercel.app/",
+      github: "https://github.com/saisriharsha2003/TalenTrail.git",
+      webapp: "https://talentrail-jade.vercel.app/",
     },
     {
       id: 1,
@@ -53,13 +53,13 @@ export const projects = [
     },
     {
       id: 2,
-      title: "WhatsAppFoodBot",
+      title: "FoodChat",
       description:
-      "WhatsAppFoodBot is an innovative chatbot-based food ordering system that allows users to place orders directly through WhatsApp without the need for a separate application. It provides an interactive menu, enabling customers to browse available dishes and order seamlessly from any restaurant associated with the chatbot. One of its key features is direct communication with restaurants, eliminating the need for middlemen and ensuring a more efficient ordering experience. Users can inquire about food options, pricing, and availability, making the process more personalized and convenient. The chatbot streamlines food ordering by integrating with multiple restaurants, enhancing accessibility and user experience.",
+      "FoodChat is an innovative chatbot-based food ordering system that allows users to place orders directly through WhatsApp without the need for a separate application. It provides an interactive menu, enabling customers to browse available dishes and order seamlessly from any restaurant associated with the chatbot. One of its key features is direct communication with restaurants, eliminating the need for middlemen and ensuring a more efficient ordering experience. Users can inquire about food options, pricing, and availability, making the process more personalized and convenient. The chatbot streamlines food ordering by integrating with multiple restaurants, enhancing accessibility and user experience.",
       image: foodbot,
       tags: ["Python", "Flask", "Django", "MongoDB", "Twilio"],
       category: "chat bot",
-      github: "https://github.com/saisriharsha2003/WhatsAppFoodBot",
+      github: "https://github.com/saisriharsha2003/FoodChat.git",
     },
     {
       id: 3,

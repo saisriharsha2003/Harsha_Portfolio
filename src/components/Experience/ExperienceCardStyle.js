@@ -48,6 +48,22 @@ export const Span = styled.span`
   text-overflow: ellipsis;
 `;
 
+export const Para = styled.p`
+  margin: 8px 0;
+  line-height: 1.6;
+  font-size: 8px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_secondary};
+  @media only screen and (max-width: 768px) {
+    font-size: 11px;
+  }
+`;
+
+export const Exp = styled.div`
+  display: none;
+  width: 100%;
+`;
+
 export const Card = styled.div`
   width: 100%;
   border-radius: 20px;
@@ -76,8 +92,11 @@ export const Card = styled.div`
   }
 
   &:hover ${Span} {
-    overflow: visible;
-    -webkit-line-clamp: unset;
+    display: none;
+  }
+
+  &:hover ${Exp} {
+    display: block;
   }
 `;
 

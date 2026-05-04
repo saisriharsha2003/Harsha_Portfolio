@@ -1,7 +1,17 @@
 import React from 'react';
-import { Card, Top, Image, Body, Role, Company, Date, Description, Span, Skills, Skill, Document } from './ExperienceCardStyle';
+import { Card, Top, Image, Body, Role, Company, Date, Description, Span, Para, Exp, Skills, Skill, Document } from './ExperienceCardStyle';
 
 const ExperienceCard = ({ experience, direction }) => {
+  const renderDesc = (desc) => {
+    if (!desc) return null;
+    const paraBlocks = desc.split(/\r?\n\r?\n/).filter(Boolean);
+    if (paraBlocks.length > 1) {
+      return paraBlocks.map((p, i) => <Para key={i}>{p}</Para>);
+    }
+    const sentences = desc.split(/(?<=[.!?])\s+/);
+    return sentences.map((s, i) => <Para key={i}>{s}</Para>);
+  };
+
   return (
     <Card direction={direction}>
       <Top>
@@ -13,7 +23,12 @@ const ExperienceCard = ({ experience, direction }) => {
         </Body>
       </Top>
       <Description>
-        {experience.desc && <Span>{experience.desc}</Span>}
+        {experience.desc && (
+          <>
+            <Span>{experience.desc}</Span>
+            <Exp>{renderDesc(experience.desc)}</Exp>
+          </>
+        )}
         {experience.skills && (
           <>
             <br />
