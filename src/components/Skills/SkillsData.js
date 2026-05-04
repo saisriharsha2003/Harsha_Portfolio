@@ -3,7 +3,7 @@ import jsp from "../../images/jsp.png";
 import tailwind from "../../images/tailwind.svg";
 import mui from "../../images/mui.png";
 import node from "../../images/nodejs.webp";
-import express from "../../images/icon-expressjs.svg";
+import express from "../../images/expressjs.png";
 import servlet from "../../images/servletslogo.webp";
 import kuberntes from "../../images/kubernetes.png";
 import git from "../../images/git.webp";
@@ -12,6 +12,10 @@ import jenkins from "../../images/jenkins.png";
 import ansible from "../../images/ansible.png";
 import groovy from "../../images/groovy.webp";
 import helm from "../../images/helm.webp";
+import css_logo from "../../images/css_logo.png";
+import java_script_logo from "../../images/js_logo.png";
+import vscode from "../../images/vscode.png";
+import intellij from "../../images/intellij.jpg";
 
 export const skills = [
   {
@@ -36,13 +40,11 @@ export const skills = [
       
       {
         name: "CSS",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png",
+        image: css_logo
       },
       {
         name: "JavaScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
+        image: java_script_logo
       },
       {
         name: "Material UI",
@@ -150,12 +152,11 @@ export const skills = [
       },
       {
         name: "VS Code",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519",
+        image: vscode
       },
       {
         name: "IntelliJ IDEA",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/2048px-IntelliJ_IDEA_Icon.svg.png"
+        image: intellij
       },
       {
         name: "Eclipse",
