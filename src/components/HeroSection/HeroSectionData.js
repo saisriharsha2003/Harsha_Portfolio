@@ -11,7 +11,7 @@ export const Bio = {
   description: "I’m Sai Sri Harsha Rankela, a DevOps Engineer at TCS. I specialize in MERN Stack Web Development, DevOps, Python, Java, SQL and AWS Cloud.",
   github: "https://github.com/saisriharsha2003",
   resume:
-    "https://drive.google.com/file/d/1tTkUBONCiTwv9L3N7d-j2a9JprHchyfk/view?usp=sharing",
+    "https://drive.google.com/file/d/1utjztJrIZo_R2vkSHDDvwTT9tufvXqI1/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/saisriharsha2005/",
   twitter: "https://twitter.com/harsha2350",
   insta: "https://www.instagram.com/saisriharsha2005/",
